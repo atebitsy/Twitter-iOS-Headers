@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <TFSTwitterCore/NSCoding-Protocol.h>
+#import <TFSTwitterCore/NSSecureCoding-Protocol.h>
 #import <TFSTwitterCore/TFSEncodable-Protocol.h>
 
 @class NSArray, NSString, TFSTwitterEntityMediaVideoVariant;
 
-@interface TFSTwitterEntityMediaVideoInfo : NSObject <NSCoding, TFSEncodable>
+@interface TFSTwitterEntityMediaVideoInfo : NSObject <NSSecureCoding, TFSEncodable>
 {
     float _aspectRatio;
     float _numerator;
@@ -22,6 +22,7 @@
 
 + (id)encodableName;
 + (id)_tfs_parseVariants:(id)arg1;
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *variants; // @synthesize variants=_variants;
 @property(readonly, nonatomic) float denominator; // @synthesize denominator=_denominator;

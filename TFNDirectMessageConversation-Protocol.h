@@ -12,7 +12,7 @@
 @protocol TFNDirectMessageConversation <NSObject>
 @property(nonatomic, readonly) _Bool unread;
 @property(nonatomic, readonly) _Bool mentionNotificationsDisabled;
-@property(nonatomic, readonly) NSDate *muteExpirationTime;
+@property(nonatomic, readonly) NSDate *snoozeExpirationTime;
 @property(nonatomic, readonly) _Bool notificationsDisabled;
 - (TFNDirectMessageUser *)admin;
 - (TFNDirectMessageUser *)recipient;

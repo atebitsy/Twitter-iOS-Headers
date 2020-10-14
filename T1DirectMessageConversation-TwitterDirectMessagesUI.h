@@ -14,7 +14,7 @@
 @interface T1DirectMessageConversation (TwitterDirectMessagesUI) <TFNDirectMessageConversationActions>
 @property(nonatomic, readonly) _Bool unread;
 @property(nonatomic, readonly) _Bool mentionNotificationsDisabled;
-@property(nonatomic, readonly) NSDate *muteExpirationTime;
+@property(nonatomic, readonly) NSDate *snoozeExpirationTime;
 @property(nonatomic, readonly) _Bool notificationsDisabled;
 - (id)admin;
 - (id)recipient;
@@ -75,6 +75,8 @@
 - (void)deleteReaction:(id)arg1 forMessage:(id)arg2;
 - (void)addReaction:(id)arg1 forMessage:(id)arg2;
 - (void)deleteConversation;
+- (void)unmute;
+- (void)mute;
 - (void)accept;
 - (void)loadMoreEntriesWithCompletion:(CDUnknownBlockType)arg1;
 - (id)deleteScribeAction;

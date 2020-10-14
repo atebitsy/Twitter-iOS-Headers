@@ -12,11 +12,13 @@
 
 @interface T1VoiceAudiowaveTalkingViewModel : NSObject <T1VoiceAudiowaveViewModel>
 {
+    _Bool _reduceMotionSettingEnabled;
     unsigned long long _tic;
     NSNumber *_audioLevel;
 }
 
 - (void).cxx_destruct;
+@property(nonatomic, getter=isReduceMotionSettingEnabled) _Bool reduceMotionSettingEnabled; // @synthesize reduceMotionSettingEnabled=_reduceMotionSettingEnabled;
 @property(retain, nonatomic) NSNumber *audioLevel; // @synthesize audioLevel=_audioLevel;
 @property(nonatomic) unsigned long long tic; // @synthesize tic=_tic;
 - (void)calculateValues:(out float *)arg1 forNumberOfBars:(unsigned long long)arg2;

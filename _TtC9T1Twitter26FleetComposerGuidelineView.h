@@ -9,7 +9,6 @@
 __attribute__((visibility("hidden")))
 @interface _TtC9T1Twitter26FleetComposerGuidelineView : UIView
 {
-    // Error parsing type: , name: isHorizontalEnabled
     // Error parsing type: , name: positionGuidelineViews
     // Error parsing type: , name: rotationGuidelineViews
     // Error parsing type: , name: activePositionGuidelines
@@ -21,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)init;
 
 @end
 

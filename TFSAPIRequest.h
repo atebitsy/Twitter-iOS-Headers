@@ -21,7 +21,6 @@
     NSString *_HTTPBodyFilePath;
     _Bool _parametersEmbeddedInQuery;
     _Bool _emptyResponseDataExpected;
-    _Bool _progressiveAPIEnabled;
     NSString *_endpointURLString;
     NSDictionary *_parameters;
 }
@@ -30,7 +29,6 @@
 + (Class)responseClass;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) TNLRequestConfiguration *requestConfiguration; // @synthesize requestConfiguration=_requestConfiguration;
-@property(readonly, nonatomic, getter=isProgressiveAPIEnabled) _Bool progressiveAPIEnabled; // @synthesize progressiveAPIEnabled=_progressiveAPIEnabled;
 @property(readonly, copy, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
 @property(readonly, copy, nonatomic) NSString *endpointURLString; // @synthesize endpointURLString=_endpointURLString;
 @property(readonly, nonatomic, getter=isEmptyResponseDataExpected) _Bool emptyResponseDataExpected; // @synthesize emptyResponseDataExpected=_emptyResponseDataExpected;

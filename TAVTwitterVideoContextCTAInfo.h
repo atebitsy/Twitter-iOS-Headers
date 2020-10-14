@@ -6,28 +6,32 @@
 
 #import <objc/NSObject.h>
 
-@class NSNumber, NSString;
+@class NSNumber, NSString, NSURL;
 
 @interface TAVTwitterVideoContextCTAInfo : NSObject
 {
     unsigned long long _type;
     unsigned long long _openWebsiteType;
-    NSString *_urlString;
     NSNumber *_appId;
     NSString *_appName;
+    NSURL *_url;
+    NSString *_urlString;
+    NSString *_vanityURLString;
 }
 
 + (id)withAmplifyVMAPPlaylistCTA:(id)arg1;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *vanityURLString; // @synthesize vanityURLString=_vanityURLString;
+@property(retain, nonatomic) NSString *urlString; // @synthesize urlString=_urlString;
+@property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSString *appName; // @synthesize appName=_appName;
 @property(retain, nonatomic) NSNumber *appId; // @synthesize appId=_appId;
-@property(copy, nonatomic) NSString *urlString; // @synthesize urlString=_urlString;
 @property(nonatomic) unsigned long long openWebsiteType; // @synthesize openWebsiteType=_openWebsiteType;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 - (id)description;
 - (id)initWatchURLCTANotUrgentWithURLString:(id)arg1;
 - (id)initWatchURLCTAWithURLString:(id)arg1;
-- (id)initImageOpenURLCTAWithURLString:(id)arg1 openWebsiteType:(unsigned long long)arg2;
+- (id)initImageOpenURLCTAWithURL:(id)arg1 vanityURLString:(id)arg2 openWebsiteType:(unsigned long long)arg3;
 - (id)initOpenURLCTAWithURLString:(id)arg1 openWebsiteType:(unsigned long long)arg2;
 - (id)initAppStoreCTAWithAppId:(id)arg1 appName:(id)arg2 urlString:(id)arg3;
 

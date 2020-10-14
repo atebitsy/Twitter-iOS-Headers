@@ -14,6 +14,6 @@
 @optional
 - (void)modalContainerViewControllerDismissableWithGestureDidChange:(UIViewController<TFNModalContainerViewController> *)arg1;
 - (void)gestureDidDismissModalContainerViewController:(UIViewController<TFNModalContainerViewController> *)arg1;
-- (_Bool)gestureShouldDismissModalContainerViewController:(UIViewController<TFNModalContainerViewController> *)arg1;
+- (void)willAttachToModalContainerViewController:(UIViewController<TFNModalContainerViewController> *)arg1;
 @end
 

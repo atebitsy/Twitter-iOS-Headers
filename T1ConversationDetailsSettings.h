@@ -12,6 +12,9 @@
 
 + (id)colorWithHexString:(id)arg1;
 + (id)colorWithRGBHex:(unsigned int)arg1;
++ (long long)maximumIndentationLevels;
++ (long long)cursorIndentationLevelDelta;
++ (long long)initialRequestIndentationLevels;
 + (double)peekHeight;
 + (double)attachedCursorBottomContentEdgeScaleFactor;
 + (double)attachedCursorTopContentEdgeScaleFactor;

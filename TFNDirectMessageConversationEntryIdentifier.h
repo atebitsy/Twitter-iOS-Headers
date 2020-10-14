@@ -6,18 +6,19 @@
 
 #import <objc/NSObject.h>
 
-#import <T1Twitter/NSCoding-Protocol.h>
 #import <T1Twitter/NSCopying-Protocol.h>
+#import <T1Twitter/NSSecureCoding-Protocol.h>
 
 @class NSString;
 
-@interface TFNDirectMessageConversationEntryIdentifier : NSObject <NSCoding, NSCopying>
+@interface TFNDirectMessageConversationEntryIdentifier : NSObject <NSCopying, NSSecureCoding>
 {
 }
 
 + (id)uniqueLocalIdentifier;
 + (id)localIdentifierWithRequestID:(id)arg1;
 + (id)canonicalIdentifierWithEventID:(long long)arg1;
++ (_Bool)supportsSecureCoding;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

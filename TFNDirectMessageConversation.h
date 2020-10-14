@@ -36,7 +36,7 @@
     TFNDirectMessageContext *_context;
     NSString *_conversationName;
     NSNumber *_topRequestRank;
-    NSDate *_muteExpirationTime;
+    NSDate *_snoozeExpirationTime;
     long long _lastReadEventID;
     id <TFNDirectMessageConversationSocialProof> _socialProof;
     TFNDirectMessageModel *_directMessageModel;
@@ -54,11 +54,11 @@
     TFSTwitterEntityImageInfo *_pendingAvatarInfo;
     NSString *_pendingConversationName;
     long long _pendingLastReadEventID;
-    NSDate *_pendingMuteExpirationTime;
+    NSDate *_pendingSnoozeExpirationTime;
 }
 
 - (void).cxx_destruct;
-@property(retain, nonatomic) NSDate *pendingMuteExpirationTime; // @synthesize pendingMuteExpirationTime=_pendingMuteExpirationTime;
+@property(retain, nonatomic) NSDate *pendingSnoozeExpirationTime; // @synthesize pendingSnoozeExpirationTime=_pendingSnoozeExpirationTime;
 @property(nonatomic, getter=isPendingNotificationsDisabled) _Bool pendingNotificationsDisabled; // @synthesize pendingNotificationsDisabled=_pendingNotificationsDisabled;
 @property(nonatomic) _Bool hasPendingNotificationsDisabled; // @synthesize hasPendingNotificationsDisabled=_hasPendingNotificationsDisabled;
 @property(nonatomic, getter=isPendingMentionNotificationsDisabled) _Bool pendingMentionNotificationsDisabled; // @synthesize pendingMentionNotificationsDisabled=_pendingMentionNotificationsDisabled;
@@ -119,7 +119,7 @@
 - (void)unmarkEntryAsSpam:(id)arg1;
 - (void)markEntryAsSpam:(id)arg1;
 - (void)markEntryAsAbuse:(id)arg1;
-@property(readonly, nonatomic) NSDate *muteExpirationTime; // @synthesize muteExpirationTime=_muteExpirationTime;
+@property(readonly, nonatomic) NSDate *snoozeExpirationTime; // @synthesize snoozeExpirationTime=_snoozeExpirationTime;
 @property(readonly, nonatomic) _Bool notificationsDisabled; // @synthesize notificationsDisabled=_notificationsDisabled;
 - (void)revertPendingNotificationsDisabled;
 - (void)setNotificationsDisabled:(_Bool)arg1 expirationTime:(id)arg2 source:(unsigned long long)arg3;

@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: threadScribeContext
     // Error parsing type: , name: controlsOverlayContainer
     // Error parsing type: , name: didPostFleet
+    // Error parsing type: , name: accessibilityDidScroll
     // Error parsing type: , name: $__lazy_storage_$_modeSwitcher
     // Error parsing type: , name: containerTopConstraint
     // Error parsing type: , name: $__lazy_storage_$_container

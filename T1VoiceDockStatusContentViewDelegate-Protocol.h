@@ -9,7 +9,6 @@
 @class T1VoiceDockStatusContentView;
 
 @protocol T1VoiceDockStatusContentViewDelegate <NSObject>
-- (void)voiceDockView:(T1VoiceDockStatusContentView *)arg1 didSeekToTimeSecs:(double)arg2;
 - (void)voiceDockViewCloseButtonWasTapped:(T1VoiceDockStatusContentView *)arg1;
 - (void)voiceDockViewPlayPauseButtonWasTapped:(T1VoiceDockStatusContentView *)arg1;
 - (void)voiceDockViewWasTapped:(T1VoiceDockStatusContentView *)arg1;

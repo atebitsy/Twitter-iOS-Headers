@@ -13,13 +13,9 @@
 
 @interface TFNTwitterCoreServicesConfiguration : NSObject <TFNTwitterCoreServicesConfiguration, NSCopying>
 {
-    _Bool _disableInlinePhotosInstagram;
     long long _shortenedURLLengthSecure;
-    long long _mediaURLLength;
     NSSet *_excludedEmailDomains;
     double _typeaheadUserPrefetchRateInSeconds;
-    unsigned long long _typeaheadUserPrefetchSize;
-    long long _antispamQueryFrequency;
     NSSet *_nonUsernamePaths;
     long long _scribeAPISampleSize;
     long long _scribeAPIErrorSampleSize;
@@ -44,12 +40,8 @@
 @property(nonatomic) long long scribeAPIErrorSampleSize; // @synthesize scribeAPIErrorSampleSize=_scribeAPIErrorSampleSize;
 @property(nonatomic) long long scribeAPISampleSize; // @synthesize scribeAPISampleSize=_scribeAPISampleSize;
 @property(copy, nonatomic) NSSet *nonUsernamePaths; // @synthesize nonUsernamePaths=_nonUsernamePaths;
-@property(nonatomic) long long antispamQueryFrequency; // @synthesize antispamQueryFrequency=_antispamQueryFrequency;
-@property(nonatomic) unsigned long long typeaheadUserPrefetchSize; // @synthesize typeaheadUserPrefetchSize=_typeaheadUserPrefetchSize;
 @property(nonatomic) double typeaheadUserPrefetchRateInSeconds; // @synthesize typeaheadUserPrefetchRateInSeconds=_typeaheadUserPrefetchRateInSeconds;
 @property(copy, nonatomic) NSSet *excludedEmailDomains; // @synthesize excludedEmailDomains=_excludedEmailDomains;
-@property(nonatomic) _Bool disableInlinePhotosInstagram; // @synthesize disableInlinePhotosInstagram=_disableInlinePhotosInstagram;
-@property(nonatomic) long long mediaURLLength; // @synthesize mediaURLLength=_mediaURLLength;
 @property(nonatomic) long long shortenedURLLengthSecure; // @synthesize shortenedURLLengthSecure=_shortenedURLLengthSecure;
 @property(readonly, nonatomic, getter=isActionServiceLoggedOutIntegrationEnabled) _Bool actionServiceLoggedOutIntegrationEnabled;
 @property(readonly, nonatomic, getter=isActionServiceIntegrationEnabled) _Bool actionServiceIntegrationEnabled;

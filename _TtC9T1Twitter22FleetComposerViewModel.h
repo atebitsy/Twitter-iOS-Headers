@@ -8,9 +8,7 @@
 
 @interface _TtC9T1Twitter22FleetComposerViewModel : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: stateObservable
-    // Error parsing type: , name: stateObservableInput
-    // Error parsing type: , name: postingService
+    // Error parsing type: , name: didExitFleetATweet
     // Error parsing type: , name: _state
     // Error parsing type: , name: lifetime
     // Error parsing type: , name: context
@@ -18,6 +16,7 @@
     // Error parsing type: , name: thread
     // Error parsing type: , name: showVideoActivityTimer
     // Error parsing type: , name: feedbackGenerator
+    // Error parsing type: , name: postingService
     // Error parsing type: , name: $__lazy_storage_$_isReadyToPost
     // Error parsing type: , name: $__lazy_storage_$_didStartComposition
     // Error parsing type: , name: hasScribedBeganTyping

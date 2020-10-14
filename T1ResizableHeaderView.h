@@ -38,7 +38,6 @@
     UIButton *_closeButton;
     UIButton *_shareHeaderButton;
     UIButton *_moreActionsButton;
-    UIButton *_toggleSideBarButton;
     TFNLegacyButton *_likeButton;
     TFNLegacyButtonAnimator *_likeButtonAnimator;
     UIView *_likeButtonCircleBackgroundView;
@@ -57,7 +56,6 @@
 @property(retain, nonatomic) UIView *likeButtonCircleBackgroundView; // @synthesize likeButtonCircleBackgroundView=_likeButtonCircleBackgroundView;
 @property(retain, nonatomic) TFNLegacyButtonAnimator *likeButtonAnimator; // @synthesize likeButtonAnimator=_likeButtonAnimator;
 @property(retain, nonatomic) TFNLegacyButton *likeButton; // @synthesize likeButton=_likeButton;
-@property(retain, nonatomic) UIButton *toggleSideBarButton; // @synthesize toggleSideBarButton=_toggleSideBarButton;
 @property(retain, nonatomic) UIButton *moreActionsButton; // @synthesize moreActionsButton=_moreActionsButton;
 @property(retain, nonatomic) UIButton *shareHeaderButton; // @synthesize shareHeaderButton=_shareHeaderButton;
 @property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;
@@ -100,7 +98,6 @@
 - (double)_t1_headerOffsetOpacity;
 - (void)_t1_setBannerImageBlurPercent:(double)arg1;
 - (void)_t1_didTapLikeButton:(id)arg1;
-- (void)_t1_didTapToggleSideBarButton:(id)arg1;
 - (void)_t1_didTapMoreActionsButton:(id)arg1;
 - (void)_t1_didTapShareHeaderButton:(id)arg1;
 - (void)_t1_didTapCloseButton:(id)arg1;
@@ -139,7 +136,6 @@
 - (void)updateBannerAccessibility;
 - (void)recalculatePreferredSize;
 - (double)preferredHeightForWidth:(double)arg1 traitCollection:(id)arg2;
-@property(readonly, nonatomic) _Bool shouldShowToggleSideBarButton;
 @property(readonly, nonatomic) _Bool shouldShowShareButton;
 @property(readonly, nonatomic) _Bool shouldShowSearchButton;
 @property(readonly, nonatomic) _Bool shouldShowMoreActionsButton;

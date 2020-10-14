@@ -6,36 +6,27 @@
 
 #import <TFNUI/TFNViewController.h>
 
-#import <T1Twitter/T1URTConversationTimelineObserver-Protocol.h>
 #import <T1Twitter/T1VoiceDockStatusContentViewDelegate-Protocol.h>
 #import <T1Twitter/T1VoiceDockableViewController-Protocol.h>
-#import <T1Twitter/TAVPlaybackObserver-Protocol.h>
+#import <T1Twitter/T1VoicePlayableCollectionViewModelObserver-Protocol.h>
 
-@class NSArray, NSString, T1URTConversationTimeline, T1URTTimelineCursorTableRowAdapter, T1VoiceStatusViewModel, TAVPlayer, TFNTwitterAccount, UIView;
+@class NSArray, NSString, T1VoiceTrackViewModel, TFNTwitterAccount, UIView;
 @protocol T1VoiceDockViewControllerContainer, T1VoiceDockableContent;
 
-@interface T1VoiceDockStatusViewController : TFNViewController <TAVPlaybackObserver, T1URTConversationTimelineObserver, T1VoiceDockStatusContentViewDelegate, T1VoiceDockableViewController>
+@interface T1VoiceDockStatusViewController : TFNViewController <T1VoiceDockStatusContentViewDelegate, T1VoicePlayableCollectionViewModelObserver, T1VoiceDockableViewController>
 {
     _Bool _hasAudioFocus;
     id <T1VoiceDockViewControllerContainer> _dockContainer;
-    T1VoiceStatusViewModel *_viewModel;
     TFNTwitterAccount *_account;
-    TAVPlayer *_player;
-    T1URTConversationTimeline *_timeline;
-    T1URTTimelineCursorTableRowAdapter *_cursorAdapter;
-    NSArray *_timelineVoiceViewModels;
     NSArray *_timelinePlayers;
+    T1VoiceTrackViewModel *_viewModel;
 }
 
 + (id)new;
 - (void).cxx_destruct;
+@property(retain, nonatomic) T1VoiceTrackViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) NSArray *timelinePlayers; // @synthesize timelinePlayers=_timelinePlayers;
-@property(retain, nonatomic) NSArray *timelineVoiceViewModels; // @synthesize timelineVoiceViewModels=_timelineVoiceViewModels;
-@property(retain, nonatomic) T1URTTimelineCursorTableRowAdapter *cursorAdapter; // @synthesize cursorAdapter=_cursorAdapter;
-@property(retain, nonatomic) T1URTConversationTimeline *timeline; // @synthesize timeline=_timeline;
-@property(retain, nonatomic) TAVPlayer *player; // @synthesize player=_player;
 @property(retain, nonatomic) TFNTwitterAccount *account; // @synthesize account=_account;
-@property(retain, nonatomic) T1VoiceStatusViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(nonatomic) _Bool hasAudioFocus; // @synthesize hasAudioFocus=_hasAudioFocus;
 @property(nonatomic) __weak id <T1VoiceDockViewControllerContainer> dockContainer; // @synthesize dockContainer=_dockContainer;
 - (void)logClickActionOnElement:(id)arg1;
@@ -57,23 +48,13 @@
 - (void)pause;
 - (void)play;
 @property(readonly, nonatomic) UIView<T1VoiceDockableContent> *dockContentView;
-- (void)voiceDockView:(id)arg1 didSeekToTimeSecs:(double)arg2;
 - (void)voiceDockViewCloseButtonWasTapped:(id)arg1;
 - (void)voiceDockViewPlayPauseButtonWasTapped:(id)arg1;
 - (void)voiceDockViewWasTapped:(id)arg1;
-- (id)_t1_voiceStatusesCorrespondingToStatus:(id)arg1 inTimelineItems:(id)arg2;
-- (void)timelineDidUpdate:(id)arg1;
-- (void)player:(id)arg1 didUpdatePlaybackState:(id)arg2;
-- (void)_t1_seekPlayerToTimeSecs:(double)arg1;
-- (void)_t1_togglePlayer;
-- (void)_t1_attachPlayerWithTime:(CDStruct_1b6d18a9)arg1;
-- (void)_t1_skipToNextClip;
-- (id)_t1_calculateNextViewModel;
-- (double)_t1_calculatePreviousDuration;
-- (double)_t1_calculateTotalDuration;
-- (void)_t1_updateView;
-- (void)_t1_reloadTimeline;
+- (void)voicePlayableViewModel:(id)arg1 didUpdateClip:(id)arg2;
+- (void)voicePlayableViewModel:(id)arg1 didUpdatePlaybackState:(id)arg2;
 - (id)_t1_statusContentView;
+- (void)togglePlaybackForStatus:(id)arg1;
 - (void)loadView;
 - (void)dealloc;
 - (id)initWithAccount:(id)arg1;

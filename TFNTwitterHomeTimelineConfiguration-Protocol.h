@@ -11,6 +11,7 @@
 
 @protocol TFNTwitterHomeTimelineConfiguration <NSObject>
 @property(nonatomic, readonly) _Bool isVisibilityByItemPathTrackingEnabled;
+@property(nonatomic, readonly) _Bool isConsecutiveAdHoistingPreventionEnabled;
 @property(nonatomic, readonly) _Bool isConsecutiveAdDedupPreventionEnabled;
 @property(nonatomic, readonly) _Bool isAsyncPrefetchRequestEnabled;
 @property(nonatomic, readonly) _Bool isHomeConversationHoistingPreventionEnabled;
@@ -18,8 +19,6 @@
 @property(nonatomic, readonly) id <TNUNetworkQualityProvider> networkQualityProvider;
 @property(nonatomic, readonly) unsigned long long clientDedupingMaxRecentCacheEntries;
 @property(nonatomic, readonly) _Bool isClientDedupingUsingImpressionCacheEnabled;
-@property(nonatomic, readonly) long long progressiveAPISegmentSize;
-- (_Bool)isProgressiveAPIEnabled;
 @property(nonatomic, readonly) unsigned long long homeRequestMaxSeenIDs;
 @property(nonatomic, readonly) NSString *scribePage;
 @property(nonatomic, readonly) _Bool isModuleItemTreeDisplayTreesEnabled;
@@ -33,8 +32,5 @@
 @property(nonatomic, readonly) NSString *username;
 @property(nonatomic, readonly) long long userID;
 @property(nonatomic, readonly) unsigned long long streamOptions;
-
-// Remaining properties
-@property(nonatomic, readonly) _Bool progressiveAPIEnabled;
 @end
 

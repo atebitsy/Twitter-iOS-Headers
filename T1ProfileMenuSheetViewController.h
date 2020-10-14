@@ -6,12 +6,12 @@
 
 #import <TFNUI/TFNItemsDataViewController.h>
 
-#import <T1Twitter/TFNMenuActionAdapterDelegate-Protocol.h>
+#import <T1Twitter/TFNMenuSheetActionAdapterDelegate-Protocol.h>
 
 @class NSArray, NSString, TFNTwitterAccount, UIViewController;
 @protocol TFNTwitterUserContext, TFSTwitterCanonicalUser;
 
-@interface T1ProfileMenuSheetViewController : TFNItemsDataViewController <TFNMenuActionAdapterDelegate>
+@interface T1ProfileMenuSheetViewController : TFNItemsDataViewController <TFNMenuSheetActionAdapterDelegate>
 {
     NSArray *_actionItems;
     TFNTwitterAccount *_account;
@@ -23,7 +23,7 @@
 
 - (void).cxx_destruct;
 - (void)private_willPresentViewControllerWithNotification:(id)arg1;
-- (void)menuActionAdapter:(id)arg1 didSelectActionItem:(id)arg2 atIndexPath:(id)arg3;
+- (void)menuActionSheetAdapter:(id)arg1 didSelectActionItem:(id)arg2 atIndexPath:(id)arg3;
 - (id)private_actionItems;
 - (void)update:(_Bool)arg1;
 - (double)heightExpanded:(_Bool)arg1;

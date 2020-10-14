@@ -14,6 +14,8 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: modeTitles
     // Error parsing type: , name: _selectedIndex
     // Error parsing type: , name: selectionHandler
+    // Error parsing type: , name: didEscape
+    // Error parsing type: , name: didScroll
     // Error parsing type: , name: $__lazy_storage_$_scrollX
     // Error parsing type: , name: $__lazy_storage_$_scrollIndex
     // Error parsing type: , name: feedbackGenerator
@@ -26,6 +28,8 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (_Bool)accessibilityPerformEscape;
+- (_Bool)accessibilityScroll:(long long)arg1;
 - (void)accessibilityDecrement;
 - (void)accessibilityIncrement;
 @property(nonatomic) unsigned long long accessibilityTraits;

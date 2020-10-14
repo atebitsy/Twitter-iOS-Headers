@@ -6,11 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@interface LocalBadgeCountInputCoding : NSObject
+#import <T1Twitter/NSSecureCoding-Protocol.h>
+
+@interface LocalBadgeCountInputCoding : NSObject <NSSecureCoding>
 {
     // Error parsing type: , name: input
 }
 
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 - (id)init;
 - (void)encodeWithCoder:(id)arg1;

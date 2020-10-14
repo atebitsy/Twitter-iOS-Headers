@@ -11,18 +11,18 @@
 @protocol T1PromptDataSource <NSObject>
 
 @optional
-@property(readonly, nonatomic) Class promptViewClass;
-@property(readonly, nonatomic) unsigned long long buttonLayout;
-@property(readonly, nonatomic) _Bool showLogo;
-@property(readonly, nonatomic) CDUnknownBlockType dismissOptionAction;
-@property(readonly, nonatomic) _Bool showDismissOption;
-@property(readonly, nonatomic) NSArray *buttonSpecs;
-@property(readonly, nonatomic) T1PromptTextSpec *detailTextSpec;
-@property(readonly, nonatomic) T1PromptContentViewSpec *contentViewSpec;
-@property(readonly, nonatomic) T1PromptTextSpec *secondaryTextSpec;
-@property(readonly, nonatomic) T1PromptTextSpec *primaryTextSpec;
-@property(readonly, nonatomic) long long promptLayout;
-@property(readonly, nonatomic) T1PromptImageSpec *imageSpec;
-@property(readonly, nonatomic) UIImage *image;
+@property(nonatomic, readonly) Class promptViewClass;
+@property(nonatomic, readonly) unsigned long long buttonLayout;
+@property(nonatomic, readonly) _Bool showLogo;
+@property(nonatomic, readonly) CDUnknownBlockType dismissOptionAction;
+@property(nonatomic, readonly) _Bool showDismissOption;
+@property(nonatomic, readonly) NSArray *buttonSpecs;
+@property(nonatomic, readonly) T1PromptTextSpec *detailTextSpec;
+@property(nonatomic, readonly) T1PromptContentViewSpec *contentViewSpec;
+@property(nonatomic, readonly) T1PromptTextSpec *secondaryTextSpec;
+@property(nonatomic, readonly) T1PromptTextSpec *primaryTextSpec;
+@property(nonatomic, readonly) long long promptLayout;
+@property(nonatomic, readonly) T1PromptImageSpec *imageSpec;
+@property(nonatomic, readonly) UIImage *image;
 @end
 

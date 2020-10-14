@@ -13,20 +13,11 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: displaySize
     // Error parsing type: , name: seenTweetIDs
     // Error parsing type: , name: streamLoadSource
-    // Error parsing type: , name: scribe
-    // Error parsing type: , name: scribeContext
-    // Error parsing type: , name: progressiveAPIEnabled
-    // Error parsing type: , name: parser
-    // Error parsing type: , name: progressiveResponseSequencingGroup
-    // Error parsing type: , name: timelineModelQueue
     // Error parsing type: , name: $__lazy_storage_$_homeResponseModelBuilder
 }
 
 - (void).cxx_destruct;
-- (void)APIRequest:(id)arg1 requestOperation:(id)arg2 didReceiveData:(id)arg3;
-- (void)completeWithResponse:(id)arg1;
 - (void)scribeCommandResponse:(id)arg1 to:(id)arg2;
-- (void)processResponse:(id)arg1;
 - (id)request;
 
 @end

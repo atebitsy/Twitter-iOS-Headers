@@ -21,7 +21,9 @@
 @property(readonly, nonatomic) T1VoiceAudiowaveTalkingViewModel *audiowaveViewModel; // @synthesize audiowaveViewModel=_audiowaveViewModel;
 @property(readonly, nonatomic) T1VoiceAudiowaveTheme *audiowaveTheme; // @synthesize audiowaveTheme=_audiowaveTheme;
 @property(retain, nonatomic) NSNumber *audioLevel; // @synthesize audioLevel=_audioLevel;
+- (void)_t1_reduceMotionStatusDidChange;
 - (struct CGSize)intrinsicContentSize;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

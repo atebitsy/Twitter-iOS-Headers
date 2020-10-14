@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <TFSFeatureSwitches/NSSecureCoding-Protocol.h>
+
 @class NSSet;
 
-@interface TFSFeatureSwitchesValue : NSObject
+@interface TFSFeatureSwitchesValue : NSObject <NSSecureCoding>
 {
     id _value;
     id _computedValue;
@@ -16,6 +18,7 @@
 }
 
 + (id)valueWithDictionary:(id)arg1 forImpressions:(id)arg2;
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *impressions; // @synthesize impressions=_impressions;
 - (_Bool)isEqualToValue:(id)arg1;

@@ -16,6 +16,8 @@
 - (_Bool)userRowAdapter:(T1UserOrRecommendationTableRowAdapter *)arg1 shouldShowBioForUserReference:(TFSTwitterUserReference *)arg2;
 - (_Bool)userRowAdapter:(T1UserOrRecommendationTableRowAdapter *)arg1 isCheckmarkInteractionEnabledForUserReference:(TFSTwitterUserReference *)arg2;
 - (_Bool)userRowAdapter:(T1UserOrRecommendationTableRowAdapter *)arg1 isCheckedForUserReference:(TFSTwitterUserReference *)arg2;
+- (long long)userRowAdapter:(T1UserOrRecommendationTableRowAdapter *)arg1 caretTypeForItem:(id)arg2 withOptions:(NSDictionary *)arg3;
+- (void)userRowAdapter:(T1UserOrRecommendationTableRowAdapter *)arg1 didTapCaretForItem:(id)arg2 withOptions:(NSDictionary *)arg3 sender:(id)arg4;
 - (void)userRowAdapter:(T1UserOrRecommendationTableRowAdapter *)arg1 didChangeChecked:(_Bool)arg2 forUserReference:(TFSTwitterUserReference *)arg3;
 - (void)userRowAdapter:(T1UserOrRecommendationTableRowAdapter *)arg1 didPerformAction:(unsigned long long)arg2 forItem:(id)arg3 withOptions:(NSDictionary *)arg4 success:(_Bool)arg5 error:(NSError *)arg6;
 @end

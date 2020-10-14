@@ -114,8 +114,6 @@
 - (_Bool)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
 - (unsigned long long)application:(id)arg1 supportedInterfaceOrientationsForWindow:(id)arg2;
 - (id)appNavigationProviderFactory;
-- (void)applicationDidTransitionToSize:(struct CGSize)arg1;
-- (void)applicationWillTransitionToSize:(struct CGSize)arg1;
 - (void)applicationDidTransitionFromSignedOut;
 - (void)performActionForShortcutItem:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)continueUserActivity:(id)arg1;

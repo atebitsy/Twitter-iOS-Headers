@@ -14,6 +14,8 @@
 
 @interface T1ToastDefaultContentView : UIView <UIGestureRecognizerDelegate, T1ToastContentViewable>
 {
+    _Bool _shouldAnimateAlternateActionButton;
+    _Bool _isAnimatingProgressView;
     id <T1ToastContentViewDelegate> _delegate;
     UIImageView *_iconView;
     UIImageView *_thumbnailImageView;
@@ -21,6 +23,9 @@
     UILabel *_messageLabel;
     UILabel *_detailLabel;
     TFNButton *_alternateActionButton;
+    UIView *_progressView;
+    NSArray *_progressViewBeginningConstraints;
+    NSArray *_progressViewEndingConstraints;
     UIView *_iconContainerView;
     UIView *_labelContainerView;
     UIStackView *_mainContainerStackView;
@@ -42,17 +47,24 @@
 @property(retain, nonatomic) UIStackView *mainContainerStackView; // @synthesize mainContainerStackView=_mainContainerStackView;
 @property(retain, nonatomic) UIView *labelContainerView; // @synthesize labelContainerView=_labelContainerView;
 @property(retain, nonatomic) UIView *iconContainerView; // @synthesize iconContainerView=_iconContainerView;
+@property(retain, nonatomic) NSArray *progressViewEndingConstraints; // @synthesize progressViewEndingConstraints=_progressViewEndingConstraints;
+@property(retain, nonatomic) NSArray *progressViewBeginningConstraints; // @synthesize progressViewBeginningConstraints=_progressViewBeginningConstraints;
+@property(nonatomic) _Bool isAnimatingProgressView; // @synthesize isAnimatingProgressView=_isAnimatingProgressView;
+@property(retain, nonatomic) UIView *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) TFNButton *alternateActionButton; // @synthesize alternateActionButton=_alternateActionButton;
 @property(retain, nonatomic) UILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(retain, nonatomic) UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property(retain, nonatomic) T1AvatarImageView *avatarView; // @synthesize avatarView=_avatarView;
 @property(retain, nonatomic) UIImageView *thumbnailImageView; // @synthesize thumbnailImageView=_thumbnailImageView;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
+@property(nonatomic) _Bool shouldAnimateAlternateActionButton; // @synthesize shouldAnimateAlternateActionButton=_shouldAnimateAlternateActionButton;
 @property(nonatomic) __weak id <T1ToastContentViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)_t1_alternateActionButtonTapped:(id)arg1;
 - (void)_t1_primaryActionTapped:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (void)_t1_updateProgressViewConstraints;
+- (void)didPresentContentViewWithInterval:(double)arg1;
 - (void)updateConstraints;
 - (id)initWithFrame:(struct CGRect)arg1 toast:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1 toast:(id)arg2 imagePipeline:(id)arg3;

@@ -15,6 +15,7 @@
     // Error parsing type: , name: advertiserAvatarImageView
     // Error parsing type: , name: stackView
     // Error parsing type: , name: didTap
+    // Error parsing type: , name: tapGestureRecognizer
 }
 
 + (Class)layerClass;
@@ -22,6 +23,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)didTapCTA;
+- (void)dealloc;
 
 @end
 

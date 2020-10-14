@@ -45,6 +45,7 @@
 - (id)initWithComponentJSON:(id)arg1 destinationDict:(id)arg2 platformMap:(id)arg3;
 - (id)withButton:(id)arg1;
 - (id)withPromotedContent:(id)arg1;
+- (_Bool)isPassingAppRatingsExperimentThreshold;
 
 // Remaining properties
 @property(readonly, nonatomic) NSArray *axDestinations;

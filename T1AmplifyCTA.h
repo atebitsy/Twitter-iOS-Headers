@@ -27,7 +27,7 @@
 @property(nonatomic) __weak id <T1AmplifyCTADelegate> delegate; // @synthesize delegate=_delegate;
 - (void)player:(id)arg1 didUpdatePlaybackState:(id)arg2;
 - (id)_fullscreenOpenURLCTATextForAdVideo:(id)arg1;
-- (void)_updateCTAButtonWithCTAType:(unsigned long long)arg1 appId:(id)arg2 appName:(id)arg3 url:(id)arg4 isAd:(_Bool)arg5 adVideoContext:(id)arg6;
+- (void)_updateCTAButtonWithCTAInfo:(id)arg1 isAd:(_Bool)arg2 adVideoContext:(id)arg3;
 - (void)_setUpLayout;
 - (void)_ctaButtonDidTap;
 @property(readonly, nonatomic) double preferredHeight;

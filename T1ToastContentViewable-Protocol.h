@@ -13,5 +13,8 @@
 @property(readonly, nonatomic) id <T1ToastViewModel> toast;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 toast:(id <T1ToastViewModel>)arg2;
+
+@optional
+- (void)didPresentContentViewWithInterval:(double)arg1;
 @end
 

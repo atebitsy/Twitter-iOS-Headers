@@ -35,6 +35,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly, copy, nonatomic) NSString *detailText;
 @property(readonly, nonatomic) NSArray *detailTextBoldRanges;
+@property(readonly, nonatomic) CDUnknownBlockType dismissCompetionHandler;
 @property(readonly, nonatomic) double displayDuration;
 @property(readonly, nonatomic) long long hapticFeedbackType;
 @property(readonly) unsigned long long hash;

@@ -84,6 +84,7 @@
 - (_Bool)_purgeDirectory:(id)arg1;
 - (void)_purgeLocalArchivesAndSettings;
 - (_Bool)_purgeArchivesIfNecessary;
+- (void)_updatePerformanceTracing:(id)arg1;
 - (void)_updateTextSizeCaching:(id)arg1;
 - (void)_updateImagePipelinesWithDeviceFeatureSwitches:(id)arg1;
 - (void)_updateScribeServiceSettings;

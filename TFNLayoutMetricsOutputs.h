@@ -15,7 +15,7 @@
     double _emWidth;
     double _standardContentInset;
     double _accessoryWidth;
-    double _bodyPadding;
+    double _elementPadding;
     struct CGSize _avatarSize;
     struct CGSize _xxSmallAvatarSize;
     struct CGSize _xSmallAvatarSize;
@@ -27,12 +27,14 @@
     struct UIEdgeInsets _minimumContentEdgeInsets;
     struct UIEdgeInsets _barItemInsets;
     struct UIEdgeInsets _bodyEdgeInsets;
+    struct UIEdgeInsets _usernameEdgeInsets;
     struct UIEdgeInsets _horizontalInsetsForLineLength;
 }
 
 @property(nonatomic) struct UIEdgeInsets horizontalInsetsForLineLength; // @synthesize horizontalInsetsForLineLength=_horizontalInsetsForLineLength;
 @property(nonatomic) _Bool constrainedByCanvasWidth; // @synthesize constrainedByCanvasWidth=_constrainedByCanvasWidth;
-@property(nonatomic) double bodyPadding; // @synthesize bodyPadding=_bodyPadding;
+@property(nonatomic) double elementPadding; // @synthesize elementPadding=_elementPadding;
+@property(nonatomic) struct UIEdgeInsets usernameEdgeInsets; // @synthesize usernameEdgeInsets=_usernameEdgeInsets;
 @property(nonatomic) struct UIEdgeInsets bodyEdgeInsets; // @synthesize bodyEdgeInsets=_bodyEdgeInsets;
 @property(nonatomic) struct CGSize mediumAvatarSize; // @synthesize mediumAvatarSize=_mediumAvatarSize;
 @property(nonatomic) struct CGSize smallAvatarSize; // @synthesize smallAvatarSize=_smallAvatarSize;

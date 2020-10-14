@@ -102,6 +102,7 @@
 - (_Bool)contactViewController:(id)arg1 shouldPerformDefaultActionForContactProperty:(id)arg2;
 - (void)contactPicker:(id)arg1 didSelectContact:(id)arg2;
 - (void)contactPickerDidCancel:(id)arg1;
+- (CDUnknownBlockType)_t1_openSpeedbumpActionForURL:(id)arg1 account:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (CDUnknownBlockType)_t1_openURLActionForURL:(id)arg1 account:(id)arg2 scribeParameters:(id)arg3;
 - (id)_t1_togglePinnedTweetActionItemWithStatus:(id)arg1 account:(id)arg2 scribePage:(id)arg3 scribeSection:(id)arg4 scribeComponent:(id)arg5;
 - (id)_t1_adsInfoActionItem:(id)arg1 account:(id)arg2;
@@ -151,6 +152,8 @@
 - (CDUnknownBlockType)_t1_retweetActionForStatus:(id)arg1 account:(id)arg2 scribePage:(id)arg3 scribeSection:(id)arg4 scribeComponent:(id)arg5 scribeElement:(id)arg6 parameters:(id)arg7 articleNudgeScribeParameters:(id)arg8;
 - (id)t1_retweetActionSheetForStatus:(id)arg1 account:(id)arg2 source:(id)arg3 scribeParameters:(id)arg4 willQuoteRetweetBlock:(CDUnknownBlockType)arg5 doneBlock:(CDUnknownBlockType)arg6;
 - (id)t1_retweetActionSheetForStatus:(id)arg1 account:(id)arg2 source:(id)arg3 doneBlock:(CDUnknownBlockType)arg4;
+- (void)_t1_scribeSoftInterventionNudgeAction:(id)arg1 account:(id)arg2 element:(id)arg3 parameters:(id)arg4;
+- (void)_t1_scribeSoftInterventionNudgeImpressionForAccount:(id)arg1 withParameters:(id)arg2;
 - (void)_t1_scribeArticleNudgeResult:(id)arg1 account:(id)arg2 parameters:(id)arg3;
 - (void)_t1_scribeArticleNudgeAction:(id)arg1 elementIfRead:(id)arg2 elementIfDidNotRead:(id)arg3 urlEntity:(id)arg4 account:(id)arg5 status:(id)arg6 withParameters:(id)arg7;
 - (void)_t1_scribeArticleNudgeDidCancelRetweetStatus:(id)arg1 withURL:(id)arg2 fromAccount:(id)arg3 withParameters:(id)arg4;
@@ -234,7 +237,6 @@
 - (id)t1_scribeContextForActiveRange:(id)arg1 status:(id)arg2 account:(id)arg3 withDefault:(id)arg4;
 - (id)t1_openActiveRange:(id)arg1 status:(id)arg2 account:(id)arg3 profileModalEnabled:(_Bool)arg4;
 - (id)t1_openActiveRange:(id)arg1 status:(id)arg2 account:(id)arg3;
-- (_Bool)t1_showsToggleSideBarAction;
 - (_Bool)t1_showsDashAction;
 - (_Bool)t1_showsPeopleAction;
 - (_Bool)t1_showsExpandedSearchBox;

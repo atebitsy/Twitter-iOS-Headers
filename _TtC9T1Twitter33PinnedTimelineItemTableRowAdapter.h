@@ -9,10 +9,10 @@
 __attribute__((visibility("hidden")))
 @interface _TtC9T1Twitter33PinnedTimelineItemTableRowAdapter : TFNItemsDataViewAdapter
 {
+    // Error parsing type: , name: delegate
     // Error parsing type: , name: $__lazy_storage_$_imagePipeline
     // Error parsing type: , name: $__lazy_storage_$_userBadger
     // Error parsing type: , name: account
-    // Error parsing type: , name: cellStyle
     // Error parsing type: , name: stringsProvider
     // Error parsing type: , name: prototypeView
 }

@@ -9,7 +9,7 @@
 #import <T1Twitter/TFNTwitterCompositionUploadOperationDelegate-Protocol.h>
 #import <T1Twitter/TNLCommunicationAgentObserver-Protocol.h>
 
-@class NSMapTable, NSOperationQueue, NSString, TFNTwitterAccount, TFNTwitterCompositionOutboxProgressing;
+@class NSMapTable, NSOperationQueue, NSString, TFNTwitterAccount, TFNTwitterCompositionOutboxProgressing, TFNTwitterToastNudgeExperimentModel;
 
 @interface TFNTwitterCompositionOutboxController : NSObject <TNLCommunicationAgentObserver, TFNTwitterCompositionUploadOperationDelegate>
 {
@@ -19,9 +19,11 @@
     long long _networkReachabilityStatus;
     NSOperationQueue *_operationQueue;
     NSMapTable *_weakOperationsForCompositions;
+    TFNTwitterToastNudgeExperimentModel *_toastNudgeExperimentModel;
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) TFNTwitterToastNudgeExperimentModel *toastNudgeExperimentModel; // @synthesize toastNudgeExperimentModel=_toastNudgeExperimentModel;
 @property(retain, nonatomic) NSMapTable *weakOperationsForCompositions; // @synthesize weakOperationsForCompositions=_weakOperationsForCompositions;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(nonatomic) _Bool needsToProcessOutboxOnNetworkReachabilityChange; // @synthesize needsToProcessOutboxOnNetworkReachabilityChange=_needsToProcessOutboxOnNetworkReachabilityChange;
@@ -48,8 +50,10 @@
 - (void)_tfn_main_deleteCompositionInOutbox:(id)arg1;
 - (void)_tfn_main_cancelCompositionToDrafts:(id)arg1;
 - (void)_tfn_main_prepareCompositionToOutbox:(id)arg1;
+- (_Bool)_tfn_main_willShowUndoOptionBeforeSending:(id)arg1;
 - (double)sendingProgressForComposition:(id)arg1;
 - (void)cancelSentComposition:(id)arg1;
+- (void)cancelUnsentCompositions:(id)arg1;
 - (void)processUnsentCompositions;
 - (void)cancelFailedComposition:(id)arg1 forRevision:(_Bool)arg2;
 - (void)retryFailedComposition:(id)arg1;

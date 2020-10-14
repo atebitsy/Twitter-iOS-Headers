@@ -10,12 +10,10 @@
 @protocol TFNDirectMessageInboxTimeline;
 
 @protocol TFNDirectMessageInbox <NSObject>
-- (unsigned long long)countOfUnseenConversationsForBadgingExcludingMuted:(_Bool)arg1 excludingUntrusted:(_Bool)arg2;
 - (_Bool)isEmpty;
 - (_Bool)isLoaded;
 @property(nonatomic, readonly) _Bool filtersLowQualityConversations;
-@property(nonatomic, readonly) unsigned long long legacyCountOfUnseenConversationsForBadging;
-@property(nonatomic, readonly) _Bool countOfUnseenConversationsForBadgingDiffersFromLegacy;
+@property(nonatomic, readonly) unsigned long long countOfUnseenConversations;
 @property(nonatomic, readonly) id <TFNDirectMessageInboxTimeline> lowQualityConversationsTimeline;
 @property(nonatomic, readonly) id <TFNDirectMessageInboxTimeline> untrustedConversationsTimeline;
 @property(nonatomic, readonly) id <TFNDirectMessageInboxTimeline> trustedConversationsTimeline;

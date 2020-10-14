@@ -8,12 +8,12 @@
 
 #import <T1Twitter/TFNLayoutMetricsEnvironment-Protocol.h>
 
-@class NSString, T1SearchTextView, TFNNavigationBar, UINavigationItem;
+@class NSString, TFNNavigationBar, TUISearchTextView, UINavigationItem;
 
 @interface T1SearchViewContainerView : UIView <TFNLayoutMetricsEnvironment>
 {
     _Bool _centered;
-    T1SearchTextView *_searchTextView;
+    TUISearchTextView *_searchTextView;
     TFNNavigationBar *_navigationBar;
     UINavigationItem *_navigationItem;
     struct CGRect _searchTextViewNavigationBarFrame;
@@ -24,7 +24,7 @@
 @property(nonatomic) __weak UINavigationItem *navigationItem; // @synthesize navigationItem=_navigationItem;
 @property(nonatomic) __weak TFNNavigationBar *navigationBar; // @synthesize navigationBar=_navigationBar;
 @property(readonly, nonatomic) _Bool centered; // @synthesize centered=_centered;
-@property(nonatomic) __weak T1SearchTextView *searchTextView; // @synthesize searchTextView=_searchTextView;
+@property(nonatomic) __weak TUISearchTextView *searchTextView; // @synthesize searchTextView=_searchTextView;
 - (_Bool)hasBackButtonItem;
 - (_Bool)allBarButtonItemsAreOnScreen;
 - (struct CGRect)calculatedSearchTextViewFrame;

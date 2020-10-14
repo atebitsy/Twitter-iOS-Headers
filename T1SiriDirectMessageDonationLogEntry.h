@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <T1Twitter/NSCoding-Protocol.h>
+#import <T1Twitter/NSSecureCoding-Protocol.h>
 
 @class NSString;
 
-@interface T1SiriDirectMessageDonationLogEntry : NSObject <NSCoding>
+@interface T1SiriDirectMessageDonationLogEntry : NSObject <NSSecureCoding>
 {
     NSString *_identifier;
     NSString *_groupIdentifier;
@@ -19,6 +19,7 @@
     long long _adminID;
 }
 
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) long long adminID; // @synthesize adminID=_adminID;
 @property(readonly, nonatomic) long long recipientID; // @synthesize recipientID=_recipientID;

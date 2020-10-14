@@ -58,7 +58,6 @@
 - (_Bool)t1_showsActionButton;
 - (_Bool)tfn_prefersNavigationBarShadowHidden;
 - (void)tfn_navigationControllerDidLayoutBarItems;
-- (_Bool)t1_showsToggleSideBarAction;
 - (_Bool)t1_showsDashAction;
 - (void)layoutMetricsDidChange:(id)arg1 to:(id)arg2;
 - (_Bool)becomeFirstResponder;

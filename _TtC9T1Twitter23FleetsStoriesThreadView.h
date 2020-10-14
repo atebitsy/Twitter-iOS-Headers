@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: didTapAddButton
     // Error parsing type: , name: isInitialThread
     // Error parsing type: , name: isDisplayingInitialEntryInThread
+    // Error parsing type: , name: $__lazy_storage_$_closeButton
     // Error parsing type: , name: $__lazy_storage_$_threadNavigationRotor
     // Error parsing type: , name: threadPosition
     // Error parsing type: , name: $__lazy_storage_$__safeAreaInsets

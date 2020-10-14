@@ -76,8 +76,7 @@
 - (void)_t1_updateLayoutMetricsContentFontForCurrentWindowSize;
 - (void)_t1_resetLayoutMetricsTransitionDestinationContentFont;
 - (void)_t1_updateLayoutMetricsTransitionDestinationContentFontForWindowSize:(struct CGSize)arg1;
-- (void)onApplicationDidTransitionToSize:(struct CGSize)arg1;
-- (void)onApplicationWillTransitionToSize:(struct CGSize)arg1;
+- (void)_t1_monitorSizeTransitions:(id)arg1;
 - (void)_t1_endBackgroundTask;
 - (void)_t1_saveState;
 - (void)_t1_saveWindowState;

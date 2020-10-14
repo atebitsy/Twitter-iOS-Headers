@@ -36,7 +36,6 @@
 - (CDUnknownBlockType)private_animationBlockForAnimationType:(long long)arg1;
 - (long long)private_imageLayoutForImageDisplayType:(long long)arg1;
 - (void)gestureDidDismissModalContainerViewController:(id)arg1;
-- (_Bool)gestureShouldDismissModalContainerViewController:(id)arg1;
 - (long long)preferredStatusBarStyle;
 @property(readonly, nonatomic) CDUnknownBlockType dismissOptionAction;
 @property(readonly, nonatomic) _Bool showDismissOption;

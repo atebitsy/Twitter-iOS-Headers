@@ -10,7 +10,13 @@
 {
 }
 
++ (void)PostWithURL:(id)arg1 ResponseClass:(Class)arg2 Parameters:(id)arg3 Completion:(CDUnknownBlockType)arg4;
++ (void)GetWithURL:(id)arg1 AdditionalHTTPHeaders:(id)arg2 Completion:(CDUnknownBlockType)arg3;
++ (void)GetTokenWithMicroserviceName:(id)arg1 LoggedInUser:(id)arg2 Completion:(CDUnknownBlockType)arg3;
 + (void)ChannelsRequestWithAPIEndPoint:(id)arg1 LoggedInUser:(id)arg2 Completion:(CDUnknownBlockType)arg3;
++ (void)DeleteBroadcastWithBroadcastID:(id)arg1 LoggedInUser:(id)arg2;
++ (void)RetrieveBroadcastsWithBroadcastIDs:(id)arg1 LoggedInUser:(id)arg2 Completion:(CDUnknownBlockType)arg3;
++ (void)RetrieveUsersWithUserIDs:(id)arg1 LoggedInUser:(id)arg2 Completion:(CDUnknownBlockType)arg3;
 + (void)LoadUsersForBroadcasts:(id)arg1 LoggedInUser:(id)arg2 Completion:(CDUnknownBlockType)arg3;
 + (void)TransformBroadcastsIntoGuestRooms:(id)arg1 LoggedInUser:(id)arg2 Completion:(CDUnknownBlockType)arg3;
 + (void)GetBroadcastsWithChannelID:(id)arg1 LoggedInUser:(id)arg2 CleanupOldBroadcasts:(_Bool)arg3 Completion:(CDUnknownBlockType)arg4;

@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: isOverflow
     // Error parsing type: , name: layoutType
     // Error parsing type: , name: imageView
-    // Error parsing type: , name: title
-    // Error parsing type: , name: subTitle
+    // Error parsing type: , name: titleLabel
+    // Error parsing type: , name: subtitleLabel
 }
 
 - (void).cxx_destruct;

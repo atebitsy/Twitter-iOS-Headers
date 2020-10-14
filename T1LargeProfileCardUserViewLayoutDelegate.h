@@ -12,7 +12,7 @@
 
 + (struct CGRect)contentRectForLayoutWithLayoutMetrics:(id)arg1;
 + (double)namesToBioGap;
-+ (double)contentHeightForContentPadding:(struct UIEdgeInsets)arg1 avatarSize:(struct CGSize)arg2 namesHeight:(double)arg3 actionControlHeight:(double)arg4 socialTextHeight:(double)arg5 bioSizeHeight:(double)arg6 infoTextHeight:(double)arg7 designatorBadgeHeight:(double)arg8 replyBadgeViewHeight:(double)arg9;
++ (double)contentHeightForContentPadding:(struct UIEdgeInsets)arg1 avatarSize:(struct CGSize)arg2 namesHeight:(double)arg3 actionControlHeight:(double)arg4 socialTextHeight:(double)arg5 bioSizeHeight:(double)arg6 infoTextHeight:(double)arg7 designatorBadgeHeight:(double)arg8;
 + (id)sharedLayoutDelegate;
 - (id)layoutStateForUserView:(id)arg1;
 - (double)textContentTopForLayoutState:(id)arg1 layoutMetrics:(id)arg2 userView:(id)arg3 contentRect:(struct CGRect)arg4;

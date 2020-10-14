@@ -357,6 +357,7 @@
 - (void)_t1_updateFloatingReplyBarViewVisibilityAnimated:(_Bool)arg1;
 - (void)_t1_hideFloatingReplyBarViewAnimated:(_Bool)arg1;
 - (void)_t1_showFloatingReplyBarViewAnimated:(_Bool)arg1;
+- (struct CGSize)_t1_floatingReplyBarContentSize;
 - (struct CGRect)_t1_floatingReplyBarFrameAboveBottomSafeAreaInset:(_Bool)arg1;
 - (void)_t1_updateFloatingReplyBarView;
 - (void)_t1_setupFloatingReplyBarIfNecessary;

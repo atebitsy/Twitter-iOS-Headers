@@ -50,8 +50,6 @@
     _Bool _isConversationFocalStatus;
     _Bool _isConversationPrecededByAncestor;
     _Bool _isConversationRoot;
-    _Bool _hasForwardPivot;
-    _Bool _hasSoftIntervention;
     _Bool _derivedSocialContextInitialized;
     TFNTwitterFeedbackInfo *_feedbackInfo;
     TFNTwitterUser *_fromUser;
@@ -118,8 +116,6 @@
 @property(nonatomic) CDStruct_c9ea5807 flags; // @synthesize flags=_flags;
 @property(readonly, nonatomic) long long authenticatedUserID; // @synthesize authenticatedUserID=_authenticatedUserID;
 @property(retain, nonatomic) TFSTwitterForwardPivot *innerForwardPivot; // @synthesize innerForwardPivot=_innerForwardPivot;
-@property(nonatomic) _Bool hasSoftIntervention; // @synthesize hasSoftIntervention=_hasSoftIntervention;
-@property(nonatomic) _Bool hasForwardPivot; // @synthesize hasForwardPivot=_hasForwardPivot;
 @property(retain, nonatomic) TFSTwitterForwardPivot *forwardPivot; // @synthesize forwardPivot=_forwardPivot;
 @property(nonatomic) long long conversationFocalStatusID; // @synthesize conversationFocalStatusID=_conversationFocalStatusID;
 @property(nonatomic) _Bool isConversationRoot; // @synthesize isConversationRoot=_isConversationRoot;
@@ -350,6 +346,8 @@
 - (id)_tfn_displayTextModelForOptions:(unsigned long long)arg1;
 - (id)attributedTextModelForOptions:(unsigned long long)arg1 width:(double)arg2 withFont:(id)arg3 boldFont:(id)arg4 lineHeight:(double)arg5 lineSpacing:(double)arg6 emptyLineMaxHeight:(double)arg7 darkBackground:(_Bool)arg8 defaultTextColor:(id)arg9 linkTextColor:(id)arg10 highlighted:(_Bool)arg11 truncationString:(id)arg12 cachingEnabled:(_Bool)arg13;
 - (long long)attributedDisplayTextHeightForOptions:(unsigned long long)arg1 withWidth:(double)arg2 font:(id)arg3 boldFont:(id)arg4 lineHeight:(double)arg5 lineSpacing:(double)arg6 emptyLineMaxHeight:(double)arg7 darkBackground:(_Bool)arg8 defaultTextColor:(id)arg9 linkTextColor:(id)arg10 truncationString:(id)arg11 cachingEnabled:(_Bool)arg12;
+@property(readonly, nonatomic) _Bool hasSoftIntervention;
+@property(readonly, nonatomic) _Bool hasForwardPivot;
 - (_Bool)isRelatedToUser:(id)arg1;
 - (_Bool)isGap;
 - (_Bool)isNotADummyStatus;
@@ -446,7 +444,6 @@
 - (id)attributedDisplayTextWithFont:(id)arg1 color:(id)arg2 selectedRanges:(id)arg3 options:(unsigned long long)arg4 account:(id)arg5;
 - (unsigned long long)_displayTextOptionsForAccount:(id)arg1 viewController:(id)arg2;
 - (id)tweetDetailsTextWithAccount:(id)arg1 viewController:(id)arg2 font:(id)arg3;
-- (_Bool)shouldOpenMediaContentViewControllerForAccount:(id)arg1;
 - (id)updatedScribeParameters:(id)arg1;
 @property(readonly, nonatomic) _Bool shouldOmitCardLink;
 - (unsigned long long)_t1_statusOptionsForAccount:(id)arg1;

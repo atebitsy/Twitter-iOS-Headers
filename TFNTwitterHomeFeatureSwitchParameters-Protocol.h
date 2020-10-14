@@ -8,6 +8,7 @@
 
 @protocol TFNTwitterHomeFeatureSwitchParameters <NSObject>
 @property(nonatomic, getter=isVisibilityByItemPathTrackingEnabled) _Bool visibilityByItemPathTrackingEnabled;
+@property(nonatomic, getter=isConsecutiveAdHoistingPreventionEnabled) _Bool consecutiveAdHoistingPreventionEnabled;
 @property(nonatomic, getter=isConsecutiveAdDedupPreventionEnabled) _Bool consecutiveAdDedupPreventionEnabled;
 @property(nonatomic, getter=isAsyncPrefetchRequestEnabled) _Bool asyncPrefetchRequestEnabled;
 @property(nonatomic, getter=isHomeConversationHoistingPreventionEnabled) _Bool homeConversationHoistingPreventionEnabled;
@@ -18,8 +19,6 @@
 @property(nonatomic, getter=isLatestHomeTimelineOptionAvailable) _Bool latestHomeTimelineOptionAvailable;
 @property(readonly, nonatomic) unsigned long long clientDedupingMaxRecentCacheEntries;
 @property(readonly, nonatomic) _Bool isClientDedupingUsingImpressionCacheEnabled;
-@property(readonly, nonatomic) long long progressiveAPISegmentSize;
-@property(readonly, nonatomic, getter=isProgressiveAPIEnabled) _Bool progressiveAPIEnabled;
 @property(readonly, nonatomic) unsigned long long homeRequestMaxSeenIDs;
 @end
 

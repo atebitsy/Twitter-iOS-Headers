@@ -9,7 +9,7 @@
 #import <TFNUI/TFNTextDataViewCell-Protocol.h>
 
 @class NSString, TFNBadgeAccessory, UIImageView, UILabel;
-@protocol TFNMenuActionItemSwitchDelegate;
+@protocol TFNMenuSheetActionItemSwitchDelegate;
 
 @interface TFNTextCell : TFNTableViewCell <TFNTextDataViewCell>
 {
@@ -18,7 +18,7 @@
     double _detailTextPadding;
     long long _verticalAlignment;
     TFNBadgeAccessory *_badgeAccessory;
-    id <TFNMenuActionItemSwitchDelegate> _switchStateDelegate;
+    id <TFNMenuSheetActionItemSwitchDelegate> _switchStateDelegate;
     long long _style;
     struct UIEdgeInsets _horizontalIconPadding;
 }
@@ -53,7 +53,7 @@
 + (id)cellForTableView:(id)arg1 indexPath:(id)arg2 withText:(id)arg3 accessoryType:(long long)arg4;
 - (void).cxx_destruct;
 @property(nonatomic) long long style; // @synthesize style=_style;
-@property(nonatomic) __weak id <TFNMenuActionItemSwitchDelegate> switchStateDelegate; // @synthesize switchStateDelegate=_switchStateDelegate;
+@property(nonatomic) __weak id <TFNMenuSheetActionItemSwitchDelegate> switchStateDelegate; // @synthesize switchStateDelegate=_switchStateDelegate;
 @property(nonatomic) struct UIEdgeInsets horizontalIconPadding; // @synthesize horizontalIconPadding=_horizontalIconPadding;
 @property(retain, nonatomic) TFNBadgeAccessory *badgeAccessory; // @synthesize badgeAccessory=_badgeAccessory;
 @property(nonatomic) long long verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;

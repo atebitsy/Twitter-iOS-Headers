@@ -17,6 +17,12 @@
 + (id)untrustedOneToOneConversationMediaInterstitialSource;
 + (id)sensitiveTweetInterstitialSource;
 + (id)sensitiveMediaInterstitialSource;
++ (id)sensitiveVoiceMessageNSFWFilterEnabledInterstitialSource;
++ (id)sensitiveVideoNSFWFilterEnabledInterstitialSource;
++ (id)sensitiveTweetNSFWFilterEnabledInterstitialSource;
++ (id)sensitivePhotoNSFWFilterEnabledInterstitialSource;
++ (id)sensitiveMediaNSFWFilterEnabledInterstitialSource;
++ (id)sensitiveGIFNSFWFilterEnabledInterstitialSource;
 - (void).cxx_destruct;
 - (id)init;
 

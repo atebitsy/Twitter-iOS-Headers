@@ -22,7 +22,7 @@
 @property(retain, nonatomic) UIColor *selectionTextColor; // @synthesize selectionTextColor=_selectionTextColor;
 @property(retain, nonatomic) UIColor *disabledLabelTextColor; // @synthesize disabledLabelTextColor=_disabledLabelTextColor;
 @property(retain, nonatomic) UIColor *labelTextColor; // @synthesize labelTextColor=_labelTextColor;
-- (void)tfn_sizeToFitInputView;
+- (void)sizeToFitInputView;
 - (void)layoutSubviews;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

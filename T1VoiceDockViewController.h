@@ -29,7 +29,6 @@
 - (void)voiceDockableViewControllerCanResignAudioFocus:(id)arg1;
 - (void)voiceDockableViewControllerRequestedAudioFocus:(id)arg1;
 - (void)voiceDockableViewControllerHasEndedSession:(id)arg1;
-- (_Bool)voiceDockableViewControllerExpandIfAble:(id)arg1;
 - (void)_t1_dockingControllerDidUpdate;
 @property(readonly, nonatomic) double currentHeight;
 - (void)voiceDockViewDidInvalidateLayout:(id)arg1;

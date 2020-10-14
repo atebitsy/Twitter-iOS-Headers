@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: viewModel
     // Error parsing type: , name: rankingMode
     // Error parsing type: , name: spheresFeatureSwitches
+    // Error parsing type: , name: levelUpPromptPresenter
 }
 
 - (void).cxx_destruct;

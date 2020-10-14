@@ -6,14 +6,17 @@
 
 #import <objc/NSObject.h>
 
+#import <T1Twitter/NSSecureCoding-Protocol.h>
+
 @class NSArray, NSMutableArray;
 
-@interface TFNDirectMessageActivityLog : NSObject
+@interface TFNDirectMessageActivityLog : NSObject <NSSecureCoding>
 {
     NSMutableArray *_mutableEntries;
     NSArray *_entries;
 }
 
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 - (void)addEntry:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *entries;

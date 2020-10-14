@@ -10,5 +10,6 @@
 - (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;
 - (long long)tfn_scaleAspectFillFocusModeForFetchHelper:(id)arg1;
 - (id)tfn_focusRectanglesForFocusMode:(long long)arg1 inBounds:(struct CGRect)arg2 forFetchHelper:(id)arg3;
+- (id)calculatedLayoutMetrics;
 @end
 

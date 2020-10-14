@@ -23,7 +23,6 @@
 @property(nonatomic) unsigned long long selectedConversationControlType; // @synthesize selectedConversationControlType=_selectedConversationControlType;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly, nonatomic) TFNMenuSheetViewController *menuSheetViewController; // @synthesize menuSheetViewController=_menuSheetViewController;
-- (_Bool)gestureShouldDismissModalContainerViewController:(id)arg1;
 - (void)gestureDidDismissModalContainerViewController:(id)arg1;
 - (void)tfn_dismissAnimated:(_Bool)arg1;
 - (void)tfn_presentFromViewController:(id)arg1 animated:(_Bool)arg2 sourceInfo:(id)arg3;

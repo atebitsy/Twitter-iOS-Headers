@@ -11,7 +11,7 @@
 #import <T1Twitter/TFNLayoutMetricsEnvironment-Protocol.h>
 #import <T1Twitter/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSString, T1AffiliateBadgeView, T1BadgedAvatarView, T1DismissButton, T1FollowsYouView, T1InfoTextView, T1StatusReplyBadgeView, T1TimelinesItemSocialContextView, T1UserBadger, T1UserBannerImageView, TFNAttributedTextView, TFNSizeThatFitsHelper, TFNTappableHighlightView, TFNTwitterAccount, TFSTwitterScribeContext, UIColor, UIFont, UIImageView, UILabel, UILongPressGestureRecognizer, UITapGestureRecognizer;
+@class NSString, T1AffiliateBadgeView, T1BadgedAvatarView, T1DismissButton, T1FollowsYouView, T1InfoTextView, T1TimelinesItemSocialContextView, T1UserBadger, T1UserBannerImageView, TFNAttributedTextView, TFNRoundedCornerView, TFNSizeThatFitsHelper, TFNTappableHighlightView, TFNTwitterAccount, TFSTwitterScribeContext, UIFont, UIImageView, UILabel, UILongPressGestureRecognizer, UITapGestureRecognizer;
 @protocol T1UserViewActionControl, T1UserViewActionControlProvider, T1UserViewDelegate, T1UserViewLayoutDelegate, T1UserViewModel;
 
 @interface T1UserView : UIView <T1FollowControlDelegate, UIGestureRecognizerDelegate, T1TimelinesItemSocialContextViewDelegate, TFNLayoutMetricsEnvironment>
@@ -33,8 +33,6 @@
     _Bool _confirmBlock;
     _Bool _showUsernameLabel;
     _Bool _showDesignatorBadge;
-    _Bool _showCaret;
-    _Bool _showReplyBadge;
     _Bool _enableTappableSocialProof;
     _Bool _avatarSelectable;
     _Bool _userInfoSelectable;
@@ -51,6 +49,7 @@
     long long _userCellStyle;
     unsigned long long _userFollowControlType;
     unsigned long long _userFollowControlVariant;
+    long long _caretType;
     unsigned long long _bioMaxLines;
     CDUnknownBlockType _caretTapBlock;
     CDUnknownBlockType _avatarTapBlock;
@@ -62,8 +61,6 @@
     CDUnknownBlockType _designatorBadgeTapActionBlock;
     CDUnknownBlockType _followRequestResponseBlock;
     id <T1UserViewDelegate> _delegate;
-    NSString *_replyBadgeText;
-    UIColor *_replyBadgeBackgroundColor;
     UIView *_conversationTopConnectorView;
     UIView *_conversationBottomConnectorView;
     NSString *_renderedProfileBannerURL;
@@ -72,7 +69,6 @@
     UILabel *_userNameLabel;
     UILabel *_fullNameLabel;
     T1AffiliateBadgeView *_designatorBadge;
-    T1StatusReplyBadgeView *_replyBadgeView;
     T1FollowsYouView *_followsYouView;
     UILabel *_adminTextLabel;
     TFNAttributedTextView *_bioAttributedTextView;
@@ -82,12 +78,14 @@
     T1InfoTextView *_infoTextView;
     TFNTappableHighlightView *_userInfoButton;
     T1DismissButton *_caretButton;
+    TFNRoundedCornerView *_borderView;
     T1TimelinesItemSocialContextView *_socialContextView;
     struct CGSize _avatarSize;
 }
 
 - (void).cxx_destruct;
 @property(readonly, nonatomic) T1TimelinesItemSocialContextView *socialContextView; // @synthesize socialContextView=_socialContextView;
+@property(readonly, nonatomic) TFNRoundedCornerView *borderView; // @synthesize borderView=_borderView;
 @property(readonly, nonatomic) T1DismissButton *caretButton; // @synthesize caretButton=_caretButton;
 @property(readonly, nonatomic) TFNTappableHighlightView *userInfoButton; // @synthesize userInfoButton=_userInfoButton;
 @property(readonly, nonatomic) T1InfoTextView *infoTextView; // @synthesize infoTextView=_infoTextView;
@@ -97,7 +95,6 @@
 @property(readonly, nonatomic) TFNAttributedTextView *bioAttributedTextView; // @synthesize bioAttributedTextView=_bioAttributedTextView;
 @property(readonly, nonatomic) UILabel *adminTextLabel; // @synthesize adminTextLabel=_adminTextLabel;
 @property(readonly, nonatomic) T1FollowsYouView *followsYouView; // @synthesize followsYouView=_followsYouView;
-@property(readonly, nonatomic) T1StatusReplyBadgeView *replyBadgeView; // @synthesize replyBadgeView=_replyBadgeView;
 @property(readonly, nonatomic) T1AffiliateBadgeView *designatorBadge; // @synthesize designatorBadge=_designatorBadge;
 @property(readonly, nonatomic) UILabel *fullNameLabel; // @synthesize fullNameLabel=_fullNameLabel;
 @property(readonly, nonatomic) UILabel *userNameLabel; // @synthesize userNameLabel=_userNameLabel;
@@ -108,8 +105,6 @@
 @property(readonly, nonatomic) UIView *conversationTopConnectorView; // @synthesize conversationTopConnectorView=_conversationTopConnectorView;
 @property(nonatomic) _Bool bottomConversationConnectorEnabled; // @synthesize bottomConversationConnectorEnabled=_bottomConversationConnectorEnabled;
 @property(nonatomic) _Bool topConversationConnectorEnabled; // @synthesize topConversationConnectorEnabled=_topConversationConnectorEnabled;
-@property(retain, nonatomic) UIColor *replyBadgeBackgroundColor; // @synthesize replyBadgeBackgroundColor=_replyBadgeBackgroundColor;
-@property(copy, nonatomic) NSString *replyBadgeText; // @synthesize replyBadgeText=_replyBadgeText;
 @property(nonatomic) __weak id <T1UserViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct CGSize avatarSize; // @synthesize avatarSize=_avatarSize;
 @property(nonatomic) _Bool unread; // @synthesize unread=_unread;
@@ -127,8 +122,6 @@
 @property(copy, nonatomic) CDUnknownBlockType avatarTapBlock; // @synthesize avatarTapBlock=_avatarTapBlock;
 @property(copy, nonatomic) CDUnknownBlockType caretTapBlock; // @synthesize caretTapBlock=_caretTapBlock;
 @property(nonatomic) _Bool enableTappableSocialProof; // @synthesize enableTappableSocialProof=_enableTappableSocialProof;
-@property(nonatomic) _Bool showReplyBadge; // @synthesize showReplyBadge=_showReplyBadge;
-@property(nonatomic) _Bool showCaret; // @synthesize showCaret=_showCaret;
 @property(nonatomic) _Bool showDesignatorBadge; // @synthesize showDesignatorBadge=_showDesignatorBadge;
 @property(nonatomic) _Bool showUsernameLabel; // @synthesize showUsernameLabel=_showUsernameLabel;
 @property(nonatomic) _Bool confirmBlock; // @synthesize confirmBlock=_confirmBlock;
@@ -141,6 +134,7 @@
 @property(nonatomic) _Bool showFollowsYou; // @synthesize showFollowsYou=_showFollowsYou;
 @property(nonatomic) unsigned long long bioMaxLines; // @synthesize bioMaxLines=_bioMaxLines;
 @property(nonatomic) _Bool showBio; // @synthesize showBio=_showBio;
+@property(nonatomic) long long caretType; // @synthesize caretType=_caretType;
 @property(nonatomic) unsigned long long userFollowControlVariant; // @synthesize userFollowControlVariant=_userFollowControlVariant;
 @property(nonatomic) unsigned long long userFollowControlType; // @synthesize userFollowControlType=_userFollowControlType;
 @property(nonatomic) _Bool useAppBackgroundColor; // @synthesize useAppBackgroundColor=_useAppBackgroundColor;
@@ -156,7 +150,6 @@
 - (void)tfn_updateBoundsToSizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (void)_t1_updateReplyBadgeView;
 - (void)_t1_updateDesignatorBadge;
 - (void)_t1_updateUserBio;
 - (id)_userBadgeWithViewModel:(id)arg1;

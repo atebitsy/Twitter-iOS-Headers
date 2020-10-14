@@ -18,8 +18,8 @@
     T1UserView *_userView;
 }
 
-+ (double)estimatedHeightForUserViewModel:(id)arg1 cellStyle:(long long)arg2 avatarSize:(struct CGSize)arg3 showBio:(_Bool)arg4 bioMaxLines:(unsigned long long)arg5 showUserBlocked:(_Bool)arg6 showDesignatorBadge:(_Bool)arg7 showReplyBadge:(_Bool)arg8 replyBadgeText:(id)arg9 expanded:(_Bool)arg10 layoutMetrics:(id)arg11;
-+ (double)heightForUserViewModel:(id)arg1 account:(id)arg2 cellStyle:(long long)arg3 followControlType:(unsigned long long)arg4 followControlVariant:(unsigned long long)arg5 avatarSize:(struct CGSize)arg6 showBio:(_Bool)arg7 bioMaxLines:(unsigned long long)arg8 showUserBlocked:(_Bool)arg9 showDesignatorBadge:(_Bool)arg10 showReplyBadge:(_Bool)arg11 replyBadgeText:(id)arg12 showFollowsYou:(_Bool)arg13 expanded:(_Bool)arg14 layoutMetrics:(id)arg15;
++ (double)estimatedHeightForUserViewModel:(id)arg1 cellStyle:(long long)arg2 avatarSize:(struct CGSize)arg3 showBio:(_Bool)arg4 bioMaxLines:(unsigned long long)arg5 showUserBlocked:(_Bool)arg6 showDesignatorBadge:(_Bool)arg7 expanded:(_Bool)arg8 layoutMetrics:(id)arg9;
++ (double)heightForUserViewModel:(id)arg1 account:(id)arg2 cellStyle:(long long)arg3 followControlType:(unsigned long long)arg4 followControlVariant:(unsigned long long)arg5 avatarSize:(struct CGSize)arg6 showBio:(_Bool)arg7 bioMaxLines:(unsigned long long)arg8 showUserBlocked:(_Bool)arg9 showDesignatorBadge:(_Bool)arg10 showFollowsYou:(_Bool)arg11 expanded:(_Bool)arg12 layoutMetrics:(id)arg13;
 + (struct CGSize)defaultAvatarSizeForStyle:(long long)arg1 showBio:(_Bool)arg2 layoutMetrics:(id)arg3;
 + (id)cellForTableView:(id)arg1 style:(long long)arg2 reuseIdentifier:(id)arg3 indexPath:(id)arg4 initialization:(CDUnknownBlockType)arg5;
 - (void).cxx_destruct;

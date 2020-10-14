@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 @property(retain, nonatomic) id <TFNTwitterFeatureSwitches> featureSwitches; // @synthesize featureSwitches=_featureSwitches;
 @property(readonly, nonatomic) id <T1ListCopyStringsProvider> stringsProvider; // @synthesize stringsProvider=_stringsProvider;
+@property(readonly, nonatomic, getter=isLevelUpPromptEnabled) _Bool levelUpPromptEnabled;
 @property(readonly, nonatomic, getter=isDetailPageMutingEnabledUnsafePeek) _Bool detailPageMutingEnabledUnsafePeek;
 @property(readonly, nonatomic, getter=isDetailPageMutingEnabled) _Bool detailPageMutingEnabled;
 @property(readonly, nonatomic) double spheresUserRecommendationRemovalInterval;

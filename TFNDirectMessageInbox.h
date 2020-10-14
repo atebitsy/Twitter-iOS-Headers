@@ -19,6 +19,7 @@
     NSOperationQueue *_directMessageOperationQueue;
     TFNDirectMessageModel *_directMessageModel;
     NSNumber *_lastLowQualityFilterState;
+    NSNumber *_lastNsfwMediaFilterState;
     long long _lastSeenEventID;
     NSString *_cursor;
     TFSTwitterAPICommandService *_commandService;
@@ -28,10 +29,7 @@
     TFNDirectMessageInboxTimeline *_lowQualityConversationsTimeline;
     TFSCoalescingUpdater *_markAsSeenUpdater;
     long long _localLastSeenEventID;
-    unsigned long long _countOfUnseenConversationsForBadgingExcludingMuted;
-    unsigned long long _countOfUnseenConversationsForBadgingExcludingMutedAndUntrusted;
-    unsigned long long _countOfUnseenConversationsForBadgingExcludingUntrusted;
-    unsigned long long _legacyCountOfUnseenConversationsForBadging;
+    unsigned long long _countOfUnseenConversations;
     TFNDirectMessageRefreshOperation *_currentRefreshOperation;
     TFNDirectMessageInboxPageOperation *_currentTrustedConversationsPageOperation;
     TFNDirectMessageInboxPageOperation *_currentUntrustedConversationsPageOperation;
@@ -43,10 +41,7 @@
 @property(nonatomic) __weak TFNDirectMessageInboxPageOperation *currentUntrustedConversationsPageOperation; // @synthesize currentUntrustedConversationsPageOperation=_currentUntrustedConversationsPageOperation;
 @property(nonatomic) __weak TFNDirectMessageInboxPageOperation *currentTrustedConversationsPageOperation; // @synthesize currentTrustedConversationsPageOperation=_currentTrustedConversationsPageOperation;
 @property(nonatomic) __weak TFNDirectMessageRefreshOperation *currentRefreshOperation; // @synthesize currentRefreshOperation=_currentRefreshOperation;
-@property(nonatomic) unsigned long long legacyCountOfUnseenConversationsForBadging; // @synthesize legacyCountOfUnseenConversationsForBadging=_legacyCountOfUnseenConversationsForBadging;
-@property(nonatomic) unsigned long long countOfUnseenConversationsForBadgingExcludingUntrusted; // @synthesize countOfUnseenConversationsForBadgingExcludingUntrusted=_countOfUnseenConversationsForBadgingExcludingUntrusted;
-@property(nonatomic) unsigned long long countOfUnseenConversationsForBadgingExcludingMutedAndUntrusted; // @synthesize countOfUnseenConversationsForBadgingExcludingMutedAndUntrusted=_countOfUnseenConversationsForBadgingExcludingMutedAndUntrusted;
-@property(nonatomic) unsigned long long countOfUnseenConversationsForBadgingExcludingMuted; // @synthesize countOfUnseenConversationsForBadgingExcludingMuted=_countOfUnseenConversationsForBadgingExcludingMuted;
+@property(nonatomic) unsigned long long countOfUnseenConversations; // @synthesize countOfUnseenConversations=_countOfUnseenConversations;
 @property(nonatomic) long long localLastSeenEventID; // @synthesize localLastSeenEventID=_localLastSeenEventID;
 @property(readonly, nonatomic) TFSCoalescingUpdater *markAsSeenUpdater; // @synthesize markAsSeenUpdater=_markAsSeenUpdater;
 @property(retain, nonatomic) TFNDirectMessageInboxTimeline *lowQualityConversationsTimeline; // @synthesize lowQualityConversationsTimeline=_lowQualityConversationsTimeline;
@@ -56,6 +51,7 @@
 @property(readonly, nonatomic) TFSTwitterAPICommandService *commandService; // @synthesize commandService=_commandService;
 @property(copy, nonatomic) NSString *cursor; // @synthesize cursor=_cursor;
 @property(nonatomic) long long lastSeenEventID; // @synthesize lastSeenEventID=_lastSeenEventID;
+@property(retain, nonatomic) NSNumber *lastNsfwMediaFilterState; // @synthesize lastNsfwMediaFilterState=_lastNsfwMediaFilterState;
 @property(retain, nonatomic) NSNumber *lastLowQualityFilterState; // @synthesize lastLowQualityFilterState=_lastLowQualityFilterState;
 @property(retain, nonatomic) TFNDirectMessageModel *directMessageModel; // @synthesize directMessageModel=_directMessageModel;
 @property(retain, nonatomic) NSOperationQueue *directMessageOperationQueue; // @synthesize directMessageOperationQueue=_directMessageOperationQueue;
@@ -78,7 +74,7 @@
 - (void)fetchTopRequests:(_Bool)arg1;
 - (void)markAsSeenThroughConversation:(id)arg1;
 - (void)markAsSeen;
-- (void)loadMoreConversationsWithCursor:(id)arg1 filterNSFW:(_Bool)arg2;
+- (void)loadMoreConversationsWithCursor:(id)arg1;
 - (void)refresh:(long long)arg1 activeConversationID:(id)arg2 filterLowQuality:(id)arg3 filterNSFW:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 @property(readonly, nonatomic, getter=isRefreshing) _Bool refreshing;
 @property(readonly, nonatomic) id <TFNDirectMessageInbox> inbox;
@@ -92,10 +88,8 @@
 - (id)internalTrustedConversationsTimeline;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned long long)countOfUnseenConversationsForBadgingExcludingMuted:(_Bool)arg1 excludingUntrusted:(_Bool)arg2;
-@property(readonly, nonatomic) _Bool countOfUnseenConversationsForBadgingDiffersFromLegacy;
 - (void)clear;
-- (id)initWithContext:(id)arg1 cursor:(id)arg2 lastSeenEventID:(long long)arg3 trustedConversationsTimeline:(id)arg4 untrustedConversationsTimeline:(id)arg5 lowQualityConversationsTimeline:(id)arg6 lastLowQualityFilterState:(id)arg7 commandService:(id)arg8 commandContext:(id)arg9;
+- (id)initWithContext:(id)arg1 cursor:(id)arg2 lastSeenEventID:(long long)arg3 trustedConversationsTimeline:(id)arg4 untrustedConversationsTimeline:(id)arg5 lowQualityConversationsTimeline:(id)arg6 lastLowQualityFilterState:(id)arg7 lastNsfwMediaFilterState:(id)arg8 commandService:(id)arg9 commandContext:(id)arg10;
 - (id)initWithContext:(id)arg1 commandService:(id)arg2 commandContext:(id)arg3;
 - (void)flushMarkAsSeen;
 

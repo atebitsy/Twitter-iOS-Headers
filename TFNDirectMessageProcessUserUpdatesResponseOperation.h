@@ -13,16 +13,18 @@
     TFNDirectMessageUserUpdatesResponse *_response;
     TFNDirectMessageModel *_model;
     NSNumber *_lowQualityFilterState;
+    NSNumber *_nsfwMediaFilterState;
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSNumber *nsfwMediaFilterState; // @synthesize nsfwMediaFilterState=_nsfwMediaFilterState;
 @property(readonly, nonatomic) NSNumber *lowQualityFilterState; // @synthesize lowQualityFilterState=_lowQualityFilterState;
 @property(readonly, nonatomic) TFNDirectMessageModel *model; // @synthesize model=_model;
 @property(retain) TFNDirectMessageUserUpdatesResponse *response; // @synthesize response=_response;
 - (void)private_processIncrementalUpdatesResponse:(id)arg1 model:(id)arg2;
 - (void)private_processInboxResetResponse:(id)arg1 model:(id)arg2;
 - (void)run;
-- (id)initWithModel:(id)arg1 updatedLowQualityFilterState:(id)arg2;
+- (id)initWithModel:(id)arg1 updatedLowQualityFilterState:(id)arg2 updatedNsfwMediaFilterState:(id)arg3;
 - (id)init;
 
 @end

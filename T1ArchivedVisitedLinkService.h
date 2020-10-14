@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableSet, NSString, TFNTwitterAccount;
+@class NSMutableSet, NSSet, NSString, TFNTwitterAccount;
 @protocol OS_dispatch_queue;
 
 @interface T1ArchivedVisitedLinkService : NSObject
@@ -16,6 +16,7 @@
     TFNTwitterAccount *_account;
     NSMutableSet *_visitedLinksSet;
     NSObject<OS_dispatch_queue> *_serialLinksQueue;
+    NSSet *_articleDomainSet;
 }
 
 + (void)purgeAllLinksFromDisk;
@@ -23,9 +24,11 @@
 + (id)sharedInstanceForAccount:(id)arg1;
 - (void).cxx_destruct;
 @property(nonatomic) _Bool hasLoadedFromDisk; // @synthesize hasLoadedFromDisk=_hasLoadedFromDisk;
+@property(copy, nonatomic) NSSet *articleDomainSet; // @synthesize articleDomainSet=_articleDomainSet;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialLinksQueue; // @synthesize serialLinksQueue=_serialLinksQueue;
 @property(retain) NSMutableSet *visitedLinksSet; // @synthesize visitedLinksSet=_visitedLinksSet;
 @property(readonly, nonatomic) TFNTwitterAccount *account; // @synthesize account=_account;
+- (void)loadNewsDomainsList;
 - (void)_t1_serialLinksQueue_pruneExpiredVisitedLinks;
 - (void)loadLinksFromDisk;
 - (void)saveLinksToDisk;

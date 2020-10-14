@@ -6,12 +6,15 @@
 
 #import <objc/NSObject.h>
 
+#import <T1Twitter/NSSecureCoding-Protocol.h>
+
 __attribute__((visibility("hidden")))
-@interface AppBadgingStateCoding : NSObject
+@interface AppBadgingStateCoding : NSObject <NSSecureCoding>
 {
     // Error parsing type: , name: appBadgingState
 }
 
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 - (id)init;
 - (void)encodeWithCoder:(id)arg1;

@@ -58,6 +58,7 @@
 + (id)ColorizedImage:(id)arg1 WithColor:(id)arg2 ShouldCircle:(_Bool)arg3;
 + (id)CircularMaskForImage:(id)arg1;
 + (id)ActionSheetForReportingBroadcast:(id)arg1 LoggedInUser:(id)arg2 GuestUser:(id)arg3 Timecode:(double)arg4 ConfirmationHandler:(CDUnknownBlockType)arg5;
++ (id)LocalizedTitleForBroadcastReportType:(long long)arg1;
 + (id)CreateSettingsAlertWithTitle:(id)arg1 Message:(id)arg2 ResultBlock:(CDUnknownBlockType)arg3;
 + (void)PresentSettingsAlertWithTitle:(id)arg1 Message:(id)arg2 PresentingController:(id)arg3;
 + (id)ContentURLForBroadcastID:(id)arg1;

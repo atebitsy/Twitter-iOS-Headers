@@ -7,15 +7,17 @@
 #import <objc/NSObject.h>
 
 #import <T1Twitter/NSCoding-Protocol.h>
+#import <T1Twitter/NSSecureCoding-Protocol.h>
 
 @class NSString;
 
-@interface TFNDirectMessageContext : NSObject <NSCoding>
+@interface TFNDirectMessageContext : NSObject <NSCoding, NSSecureCoding>
 {
     long long _authenticatedUserID;
     NSString *_accountID;
 }
 
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
 @property(readonly, nonatomic) long long authenticatedUserID; // @synthesize authenticatedUserID=_authenticatedUserID;

@@ -110,7 +110,7 @@
 + (void)ResetCacheOfReportedBroadcastIDs;
 + (void)CacheReportedBroadcastWithID:(id)arg1;
 + (id)CacheOfReportedBroadcastIDs;
-+ (void)ReportBroadcastWithID:(id)arg1 LoggedInUser:(id)arg2 ReportType:(long long)arg3 GuestUserID:(id)arg4 Timecode:(double)arg5 Ntp:(unsigned long long)arg6 IsReportFromFeed:(_Bool)arg7 CompletionBlock:(CDUnknownBlockType)arg8;
++ (void)ReportBroadcastWithID:(id)arg1 LoggedInUser:(id)arg2 ReportType:(long long)arg3 ReportedUserID:(id)arg4 Timecode:(double)arg5 Ntp:(unsigned long long)arg6 IsReportFromFeed:(_Bool)arg7 CompletionBlock:(CDUnknownBlockType)arg8;
 + (void)ReportBroadcastWithID:(id)arg1 LoggedInUser:(id)arg2 ReportType:(long long)arg3 IsReportFromFeed:(_Bool)arg4 CompletionBlock:(CDUnknownBlockType)arg5;
 + (void)ShareBroadcast:(id)arg1 AtTimeCode:(double)arg2 WithFollowerIDs:(id)arg3 WithChannelID:(id)arg4 LoggedInUser:(id)arg5 CompletionBlock:(CDUnknownBlockType)arg6;
 + (void)RefreshBroadcasts:(id)arg1 LoggedInUser:(id)arg2 CompletionBlock:(CDUnknownBlockType)arg3;

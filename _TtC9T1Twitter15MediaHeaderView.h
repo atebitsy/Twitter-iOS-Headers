@@ -12,6 +12,15 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: mediaContainer
     // Error parsing type: , name: backgroundImageView
     // Error parsing type: , name: mediaHeaderModel
+    // Error parsing type: , name: title
+    // Error parsing type: , name: titleStyle
+    // Error parsing type: , name: isTitleHidden
+    // Error parsing type: , name: titleAlpha
+    // Error parsing type: , name: navigationBarTitleLabelIfLoaded
+    // Error parsing type: , name: titlePillIfLoaded
+    // Error parsing type: , name: titlePillLeadingConstraintIfLoaded
+    // Error parsing type: , name: titlePillTopConstraintIfLoaded
+    // Error parsing type: , name: bottomBarTitleLabelIfLoaded
 }
 
 - (void).cxx_destruct;

@@ -6,15 +6,20 @@
 
 #import <PeriscopeSDK/NSObject-Protocol.h>
 
-@class NSArray, NSString, PTVGuestRoomUser, PTVGuestView;
+@class NSArray, NSString, PTVGuestRoomReportType, PTVGuestRoomUser, PTVGuestView;
 @protocol PTVGuestRoomControllerObserver;
 
 @protocol PTVGuestRoomController <NSObject>
 @property(readonly, nonatomic) NSArray *users;
 @property(readonly, nonatomic) unsigned long long totalUsersCount;
 @property(nonatomic) _Bool isMuted;
+- (NSArray *)ownedViewControllers;
 - (PTVGuestView *)guestViewForUser:(PTVGuestRoomUser *)arg1;
-- (void)reportUser:(PTVGuestRoomUser *)arg1;
+- (void)reportGuestRoomWithType:(PTVGuestRoomReportType *)arg1;
+- (void)reportUser:(PTVGuestRoomUser *)arg1 withType:(PTVGuestRoomReportType *)arg2;
+- (NSArray *)reportTypesForGuestRoom;
+- (NSArray *)reportTypesForUser:(PTVGuestRoomUser *)arg1;
+- (void)unblockUser:(PTVGuestRoomUser *)arg1;
 - (void)blockUser:(PTVGuestRoomUser *)arg1;
 - (void)sendText:(NSString *)arg1 language:(NSString *)arg2;
 - (void)sendEmoji:(NSString *)arg1;

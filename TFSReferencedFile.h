@@ -6,18 +6,19 @@
 
 #import <objc/NSObject.h>
 
-#import <TFSUtilities/NSCoding-Protocol.h>
 #import <TFSUtilities/NSCopying-Protocol.h>
+#import <TFSUtilities/NSSecureCoding-Protocol.h>
 
 @class NSString, TFSReferencedFileReference;
 
-@interface TFSReferencedFile : NSObject <NSCopying, NSCoding>
+@interface TFSReferencedFile : NSObject <NSCopying, NSSecureCoding>
 {
     NSString *_relativePath;
     unsigned long long _searchDirectory;
     TFSReferencedFileReference *_reference;
 }
 
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 @property(retain, nonatomic) TFSReferencedFileReference *reference; // @synthesize reference=_reference;
 @property(readonly, nonatomic) unsigned long long searchDirectory; // @synthesize searchDirectory=_searchDirectory;

@@ -8,13 +8,14 @@
 
 #import <TFNUI/TFNLayoutMetricsEnvironment-Protocol.h>
 #import <TFNUI/TFNModalContainerViewController-Protocol.h>
+#import <TFNUI/TFNModalSheetViewController-Protocol.h>
 #import <TFNUI/TFNPopoverSourceSpecification-Protocol.h>
 #import <TFNUI/UIGestureRecognizerDelegate-Protocol.h>
 
 @class NSString, TFNBasicTransitionCoordinator, TFNDimBackgroundTransitionEffect, TFNModalSheetContentHostView, TFNModalSheetTransitioningDelegate, TFNUnanimatedTransitioningDelegate, UIBarButtonItem, UIColor, UIPanGestureRecognizer, UITapGestureRecognizer, UITraitCollection, UIView;
 @protocol TFNModalContainerViewControllerDelegate, TFNModalSheetViewControllerLayoutDelegate;
 
-@interface TFNModalSheetViewController : UIViewController <UIGestureRecognizerDelegate, TFNLayoutMetricsEnvironment, TFNModalContainerViewController, TFNPopoverSourceSpecification>
+@interface TFNModalSheetViewController : UIViewController <UIGestureRecognizerDelegate, TFNLayoutMetricsEnvironment, TFNModalContainerViewController, TFNPopoverSourceSpecification, TFNModalSheetViewController>
 {
     TFNModalSheetTransitioningDelegate *_modalSheetTransitioningDelegate;
     TFNUnanimatedTransitioningDelegate *_unanimatedTransitioningDelegate;
@@ -27,9 +28,10 @@
     UITapGestureRecognizer *_tapRecognizer;
     UIPanGestureRecognizer *_panGestureRecognizer;
     _Bool _allowCenteredPresentationWithoutSource;
-    _Bool _shouldSendAppearanceTransitionsToPresentingViewController;
-    _Bool _expandable;
     _Bool _backgroundBlurEnabled;
+    _Bool _expandable;
+    _Bool _shouldSendAppearanceTransitionsToPresentingViewController;
+    _Bool _dismissableWithGesture;
     _Bool _animatingLayoutModeTransition;
     _Bool _animatingPresentationTransition;
     _Bool _presented;
@@ -40,16 +42,16 @@
     UIBarButtonItem *_barButtonItem;
     double _maximumHeightForPopover;
     double _maximumHeightForSlideover;
-    UIViewController *_modalContentViewController;
+    long long _backgroundBlurStyle;
+    UIColor *_chromeColor;
     id <TFNModalSheetViewControllerLayoutDelegate> _layoutDelegate;
+    UIViewController *_modalContentViewController;
     double _preferredHeight;
     long long _preferredPresentationStyle;
-    long long _layoutMode;
-    UIColor *_chromeColor;
     UIColor *_slideoverHandleColor;
-    long long _backgroundBlurStyle;
     TFNDimBackgroundTransitionEffect *_backgroundTransitionEffect;
     long long _floatingModalStackPosition;
+    long long _layoutMode;
     double _currentHeight;
     double _dismissAnimationVelocity;
     double _dismissAnimationDuration;
@@ -61,23 +63,25 @@
 @property(nonatomic) double dismissAnimationVelocity; // @synthesize dismissAnimationVelocity=_dismissAnimationVelocity;
 @property(nonatomic) _Bool dismissFromGesture; // @synthesize dismissFromGesture=_dismissFromGesture;
 @property(nonatomic) double currentHeight; // @synthesize currentHeight=_currentHeight;
+@property(nonatomic) long long layoutMode; // @synthesize layoutMode=_layoutMode;
 @property(nonatomic) long long floatingModalStackPosition; // @synthesize floatingModalStackPosition=_floatingModalStackPosition;
 @property(nonatomic, getter=isSetupForPresentation) _Bool setupForPresentation; // @synthesize setupForPresentation=_setupForPresentation;
 @property(nonatomic, getter=isPresented) _Bool presented; // @synthesize presented=_presented;
 @property(nonatomic, getter=isAnimatingPresentationTransition) _Bool animatingPresentationTransition; // @synthesize animatingPresentationTransition=_animatingPresentationTransition;
 @property(nonatomic, getter=isAnimatingLayoutModeTransition) _Bool animatingLayoutModeTransition; // @synthesize animatingLayoutModeTransition=_animatingLayoutModeTransition;
 @property(readonly, nonatomic) TFNDimBackgroundTransitionEffect *backgroundTransitionEffect; // @synthesize backgroundTransitionEffect=_backgroundTransitionEffect;
-@property(nonatomic) long long backgroundBlurStyle; // @synthesize backgroundBlurStyle=_backgroundBlurStyle;
-@property(nonatomic, getter=isBackgroundBlurEnabled) _Bool backgroundBlurEnabled; // @synthesize backgroundBlurEnabled=_backgroundBlurEnabled;
+- (void)setDismissableWithGesture:(_Bool)arg1;
+@property(readonly, nonatomic, getter=isDismissableWithGesture) _Bool dismissableWithGesture;
 @property(retain, nonatomic) UIColor *slideoverHandleColor; // @synthesize slideoverHandleColor=_slideoverHandleColor;
-@property(retain, nonatomic) UIColor *chromeColor; // @synthesize chromeColor=_chromeColor;
-@property(nonatomic) long long layoutMode; // @synthesize layoutMode=_layoutMode;
+@property(nonatomic) _Bool shouldSendAppearanceTransitionsToPresentingViewController; // @synthesize shouldSendAppearanceTransitionsToPresentingViewController=_shouldSendAppearanceTransitionsToPresentingViewController;
 @property(nonatomic) long long preferredPresentationStyle; // @synthesize preferredPresentationStyle=_preferredPresentationStyle;
 @property(readonly, nonatomic) double preferredHeight; // @synthesize preferredHeight=_preferredHeight;
-@property(nonatomic, getter=isExpandable) _Bool expandable; // @synthesize expandable=_expandable;
-@property(nonatomic) __weak id <TFNModalSheetViewControllerLayoutDelegate> layoutDelegate; // @synthesize layoutDelegate=_layoutDelegate;
-@property(nonatomic) _Bool shouldSendAppearanceTransitionsToPresentingViewController; // @synthesize shouldSendAppearanceTransitionsToPresentingViewController=_shouldSendAppearanceTransitionsToPresentingViewController;
 @property(retain, nonatomic) UIViewController *modalContentViewController; // @synthesize modalContentViewController=_modalContentViewController;
+@property(nonatomic) __weak id <TFNModalSheetViewControllerLayoutDelegate> layoutDelegate; // @synthesize layoutDelegate=_layoutDelegate;
+@property(nonatomic, getter=isExpandable) _Bool expandable; // @synthesize expandable=_expandable;
+@property(retain, nonatomic) UIColor *chromeColor; // @synthesize chromeColor=_chromeColor;
+@property(nonatomic) long long backgroundBlurStyle; // @synthesize backgroundBlurStyle=_backgroundBlurStyle;
+@property(nonatomic, getter=isBackgroundBlurEnabled) _Bool backgroundBlurEnabled; // @synthesize backgroundBlurEnabled=_backgroundBlurEnabled;
 @property(nonatomic) _Bool allowCenteredPresentationWithoutSource; // @synthesize allowCenteredPresentationWithoutSource=_allowCenteredPresentationWithoutSource;
 @property(retain, nonatomic) UIBarButtonItem *barButtonItem; // @synthesize barButtonItem=_barButtonItem;
 @property(nonatomic) struct CGRect sourceRect; // @synthesize sourceRect=_sourceRect;
@@ -171,7 +175,6 @@
 - (id)childViewControllerForStatusBarStyle;
 - (long long)preferredStatusBarStyle;
 - (void)contextDefiningModalContentViewControllerDidDismissCurrentContextViewController;
-@property(readonly, nonatomic, getter=isDismissableWithGesture) _Bool dismissableWithGesture;
 - (void)_updateSlideoverHandleBackgroundColor;
 - (void)_updatePopoverArrowColor;
 - (void)collapseFullScreenAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;

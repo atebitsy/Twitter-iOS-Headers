@@ -48,10 +48,9 @@
 - (id)initWithJSONDictionary:(id)arg1 promotedContent:(id)arg2;
 - (id)initWithComponents:(id)arg1 promotedContent:(id)arg2 appStoreData:(id)arg3 scribeCustomization:(CDUnknownBlockType)arg4 shouldHideBorder:(_Bool)arg5;
 - (id)videoSourceComponent;
-- (_Bool)hasDockedMedia;
 - (_Bool)containsVideo;
+- (_Bool)isImageAppCardOrVideoAppCard;
 - (_Bool)_t1_isValidImageCardWithAppStoreDetailsAndInstallButton;
-- (_Bool)_t1_isValidImageOrVideoCardWithAppStoreDetailsAndInstallButton;
 - (_Bool)meetsExperiment10772CriteriaForAppCard;
 - (_Bool)meetsExperiment10772CriteriaForWebsiteCard;
 - (_Bool)meetsExperiment10576Criteria;
@@ -62,7 +61,6 @@
 - (id)mediaComponentModel;
 - (id)appStoreDetailComponentModel;
 - (_Bool)meetsExperiment10890Criteria;
-- (_Bool)meetsExperiment10536Criteria;
 - (_Bool)meetsExperiment10704CriteriaForImageWebsiteCards;
 - (_Bool)meetsExperiment10704CriteriaForImageAppCards;
 - (_Bool)meetsExperiment10193Criteria;

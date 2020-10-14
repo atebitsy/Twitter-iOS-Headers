@@ -8,7 +8,7 @@
 
 @interface _TtC11TwitterHome33ItemPathTimelineVisibilityTracker : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: unfairAccessLock
+    // Error parsing type: , name: unfairAccessQueue
     // Error parsing type: , name: visibileItemIndex
 }
 

@@ -7,16 +7,16 @@
 #import <TFNUI/TFNNavigationController.h>
 
 #import <T1Twitter/T1PanelNavigationController-Protocol.h>
-#import <T1Twitter/T1SearchTextViewDelegate-Protocol.h>
 #import <T1Twitter/T1TweetDraftsViewControllerDelegate-Protocol.h>
 #import <T1Twitter/TFNNavigationControllerTransitionProvider-Protocol.h>
 #import <T1Twitter/TFNTooltipDelegate-Protocol.h>
+#import <T1Twitter/TUISearchTextViewDelegate-Protocol.h>
 #import <T1Twitter/UIDropInteractionDelegate-Protocol.h>
 
 @class NSArray, NSString, T1DashBarButtonItem, T1SearchViewContainerView, TFNBarButtonItem, TFNTwitterAccount, UILongPressGestureRecognizer, UIView, UIViewController;
 @protocol T1DashPresenter, T1TabView;
 
-@interface T1TabNavigationController : TFNNavigationController <T1SearchTextViewDelegate, TFNTooltipDelegate, UIDropInteractionDelegate, T1TweetDraftsViewControllerDelegate, T1PanelNavigationController, TFNNavigationControllerTransitionProvider>
+@interface T1TabNavigationController : TFNNavigationController <TUISearchTextViewDelegate, TFNTooltipDelegate, UIDropInteractionDelegate, T1TweetDraftsViewControllerDelegate, T1PanelNavigationController, TFNNavigationControllerTransitionProvider>
 {
     _Bool _selectionBeganWithPushedViewController;
     _Bool _isAnimatingSearch;
@@ -24,7 +24,6 @@
     UIView<T1TabView> *_tabView;
     id <T1DashPresenter> _dashPresenter;
     T1DashBarButtonItem *_dashItem;
-    TFNBarButtonItem *_toggleSideBarItem;
     TFNBarButtonItem *_peopleDiscoveryRightSideItem;
     T1SearchViewContainerView *_searchTextFieldContainerView;
     UILongPressGestureRecognizer *_dashButtonLongPressRecognizer;
@@ -38,7 +37,6 @@
 @property(retain, nonatomic) UILongPressGestureRecognizer *dashButtonLongPressRecognizer; // @synthesize dashButtonLongPressRecognizer=_dashButtonLongPressRecognizer;
 @property(retain, nonatomic) T1SearchViewContainerView *searchTextFieldContainerView; // @synthesize searchTextFieldContainerView=_searchTextFieldContainerView;
 @property(retain, nonatomic) TFNBarButtonItem *peopleDiscoveryRightSideItem; // @synthesize peopleDiscoveryRightSideItem=_peopleDiscoveryRightSideItem;
-@property(retain, nonatomic) TFNBarButtonItem *toggleSideBarItem; // @synthesize toggleSideBarItem=_toggleSideBarItem;
 @property(retain, nonatomic) T1DashBarButtonItem *dashItem; // @synthesize dashItem=_dashItem;
 @property(nonatomic) __weak id <T1DashPresenter> dashPresenter; // @synthesize dashPresenter=_dashPresenter;
 @property(nonatomic) _Bool selectionBeganWithPushedViewController; // @synthesize selectionBeganWithPushedViewController=_selectionBeganWithPushedViewController;

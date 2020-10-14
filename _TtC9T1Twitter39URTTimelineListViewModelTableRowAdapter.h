@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: account
     // Error parsing type: , name: style
     // Error parsing type: , name: feedbackPresenter
+    // Error parsing type: , name: levelUpPromptPresenter
     // Error parsing type: , name: imagePipeline
     // Error parsing type: , name: spheresFeatureSwitches
     // Error parsing type: , name: listMutationsManager

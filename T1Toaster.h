@@ -59,6 +59,7 @@
 - (void)toastViewController:(id)arg1 didInvokeToastAction:(id)arg2 forToast:(id)arg3;
 - (void)viewControllerViewDidFullyDisappear:(id)arg1;
 - (void)viewControllerViewDidFullyAppear:(id)arg1;
+- (void)_t1_callDismissCompletionHandlerIfNeededForToast:(id)arg1 fromGesture:(_Bool)arg2;
 - (void)_t1_applicationDidEnterBackground:(id)arg1;
 - (void)_t1_timerDidFinish;
 - (void)_t1_startToastTimerWithInterval:(double)arg1;

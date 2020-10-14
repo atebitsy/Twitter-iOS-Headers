@@ -7,9 +7,9 @@
 #import <T1Twitter/_TtC9T1Twitter40GuideExtendedContentChromeViewController.h>
 
 #import <T1Twitter/T1SearchKeyCommandSupportProtocol-Protocol.h>
-#import <T1Twitter/T1SearchTextViewDelegate-Protocol.h>
+#import <T1Twitter/TUISearchTextViewDelegate-Protocol.h>
 
-@interface _TtC9T1Twitter40GuideExtendedContentChromeViewController (T1Twitter) <T1SearchTextViewDelegate, T1SearchKeyCommandSupportProtocol>
+@interface _TtC9T1Twitter40GuideExtendedContentChromeViewController (T1Twitter) <TUISearchTextViewDelegate, T1SearchKeyCommandSupportProtocol>
 - (void)searchTextViewWasTapped:(id)arg1;
 - (void)handleSearchKeyCommand;
 - (_Bool)canHandleSearchKeyCommand;

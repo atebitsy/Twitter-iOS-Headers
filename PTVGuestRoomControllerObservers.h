@@ -18,6 +18,7 @@
 - (void).cxx_destruct;
 @property(retain, nonatomic) PTVWeakSet *observers; // @synthesize observers=_observers;
 @property(nonatomic) __weak id <PTVGuestRoomController> controller; // @synthesize controller=_controller;
+- (void)notifyUserBlockedAndRemovedByAdmin;
 - (void)notifyRoomDestruction;
 - (void)notifyUpdateOfUsers:(id)arg1 totalUsersCount:(unsigned long long)arg2;
 - (void)notifyReceptionOfText:(id)arg1 language:(id)arg2 fromUser:(id)arg3;

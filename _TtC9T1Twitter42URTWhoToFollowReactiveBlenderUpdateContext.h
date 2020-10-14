@@ -8,9 +8,9 @@
 
 @interface _TtC9T1Twitter42URTWhoToFollowReactiveBlenderUpdateContext : _TtC9T1Twitter24URTTimelineUpdateContext
 {
-    // Error parsing type: , name: followedUserID
+    // Error parsing type: , name: targetUserID
     // Error parsing type: , name: excludedUserIDs
-    // Error parsing type: , name: followedEntryID
+    // Error parsing type: , name: targetEntryID
 }
 
 @end

@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: parameters
     // Error parsing type: , name: assimilationOptions
     // Error parsing type: , name: networkConfiguration
+    // Error parsing type: , name: scribeContext
 }
 
 - (void).cxx_destruct;

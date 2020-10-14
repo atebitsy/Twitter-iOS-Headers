@@ -9,5 +9,7 @@
 @interface NSCoder (TFSAdditions)
 - (void)tfs_encodeCGSize:(struct CGSize)arg1 forKey:(id)arg2;
 - (void)tfs_encodeCGRect:(struct CGRect)arg1 forKey:(id)arg2;
+- (id)tfs_decodeDictionaryWithKeysOfClass:(Class)arg1 objectsOfClass:(Class)arg2 forKey:(id)arg3;
+- (id)tfs_decodeArrayOfObjectsOfClass:(Class)arg1 forKey:(id)arg2;
 @end
 

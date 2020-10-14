@@ -8,7 +8,7 @@
 
 #import <T1Twitter/TFSOperationDependencyResult-Protocol.h>
 
-@class NSError, NSString, TFNTwitterComposition, TFNTwitterCompositionUploadContext, TFNTwitterStatus;
+@class NSError, NSString, TFNTwitterComposition, TFNTwitterCompositionUploadContext, TFNTwitterNudgeExperimentModel, TFNTwitterStatus;
 @protocol TFSTwitterAPICommandCancellable;
 
 @interface TFNTwitterCompositionUpdateStatusOperation : TFSDependentConcurrentOperation <TFSOperationDependencyResult>
@@ -18,11 +18,13 @@
     TFNTwitterStatus *_resultStatus;
     TFNTwitterComposition *_composition;
     TFNTwitterCompositionUploadContext *_context;
+    TFNTwitterNudgeExperimentModel *_nudgeExperimentModel;
     id <TFSTwitterAPICommandCancellable> _commandOperation;
 }
 
 - (void).cxx_destruct;
 @property(retain) id <TFSTwitterAPICommandCancellable> commandOperation; // @synthesize commandOperation=_commandOperation;
+@property(readonly, nonatomic) TFNTwitterNudgeExperimentModel *nudgeExperimentModel; // @synthesize nudgeExperimentModel=_nudgeExperimentModel;
 @property(readonly, nonatomic) TFNTwitterCompositionUploadContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) TFNTwitterComposition *composition; // @synthesize composition=_composition;
 @property(retain) TFNTwitterStatus *resultStatus; // @synthesize resultStatus=_resultStatus;
@@ -32,7 +34,7 @@
 - (void)cancel;
 - (void)_tfn_main_run;
 - (void)run;
-- (id)initWithComposition:(id)arg1 context:(id)arg2;
+- (id)initWithComposition:(id)arg1 context:(id)arg2 nudgeExperimentModel:(id)arg3;
 - (id)init;
 
 // Remaining properties

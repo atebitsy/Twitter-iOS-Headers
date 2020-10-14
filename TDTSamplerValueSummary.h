@@ -6,9 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <TwitterDiagnosticTools/NSCoding-Protocol.h>
+#import <TwitterDiagnosticTools/NSSecureCoding-Protocol.h>
 
-@interface TDTSamplerValueSummary : NSObject <NSCoding>
+@interface TDTSamplerValueSummary : NSObject <NSSecureCoding>
 {
     _Bool _primed;
     double _min;
@@ -19,6 +19,7 @@
     double _lastValue;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) double lastValue; // @synthesize lastValue=_lastValue;
 @property(nonatomic) double firstValue; // @synthesize firstValue=_firstValue;
 @property(nonatomic) _Bool primed; // @synthesize primed=_primed;

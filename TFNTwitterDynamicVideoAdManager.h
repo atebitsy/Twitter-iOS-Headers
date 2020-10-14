@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, TFNTwitterBatchFetchManager, TFSTwitterDynamicVideoAd;
+@class NSString, TAFBatchFetchManager, TFSTwitterDynamicVideoAd;
 
 @interface TFNTwitterDynamicVideoAdManager : NSObject
 {
     _Bool _showAdvertiserNameInForcedAd;
     long long _adsBatchFetchSize;
-    TFNTwitterBatchFetchManager *_batchFetchManager;
+    TAFBatchFetchManager *_batchFetchManager;
     TFSTwitterDynamicVideoAd *_triggerAd;
     NSString *_prerollTypeString;
 }
@@ -21,7 +21,7 @@
 @property(readonly, nonatomic) _Bool showAdvertiserNameInForcedAd; // @synthesize showAdvertiserNameInForcedAd=_showAdvertiserNameInForcedAd;
 @property(retain, nonatomic) NSString *prerollTypeString; // @synthesize prerollTypeString=_prerollTypeString;
 @property(retain, nonatomic) TFSTwitterDynamicVideoAd *triggerAd; // @synthesize triggerAd=_triggerAd;
-@property(readonly, nonatomic) TFNTwitterBatchFetchManager *batchFetchManager; // @synthesize batchFetchManager=_batchFetchManager;
+@property(readonly, nonatomic) TAFBatchFetchManager *batchFetchManager; // @synthesize batchFetchManager=_batchFetchManager;
 @property(readonly, nonatomic) long long adsBatchFetchSize; // @synthesize adsBatchFetchSize=_adsBatchFetchSize;
 - (void)scribeMissingAdsForResponse:(id)arg1 userReference:(id)arg2 scribe:(id)arg3 auditAllowedUserIDs:(id)arg4;
 - (id)cardParametersWithAdditionalItemParameters:(id)arg1 addedToBaseParameters:(id)arg2;

@@ -9,12 +9,11 @@
 #import <T1Twitter/TFNDirectMessageUserCache-Protocol.h>
 
 @class NSArray, NSMapTable, NSMutableDictionary, NSMutableSet, NSString, TFNDirectMessageActivityLog, TFNDirectMessageContextState, TFNDirectMessageInbox, TFSModelContext;
-@protocol OS_dispatch_queue;
 
 @interface TFNDirectMessageModel : NSObject <TFNDirectMessageUserCache>
 {
-    NSObject<OS_dispatch_queue> *_cachedUserAccessQueue;
-    NSObject<OS_dispatch_queue> *_cachedCustomProfileAccessQueue;
+    CDStruct_762bc9ff _cachedUserAccessQueue;
+    CDStruct_762bc9ff _cachedCustomProfileAccessQueue;
     NSMapTable *_cachedUsersByUserID;
     NSMapTable *_cachedCustomProfilesByCustomProfileID;
     TFNDirectMessageActivityLog *_activityLog;

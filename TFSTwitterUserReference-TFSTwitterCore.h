@@ -6,12 +6,14 @@
 
 #import <TFSTwitterCore/TFSTwitterUserReference.h>
 
-#import <TFSTwitterCore/NSCoding-Protocol.h>
+#import <TFSTwitterCore/NSSecureCoding-Protocol.h>
 #import <TFSTwitterCore/TFSTwitterScribableItem-Protocol.h>
 
 @class NSDictionary, NSString;
 
-@interface TFSTwitterUserReference (TFSTwitterCore) <NSCoding, TFSTwitterScribableItem>
+@interface TFSTwitterUserReference (TFSTwitterCore) <NSSecureCoding, TFSTwitterScribableItem>
++ (void)setSupportsSecureCoding:(_Bool)arg1;
++ (_Bool)supportsSecureCoding;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)scribeParametersWithProfileID:(_Bool)arg1 scribeItem:(_Bool)arg2;

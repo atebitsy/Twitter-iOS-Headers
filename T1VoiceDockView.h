@@ -8,12 +8,11 @@
 
 #import <T1Twitter/T1VoiceDockContainer-Protocol.h>
 
-@class NSArray, NSLayoutConstraint, TFNSolidColorView, UIAccessibilityCustomAction, UIPanGestureRecognizer;
+@class NSArray, NSLayoutConstraint, TFNSolidColorView;
 @protocol T1VoiceDockViewDelegate, T1VoiceDockableContent;
 
 @interface T1VoiceDockView : UIView <T1VoiceDockContainer>
 {
-    _Bool _gestureIsReadingAsExpansion;
     UIView<T1VoiceDockableContent> *_contentView;
     unsigned long long _displayState;
     id <T1VoiceDockViewDelegate> _delegate;
@@ -22,40 +21,20 @@
     NSArray *_animationConstraints;
     NSLayoutConstraint *_backgroundHeightConstraint;
     UIView *_bottomDivider;
-    UIPanGestureRecognizer *_expandingPanGesture;
-    double _gestureStartingOffset;
-    double _gestureCurrentOffset;
-    UIAccessibilityCustomAction *_toggleExpandedAccessibilityAction;
 }
 
 + (id)new;
 - (void).cxx_destruct;
-@property(retain, nonatomic) UIAccessibilityCustomAction *toggleExpandedAccessibilityAction; // @synthesize toggleExpandedAccessibilityAction=_toggleExpandedAccessibilityAction;
-@property(nonatomic) double gestureCurrentOffset; // @synthesize gestureCurrentOffset=_gestureCurrentOffset;
-@property(nonatomic) double gestureStartingOffset; // @synthesize gestureStartingOffset=_gestureStartingOffset;
-@property(nonatomic) _Bool gestureIsReadingAsExpansion; // @synthesize gestureIsReadingAsExpansion=_gestureIsReadingAsExpansion;
-@property(retain, nonatomic) UIPanGestureRecognizer *expandingPanGesture; // @synthesize expandingPanGesture=_expandingPanGesture;
 @property(retain, nonatomic) UIView *bottomDivider; // @synthesize bottomDivider=_bottomDivider;
 @property(retain, nonatomic) NSLayoutConstraint *backgroundHeightConstraint; // @synthesize backgroundHeightConstraint=_backgroundHeightConstraint;
 @property(retain, nonatomic) NSArray *animationConstraints; // @synthesize animationConstraints=_animationConstraints;
 @property(retain, nonatomic) TFNSolidColorView *transitionContainer; // @synthesize transitionContainer=_transitionContainer;
 @property(retain, nonatomic) TFNSolidColorView *contentContainer; // @synthesize contentContainer=_contentContainer;
 @property(nonatomic) __weak id <T1VoiceDockViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void)_t1_updateAccessibilityWithExpandedState:(_Bool)arg1;
-- (id)accessibilityCustomActions;
 - (void)_t1_initAccessibility;
-- (void)_t1_animateToExpandedDisplay:(_Bool)arg1 duration:(double)arg2;
-- (void)_t1_animateExpansionWithVelocity:(double)arg1;
 - (void)_t1_replaceAnimatingConstraintsWithConstraints:(id)arg1;
 - (void)animateDismissal:(CDUnknownBlockType)arg1;
 - (void)animateDocking:(CDUnknownBlockType)arg1;
-- (void)_handlePanEvent:(id)arg1;
-- (void)_t1_toggleExpanded;
-- (void)expand;
-@property(readonly, nonatomic) _Bool canExpand;
-@property(readonly, nonatomic) _Bool isExpanded;
-- (double)_t1_gestureBasedHeightOffset;
-- (double)_t1_expandedHeight;
 - (double)_t1_minimumHeight;
 - (double)_t1_instrinsicHeightForDisplayState:(unsigned long long)arg1;
 - (struct CGSize)intrinsicContentSize;

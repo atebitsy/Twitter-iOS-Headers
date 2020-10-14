@@ -29,7 +29,7 @@
 - (void)private_updatePromptView;
 - (void)private_dismissAction:(id)arg1;
 - (struct CGSize)sizeWithLayoutMetrics:(id)arg1;
-- (_Bool)gestureShouldDismissModalContainerViewController:(id)arg1;
+- (void)willAttachToModalContainerViewController:(id)arg1;
 - (_Bool)tfn_logoTitleViewShown;
 - (long long)tfn_preferredToolbarVisibility;
 - (_Bool)tfn_prefersNavigationBarShadowHidden;

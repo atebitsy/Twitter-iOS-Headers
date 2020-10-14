@@ -35,6 +35,7 @@
     _Bool _needsPersistedScrollPositionRestore;
     _Bool _loadGapUpwards;
     NSNumber *_nextUpdateRestoreScrollPositionTypeOverride;
+    _Bool _needsJumpToTop;
     _Bool _isTopRowVisible;
     TFNItemsSectionTransformer *_sectionTransformer;
     _Bool _shouldNotifyTableUpdatedFromStreamAPIUpdate;
@@ -93,7 +94,7 @@
 - (id)_scribeParametersFromParameters:(id)arg1 byIncludingPositionForItemAtIndexPath:(id)arg2;
 - (id)_statusAtIndexPath:(id)arg1;
 - (unsigned long long)_statusOptionsForAdapter:(id)arg1 args:(id)arg2 options:(unsigned long long)arg3;
-- (void)_emptyMessagePromptTapped;
+- (void)_emptyMessagePromptTappedWithScribeContext:(id)arg1;
 - (void)markAsViewedHelper:(id)arg1 didViewCells:(id)arg2;
 - (void)didRestoreTimelineItem:(id)arg1;
 - (void)dismissTimelineItem:(id)arg1 withFeedbackModule:(id)arg2 derivedFromAction:(id)arg3;
@@ -154,7 +155,6 @@
 - (void)_t1_processAutoSwitchedToTopWithLoadSource:(long long)arg1;
 - (void)_t1_checkForAutomaticSwitchToTop;
 - (_Bool)t1_showsPeopleAction;
-- (_Bool)t1_showsToggleSideBarAction;
 - (_Bool)t1_showsDashAction;
 - (void)_t1_cleanupTooltips;
 - (void)_t1_triggerImmediateDismissTooltip;

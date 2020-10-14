@@ -14,7 +14,7 @@
     // Error parsing type: , name: fleetLineState
     // Error parsing type: , name: threadUpdate
     // Error parsing type: , name: featureHighlightThreadDismissUpdate
-    // Error parsing type: , name: observer
+    // Error parsing type: , name: lifetime
     // Error parsing type: , name: threadViewModels
     // Error parsing type: , name: fleetLineThreads
     // Error parsing type: , name: lastTappedIndex

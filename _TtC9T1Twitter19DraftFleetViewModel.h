@@ -10,7 +10,6 @@
 {
     // Error parsing type: , name: author
     // Error parsing type: , name: displayTime
-    // Error parsing type: , name: accessibilityDisplayTime
     // Error parsing type: , name: mentions
     // Error parsing type: , name: read
     // Error parsing type: , name: viewCount

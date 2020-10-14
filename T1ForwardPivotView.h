@@ -26,7 +26,7 @@
     id <T1ForwardPivotViewModel> _viewModel;
 }
 
-+ (double)preferredHeightForViewModel:(id)arg1;
++ (double)preferredHeightForViewModel:(id)arg1 forwardPivotWidth:(double)arg2;
 - (void).cxx_destruct;
 @property(retain, nonatomic) id <T1ForwardPivotViewModel> viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) NSArray *currentConstraints; // @synthesize currentConstraints=_currentConstraints;

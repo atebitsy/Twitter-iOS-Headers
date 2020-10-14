@@ -11,6 +11,7 @@
 }
 
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)setCustomBodyBelowAvatar:(id)arg1;
 - (void)setCustomAvatarSize:(id)arg1;
 - (void)setCustomAccessoryWidth:(id)arg1;
 - (void)setCustomHorizontalSafeAreaInsets:(id)arg1;

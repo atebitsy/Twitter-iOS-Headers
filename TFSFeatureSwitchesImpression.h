@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <TFSFeatureSwitches/NSCoding-Protocol.h>
+#import <TFSFeatureSwitches/NSSecureCoding-Protocol.h>
 
 @class NSString;
 
-@interface TFSFeatureSwitchesImpression : NSObject <NSCoding>
+@interface TFSFeatureSwitchesImpression : NSObject <NSSecureCoding>
 {
     NSString *_key;
     NSString *_bucket;
@@ -18,6 +18,7 @@
 }
 
 + (id)impressionWithDictionary:(id)arg1;
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) long long version; // @synthesize version=_version;
 @property(readonly, nonatomic) NSString *bucket; // @synthesize bucket=_bucket;

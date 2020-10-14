@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <TFSTwitterCore/NSCoding-Protocol.h>
+#import <TFSTwitterCore/NSSecureCoding-Protocol.h>
 #import <TFSTwitterCore/TFSEncodable-Protocol.h>
 
 @class TFSTwitterUserReference;
 
-@interface TFSTwitterEntityMediaSourceUser : NSObject <NSCoding, TFSEncodable>
+@interface TFSTwitterEntityMediaSourceUser : NSObject <NSSecureCoding, TFSEncodable>
 {
     _Bool _verified;
     long long _identityType;
@@ -19,6 +19,7 @@
 }
 
 + (id)encodableName;
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) TFSTwitterUserReference *userReference; // @synthesize userReference=_userReference;
 @property(readonly, nonatomic) long long identityType; // @synthesize identityType=_identityType;

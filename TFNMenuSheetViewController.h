@@ -6,19 +6,20 @@
 
 #import <TFNUI/TFNItemsDataViewController.h>
 
-#import <TFNUI/TFNMenuActionAdapterDelegate-Protocol.h>
+#import <TFNUI/TFNMenuSheetActionAdapterDelegate-Protocol.h>
 #import <TFNUI/TFNModalSheetViewControllerDelegate-Protocol.h>
 #import <TFNUI/TFNModalSheetViewControllerLayoutDelegate-Protocol.h>
 #import <TFNUI/TFNPopoverSourceSpecification-Protocol.h>
 #import <TFNUI/TFNPresented-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString, TFNActiveTextItem, TFNBarButtonItem, TFNMenuActionItem, TFNModalSheetViewController, UIBarButtonItem, UIColor, UIView;
-@protocol TFNMenuSheetViewControllerDelegate;
+@class NSArray, NSMutableArray, NSString, TFNActiveTextItem, TFNBarButtonItem, TFNModalSheetViewController, UIBarButtonItem, UIColor, UIView;
+@protocol TFNActionItem, TFNMenuSheetViewControllerDelegate;
 
-@interface TFNMenuSheetViewController : TFNItemsDataViewController <TFNModalSheetViewControllerDelegate, TFNModalSheetViewControllerLayoutDelegate, TFNPopoverSourceSpecification, TFNPresented, TFNMenuActionAdapterDelegate>
+@interface TFNMenuSheetViewController : TFNItemsDataViewController <TFNModalSheetViewControllerDelegate, TFNModalSheetViewControllerLayoutDelegate, TFNPopoverSourceSpecification, TFNPresented, TFNMenuSheetActionAdapterDelegate>
 {
     _Bool _allowCenteredPresentationWithoutSource;
     _Bool _showsCancelButton;
+    _Bool _dismissableWithGesture;
     _Bool _userDidSelectAction;
     UIView *_sourceView;
     UIBarButtonItem *_barButtonItem;
@@ -34,19 +35,20 @@
     NSString *_messageIconName;
     NSArray *_actionItemSections;
     NSMutableArray *_items;
-    TFNMenuActionItem *_cancelItem;
+    id <TFNActionItem> _cancelItem;
     struct CGRect _sourceRect;
 }
 
 - (void).cxx_destruct;
 @property(nonatomic) _Bool userDidSelectAction; // @synthesize userDidSelectAction=_userDidSelectAction;
-@property(retain, nonatomic) TFNMenuActionItem *cancelItem; // @synthesize cancelItem=_cancelItem;
+@property(retain, nonatomic) id <TFNActionItem> cancelItem; // @synthesize cancelItem=_cancelItem;
 @property(readonly, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(readonly, copy, nonatomic) NSArray *actionItemSections; // @synthesize actionItemSections=_actionItemSections;
 @property(copy, nonatomic) NSString *messageIconName; // @synthesize messageIconName=_messageIconName;
 @property(retain, nonatomic) TFNActiveTextItem *messageTextItem; // @synthesize messageTextItem=_messageTextItem;
 @property(nonatomic) __weak TFNModalSheetViewController *modalSheet; // @synthesize modalSheet=_modalSheet;
 @property(copy, nonatomic) CDUnknownBlockType dismissBlock; // @synthesize dismissBlock=_dismissBlock;
+@property(nonatomic, getter=isDismissableWithGesture) _Bool dismissableWithGesture; // @synthesize dismissableWithGesture=_dismissableWithGesture;
 @property(nonatomic) double additionalBottomPadding; // @synthesize additionalBottomPadding=_additionalBottomPadding;
 @property(retain, nonatomic) UIColor *messageTextColor; // @synthesize messageTextColor=_messageTextColor;
 @property(retain, nonatomic) UIColor *chromeColor; // @synthesize chromeColor=_chromeColor;
@@ -72,11 +74,11 @@
 - (void)_tfn_didTapCloseButton;
 @property(readonly, nonatomic) TFNBarButtonItem *closeButton; // @synthesize closeButton=_closeButton;
 - (void)tfn_fontSizeChanged;
-- (id)_tfn_sectionsFilteredForActionItems;
+- (id)_tfn_sectionsFilteredForMenuCompatibleItems;
 @property(readonly, nonatomic) NSArray *actions;
 - (void)_tfn_updateMessageItem;
 - (id)_tfn_messageItemForMessage:(id)arg1 messageIconName:(id)arg2 textColor:(id)arg3;
-- (void)menuActionAdapter:(id)arg1 didSelectActionItem:(id)arg2 atIndexPath:(id)arg3;
+- (void)menuActionSheetAdapter:(id)arg1 didSelectActionItem:(id)arg2 atIndexPath:(id)arg3;
 - (void)update:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 messageIconName:(id)arg3 actionItemSections:(id)arg4;

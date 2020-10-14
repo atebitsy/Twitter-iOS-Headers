@@ -11,6 +11,5 @@
 - (void)voiceDockableViewControllerCanResignAudioFocus:(UIViewController<T1VoiceDockableViewController> *)arg1;
 - (void)voiceDockableViewControllerRequestedAudioFocus:(UIViewController<T1VoiceDockableViewController> *)arg1;
 - (void)voiceDockableViewControllerHasEndedSession:(UIViewController<T1VoiceDockableViewController> *)arg1;
-- (_Bool)voiceDockableViewControllerExpandIfAble:(UIViewController<T1VoiceDockableViewController> *)arg1;
 @end
 

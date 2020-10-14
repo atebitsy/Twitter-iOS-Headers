@@ -6,16 +6,25 @@
 
 #import <TFNUI/TFNItemsDataViewAdapter.h>
 
+@protocol T1NudgeItemViewAdapterDelegate;
+
 @interface T1NudgeItemViewAdapter : TFNItemsDataViewAdapter
 {
+    id <T1NudgeItemViewAdapterDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic) __weak id <T1NudgeItemViewAdapterDelegate> delegate; // @synthesize delegate=_delegate;
+- (_Bool)expandedStatePossibleForItem:(id)arg1;
+- (id)_t1_learnMoreForItem:(id)arg1;
 - (id)_t1_subtitleForItem:(id)arg1;
 - (id)_t1_titleForItem:(id)arg1;
 - (id)_t1_iconForItem:(id)arg1;
-- (id)_t1_nudgeCellForItem:(id)arg1 atIndexPath:(id)arg2 withController:(id)arg3;
+- (id)_t1_condensedViewForItem:(id)arg1;
+- (void)_t1_configureCell:(id)arg1 forItem:(id)arg2 atIndexPath:(id)arg3;
 - (id)dataViewController:(id)arg1 tableViewCellForItem:(id)arg2 withOptions:(id)arg3 atIndexPath:(id)arg4;
 - (double)dataViewController:(id)arg1 tableViewHeightForItem:(id)arg2 withOptions:(id)arg3 atIndexPath:(id)arg4;
+- (id)initWithDelegate:(id)arg1;
 
 @end
 

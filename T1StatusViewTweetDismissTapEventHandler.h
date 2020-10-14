@@ -10,7 +10,7 @@
 {
 }
 
-- (void)_dataViewController:(id)arg1 dismissItemIfNeeded:(id)arg2 inCell:(id)arg3;
+- (void)_dataViewController:(id)arg1 dismissItemIfNeeded:(id)arg2 withInfo:(id)arg3 inCell:(id)arg4;
 - (void)handleStatusViewEvent:(id)arg1 controller:(id)arg2 scribeContext:(id)arg3;
 
 @end

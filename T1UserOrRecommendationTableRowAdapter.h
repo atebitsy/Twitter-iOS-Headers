@@ -8,7 +8,7 @@
 
 #import <T1Twitter/T1UserViewDelegate-Protocol.h>
 
-@class NSString, TFNTwitterAccount, TFNTwitterStatus, TFSTwitterScribeContext, UIViewController;
+@class NSString, TFNTwitterAccount, TFSTwitterScribeContext, UIViewController;
 @protocol T1UserOrRecommendationTableRowAdapterDelegate, T1UserViewActionControlProvider, TFNTwitterScribeImpressionCache;
 
 @interface T1UserOrRecommendationTableRowAdapter : TFNItemsTableRowAdapter <T1UserViewDelegate>
@@ -23,7 +23,6 @@
     _Bool _confirmBlock;
     _Bool _showSocialBadge;
     _Bool _showAdminTextLabel;
-    _Bool _showCaret;
     _Bool _showUserBlocked;
     _Bool _showUserPreview;
     _Bool _disableAvatarLongPress;
@@ -41,7 +40,6 @@
     unsigned long long _followControlVariant;
     unsigned long long _actionSheetOptions;
     unsigned long long _bioInclusionMode;
-    TFNTwitterStatus *_sourceStatus;
     TFSTwitterScribeContext *_scribeContext;
     UIViewController *_presentationViewController;
     id <TFNTwitterScribeImpressionCache> _scribeImpressionCache;
@@ -51,18 +49,16 @@
 @property(retain, nonatomic) id <TFNTwitterScribeImpressionCache> scribeImpressionCache; // @synthesize scribeImpressionCache=_scribeImpressionCache;
 @property(nonatomic) __weak UIViewController *presentationViewController; // @synthesize presentationViewController=_presentationViewController;
 @property(copy, nonatomic) TFSTwitterScribeContext *scribeContext; // @synthesize scribeContext=_scribeContext;
+@property(nonatomic) unsigned long long bioInclusionMode; // @synthesize bioInclusionMode=_bioInclusionMode;
 @property(nonatomic) _Bool scribeLingers; // @synthesize scribeLingers=_scribeLingers;
-@property(retain, nonatomic) TFNTwitterStatus *sourceStatus; // @synthesize sourceStatus=_sourceStatus;
 @property(nonatomic) _Bool enableUserInfoSelection; // @synthesize enableUserInfoSelection=_enableUserInfoSelection;
 @property(nonatomic) _Bool enableDisplayInModal; // @synthesize enableDisplayInModal=_enableDisplayInModal;
 @property(nonatomic) _Bool avatarAccessibilityElement; // @synthesize avatarAccessibilityElement=_avatarAccessibilityElement;
 @property(nonatomic) _Bool enableAvatarSelection; // @synthesize enableAvatarSelection=_enableAvatarSelection;
 @property(nonatomic) _Bool disableCellSelection; // @synthesize disableCellSelection=_disableCellSelection;
 @property(nonatomic) _Bool disableAvatarLongPress; // @synthesize disableAvatarLongPress=_disableAvatarLongPress;
-@property(nonatomic) unsigned long long bioInclusionMode; // @synthesize bioInclusionMode=_bioInclusionMode;
 @property(nonatomic) _Bool showUserPreview; // @synthesize showUserPreview=_showUserPreview;
 @property(nonatomic) _Bool showUserBlocked; // @synthesize showUserBlocked=_showUserBlocked;
-@property(nonatomic) _Bool showCaret; // @synthesize showCaret=_showCaret;
 @property(nonatomic) _Bool showAdminTextLabel; // @synthesize showAdminTextLabel=_showAdminTextLabel;
 @property(nonatomic) _Bool showSocialBadge; // @synthesize showSocialBadge=_showSocialBadge;
 @property(nonatomic) _Bool confirmBlock; // @synthesize confirmBlock=_confirmBlock;

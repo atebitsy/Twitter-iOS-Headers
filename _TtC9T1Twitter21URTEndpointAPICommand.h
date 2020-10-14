@@ -11,7 +11,6 @@ __attribute__((visibility("hidden")))
 {
     // Error parsing type: , name: endpoint
     // Error parsing type: , name: requestTimeoutOverride
-    // Error parsing type: , name: scribeContext
 }
 
 - (void).cxx_destruct;

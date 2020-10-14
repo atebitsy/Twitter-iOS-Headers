@@ -6,11 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@interface AccountStateCoding : NSObject
+#import <T1Twitter/NSSecureCoding-Protocol.h>
+
+@interface AccountStateCoding : NSObject <NSSecureCoding>
 {
     // Error parsing type: , name: accountState
 }
 
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 - (id)init;
 - (void)encodeWithCoder:(id)arg1;

@@ -8,19 +8,13 @@
 
 @interface _TtC9T1Twitter10FleetStore : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: fleetLineThreads
-    // Error parsing type: , name: fleetLineThreadsInput
-    // Error parsing type: , name: fleetThreads
-    // Error parsing type: , name: fleetThreadsInput
+    // Error parsing type: , name: __fleetLineThreads
+    // Error parsing type: , name: __fleetThreads
+    // Error parsing type: , name: __userFleetThreads
     // Error parsing type: , name: fleetlineUpdated
     // Error parsing type: , name: account
     // Error parsing type: , name: userCache
     // Error parsing type: , name: draftCache
-    // Error parsing type: , name: userFleetThreadObservables
-    // Error parsing type: , name: userFleetThreadsStorage
-    // Error parsing type: , name: threadObservables
-    // Error parsing type: , name: fleetLineThreadStorage
-    // Error parsing type: , name: fleetThreadStorage
 }
 
 @end

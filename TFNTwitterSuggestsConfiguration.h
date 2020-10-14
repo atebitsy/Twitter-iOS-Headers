@@ -13,7 +13,6 @@
 
 @interface TFNTwitterSuggestsConfiguration : NSObject <TFNTwitterHomeTimelineConfiguration>
 {
-    _Bool _progressiveAPIEnabled;
     _Bool _isClientDedupingUsingImpressionCacheEnabled;
     _Bool _isLatestHomeTimelineOptionAvailable;
     _Bool _isTopCursorPrefetchEnabled;
@@ -23,12 +22,12 @@
     _Bool _isHomeConversationHoistingPreventionEnabled;
     _Bool _isAsyncPrefetchRequestEnabled;
     _Bool _isConsecutiveAdDedupPreventionEnabled;
+    _Bool _isConsecutiveAdHoistingPreventionEnabled;
     _Bool _isVisibilityByItemPathTrackingEnabled;
     unsigned long long _streamOptions;
     long long _userID;
     NSString *_username;
     unsigned long long _homeRequestMaxSeenIDs;
-    long long _progressiveAPISegmentSize;
     unsigned long long _clientDedupingMaxRecentCacheEntries;
     id <TNUNetworkQualityProvider> _networkQualityProvider;
 }
@@ -38,6 +37,7 @@
 + (id)suggestsConfigurationForAccount:(id)arg1;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isVisibilityByItemPathTrackingEnabled; // @synthesize isVisibilityByItemPathTrackingEnabled=_isVisibilityByItemPathTrackingEnabled;
+@property(readonly, nonatomic) _Bool isConsecutiveAdHoistingPreventionEnabled; // @synthesize isConsecutiveAdHoistingPreventionEnabled=_isConsecutiveAdHoistingPreventionEnabled;
 @property(readonly, nonatomic) _Bool isConsecutiveAdDedupPreventionEnabled; // @synthesize isConsecutiveAdDedupPreventionEnabled=_isConsecutiveAdDedupPreventionEnabled;
 @property(readonly, nonatomic) _Bool isAsyncPrefetchRequestEnabled; // @synthesize isAsyncPrefetchRequestEnabled=_isAsyncPrefetchRequestEnabled;
 @property(readonly, nonatomic) _Bool isHomeConversationHoistingPreventionEnabled; // @synthesize isHomeConversationHoistingPreventionEnabled=_isHomeConversationHoistingPreventionEnabled;
@@ -49,8 +49,6 @@
 @property(readonly, nonatomic) id <TNUNetworkQualityProvider> networkQualityProvider; // @synthesize networkQualityProvider=_networkQualityProvider;
 @property(readonly, nonatomic) unsigned long long clientDedupingMaxRecentCacheEntries; // @synthesize clientDedupingMaxRecentCacheEntries=_clientDedupingMaxRecentCacheEntries;
 @property(readonly, nonatomic) _Bool isClientDedupingUsingImpressionCacheEnabled; // @synthesize isClientDedupingUsingImpressionCacheEnabled=_isClientDedupingUsingImpressionCacheEnabled;
-@property(readonly, nonatomic) long long progressiveAPISegmentSize; // @synthesize progressiveAPISegmentSize=_progressiveAPISegmentSize;
-@property(readonly, nonatomic, getter=isProgressiveAPIEnabled) _Bool progressiveAPIEnabled; // @synthesize progressiveAPIEnabled=_progressiveAPIEnabled;
 @property(readonly, nonatomic) unsigned long long homeRequestMaxSeenIDs; // @synthesize homeRequestMaxSeenIDs=_homeRequestMaxSeenIDs;
 @property(readonly, nonatomic) NSString *username; // @synthesize username=_username;
 @property(readonly, nonatomic) long long userID; // @synthesize userID=_userID;

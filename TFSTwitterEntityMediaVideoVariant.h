@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <TFSTwitterCore/NSCoding-Protocol.h>
+#import <TFSTwitterCore/NSSecureCoding-Protocol.h>
 #import <TFSTwitterCore/TFSEncodable-Protocol.h>
 
 @class NSString;
 
-@interface TFSTwitterEntityMediaVideoVariant : NSObject <NSCoding, TFSEncodable>
+@interface TFSTwitterEntityMediaVideoVariant : NSObject <NSSecureCoding, TFSEncodable>
 {
     NSString *_url;
     NSString *_contentType;
@@ -19,6 +19,7 @@
 }
 
 + (id)encodableName;
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) long long bitrate; // @synthesize bitrate=_bitrate;
 @property(readonly, copy, nonatomic) NSString *contentType; // @synthesize contentType=_contentType;

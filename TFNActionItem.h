@@ -7,16 +7,17 @@
 #import <objc/NSObject.h>
 
 #import <TFNUI/NSCopying-Protocol.h>
+#import <TFNUI/TFNActionItem-Protocol.h>
 
 @class NSString, UIImage;
 
-@interface TFNActionItem : NSObject <NSCopying>
+@interface TFNActionItem : NSObject <TFNActionItem, NSCopying>
 {
+    long long _style;
+    NSString *_identifier;
     NSString *_title;
     NSString *_subtitle;
-    long long _style;
     CDUnknownBlockType _action;
-    NSString *_identifier;
     UIImage *_image;
     NSString *_imageName;
 }
@@ -33,13 +34,20 @@
 - (void).cxx_destruct;
 @property(copy, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
-@property(nonatomic) long long style; // @synthesize style=_style;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
+@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(nonatomic) long long style; // @synthesize style=_style;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic, getter=isDestructive) _Bool destructive;
+@property(readonly, nonatomic, getter=isCancelItem) _Bool cancelItem;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

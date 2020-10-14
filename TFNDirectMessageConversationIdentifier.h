@@ -8,10 +8,11 @@
 
 #import <T1Twitter/NSCoding-Protocol.h>
 #import <T1Twitter/NSCopying-Protocol.h>
+#import <T1Twitter/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSString;
 
-@interface TFNDirectMessageConversationIdentifier : NSObject <NSCopying, NSCoding>
+@interface TFNDirectMessageConversationIdentifier : NSObject <NSCopying, NSCoding, NSSecureCoding>
 {
     NSArray *_inferredParticipantIDs;
     long long _conversationType;
@@ -24,6 +25,7 @@
 + (id)uniqueLocalGroupIdentifier;
 + (id)canonicalIdentifierWithUserID1:(long long)arg1 userID2:(long long)arg2;
 + (id)canonicalIdentifierWithConversationID:(id)arg1;
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *localID; // @synthesize localID=_localID;
 @property(readonly, copy, nonatomic) NSString *canonicalID; // @synthesize canonicalID=_canonicalID;

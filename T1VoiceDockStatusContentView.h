@@ -7,15 +7,16 @@
 #import <T1Twitter/T1VoicePlaybackView.h>
 
 #import <T1Twitter/T1VoiceDockableContent-Protocol.h>
+#import <T1Twitter/T1VoicePlayableCollectionViewModelObserver-Protocol.h>
 
-@class NSLayoutConstraint, NSTimer, T1AmbientNotificationContainer, T1AvatarImageView, T1VoiceDockStatusViewModel, TAVPlaybackState, TFNBarProgressView, TFNButton, UIAccessibilityCustomAction, UIButton, UIImage, UILabel, UIStackView, UIView;
+@class NSLayoutConstraint, NSTimer, T1AmbientNotificationContainer, T1AvatarImageView, T1VoiceTrackViewModel, TAVPlaybackState, TFNBarProgressView, TFNButton, UIAccessibilityCustomAction, UIButton, UIImage, UILabel, UIPanGestureRecognizer, UIStackView, UIView;
 @protocol T1VoiceDockContainer, T1VoiceDockStatusContentViewDelegate;
 
-@interface T1VoiceDockStatusContentView : T1VoicePlaybackView <T1VoiceDockableContent>
+@interface T1VoiceDockStatusContentView : T1VoicePlaybackView <T1VoicePlayableCollectionViewModelObserver, T1VoiceDockableContent>
 {
     UIView<T1VoiceDockContainer> *_dockContainer;
     id <T1VoiceDockStatusContentViewDelegate> _delegate;
-    T1VoiceDockStatusViewModel *_viewModel;
+    T1VoiceTrackViewModel *_viewModel;
     TFNBarProgressView *_progressView;
     TAVPlaybackState *_lastKnownPlaybackState;
     TFNButton *_progressThumbView;
@@ -29,8 +30,7 @@
     UILabel *_titleLabel;
     UILabel *_subtitleLabel;
     UIView *_topDivider;
-    UIView *_controlSectionDivider;
-    long long _lastKnownScrubGestureState;
+    UIPanGestureRecognizer *_scrubPanGesture;
     T1AmbientNotificationContainer *_playbackErrorNotificationContainer;
     UIAccessibilityCustomAction *_playPauseAccessibilityAction;
     struct CGPoint _progressThumbOriginalPosition;
@@ -40,8 +40,7 @@
 - (void).cxx_destruct;
 @property(retain, nonatomic) UIAccessibilityCustomAction *playPauseAccessibilityAction; // @synthesize playPauseAccessibilityAction=_playPauseAccessibilityAction;
 @property(retain, nonatomic) T1AmbientNotificationContainer *playbackErrorNotificationContainer; // @synthesize playbackErrorNotificationContainer=_playbackErrorNotificationContainer;
-@property(nonatomic) long long lastKnownScrubGestureState; // @synthesize lastKnownScrubGestureState=_lastKnownScrubGestureState;
-@property(retain, nonatomic) UIView *controlSectionDivider; // @synthesize controlSectionDivider=_controlSectionDivider;
+@property(retain, nonatomic) UIPanGestureRecognizer *scrubPanGesture; // @synthesize scrubPanGesture=_scrubPanGesture;
 @property(retain, nonatomic) UIView *topDivider; // @synthesize topDivider=_topDivider;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -56,7 +55,7 @@
 @property(retain, nonatomic) TFNButton *progressThumbView; // @synthesize progressThumbView=_progressThumbView;
 @property(retain, nonatomic) TAVPlaybackState *lastKnownPlaybackState; // @synthesize lastKnownPlaybackState=_lastKnownPlaybackState;
 @property(retain, nonatomic) TFNBarProgressView *progressView; // @synthesize progressView=_progressView;
-@property(retain, nonatomic) T1VoiceDockStatusViewModel *viewModel; // @synthesize viewModel=_viewModel;
+@property(retain, nonatomic) T1VoiceTrackViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(nonatomic) __weak id <T1VoiceDockStatusContentViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)accessibilityActivate;
 - (void)accessibilityElementDidLoseFocus;
@@ -64,22 +63,21 @@
 - (void)_t1_updateAccessibilityIsPlaying:(_Bool)arg1;
 - (void)_t1_resetAccessibilityCustomActions;
 - (void)_t1_initAccessibility;
-- (void)player:(id)arg1 didUpdatePlaybackState:(id)arg2;
 - (void)_t1_hidePlaybackErrorIfNeeded;
 - (void)_t1_showPlaybackError:(id)arg1;
 @property(nonatomic) double progress;
 - (_Bool)_t1_isScrubbing;
 - (void)_t1_hideScrubbingAfterDelay:(double)arg1;
 - (void)_t1_setScrubbingVisible:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)handleSwipeGesture:(struct CGPoint)arg1 state:(long long)arg2;
-@property(readonly, nonatomic, getter=isExpandable) _Bool expandable;
-@property(readonly, nonatomic) double expandedHeight;
 @property(readonly, nonatomic) double minimumHeight;
 @property(nonatomic) __weak UIView<T1VoiceDockContainer> *dockContainer; // @synthesize dockContainer=_dockContainer;
+- (void)_handlePanEvent:(id)arg1;
 - (void)_t1_reportGenericTap;
 - (void)_t1_handleDockViewTap;
 - (void)_t1_handlePlayPauseButton;
 - (void)_t1_handleCloseButton;
+- (void)voicePlayableViewModel:(id)arg1 didUpdateClip:(id)arg2;
+- (void)voicePlayableViewModel:(id)arg1 didUpdatePlaybackState:(id)arg2;
 @property(readonly, nonatomic) UIImage *avatarImage;
 - (void)dealloc;
 - (id)initWithImagePipeline:(id)arg1;

@@ -33,6 +33,8 @@
     unsigned long long _bioTranslationState;
     TFNAttributedTextView *_bioLabel;
     TFNAttributedTextView *_translatedBioLabel;
+    T1TranslateButton *_translateBioButton;
+    UIActivityIndicatorView *_translatingBioIndicator;
     UIButton *_birthdayButton;
     UIButton *_createdDateButton;
     UIButton *_locationButton;
@@ -40,14 +42,10 @@
     UIButton *_urlButton;
     TFNAttributedTextView *_contributorIndicatorView;
     TFSTwitterEntitySet *_bioEntities;
-    T1TranslateButton *_translateBioButton;
-    UIActivityIndicatorView *_translatingBioIndicator;
     struct UIEdgeInsets _contentEdgeInsets;
 }
 
 - (void).cxx_destruct;
-@property(retain, nonatomic) UIActivityIndicatorView *translatingBioIndicator; // @synthesize translatingBioIndicator=_translatingBioIndicator;
-@property(retain, nonatomic) T1TranslateButton *translateBioButton; // @synthesize translateBioButton=_translateBioButton;
 @property(retain, nonatomic) TFSTwitterEntitySet *bioEntities; // @synthesize bioEntities=_bioEntities;
 @property(retain, nonatomic) TFNAttributedTextView *contributorIndicatorView; // @synthesize contributorIndicatorView=_contributorIndicatorView;
 @property(retain, nonatomic) UIButton *urlButton; // @synthesize urlButton=_urlButton;
@@ -55,6 +53,8 @@
 @property(retain, nonatomic) UIButton *locationButton; // @synthesize locationButton=_locationButton;
 @property(retain, nonatomic) UIButton *createdDateButton; // @synthesize createdDateButton=_createdDateButton;
 @property(retain, nonatomic) UIButton *birthdayButton; // @synthesize birthdayButton=_birthdayButton;
+@property(retain, nonatomic) UIActivityIndicatorView *translatingBioIndicator; // @synthesize translatingBioIndicator=_translatingBioIndicator;
+@property(retain, nonatomic) T1TranslateButton *translateBioButton; // @synthesize translateBioButton=_translateBioButton;
 @property(retain, nonatomic) TFNAttributedTextView *translatedBioLabel; // @synthesize translatedBioLabel=_translatedBioLabel;
 @property(retain, nonatomic) TFNAttributedTextView *bioLabel; // @synthesize bioLabel=_bioLabel;
 @property(nonatomic, getter=isPartialUser) _Bool partialUser; // @synthesize partialUser=_partialUser;
@@ -80,6 +80,7 @@
 - (id)_buttonTitleForUrl:(id)arg1;
 - (id)_buttonBackgroundImageForColor:(id)arg1;
 - (void)_t1_hashflagVersionDidChange:(id)arg1;
+- (void)_t1_refreshTranslatedBioLabel;
 - (void)_t1_refreshTranslatingBioIndicator;
 - (void)_t1_refreshTranslateBioButton;
 - (void)_t1_refreshURLButton;
@@ -92,7 +93,7 @@
 - (id)_t1_buildTranslateBioButton;
 - (id)_t1_buildContributorIndicatorView;
 - (id)_t1_buildBulletpointButtonWithLineBreakMode:(long long)arg1 accessibilityIdentifier:(id)arg2 action:(SEL)arg3;
-- (id)_t1_buildBioLabel;
+- (id)_t1_buildBioLabelWithAccessibilityIdentifier:(id)arg1;
 - (id)_t1_layoutItemForContributorView:(id)arg1;
 - (id)_t1_layoutItemForBulletpointButton:(id)arg1;
 - (id)_t1_layoutItemForTranslatingBioIndicator:(id)arg1;
@@ -109,7 +110,7 @@
 - (void)updateFontSize;
 - (id)previewItemAtLocation:(struct CGPoint)arg1 outSourceRect:(out struct CGRect *)arg2;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1 isProfileBioTranslationEnabled:(_Bool)arg2;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

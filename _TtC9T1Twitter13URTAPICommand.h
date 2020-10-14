@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: requestCursor
     // Error parsing type: , name: assimilationOptions
     // Error parsing type: , name: networkConfiguration
+    // Error parsing type: , name: scribeContext
     // Error parsing type: , name: $__lazy_storage_$_responseModelBuilder
 }
 

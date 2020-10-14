@@ -33,14 +33,12 @@
     NSURL *_rootURL;
     TFNTwitterAccount *_account;
     TFNTwitterStatus *_sourceStatus;
-    unsigned long long _presentationStyle;
     UIScreenEdgePanGestureRecognizer *_interactiveDismissGestureRecognizer;
 }
 
 + (id)modalSafariViewControllerWithRootURL:(id)arg1 account:(id)arg2 sourceStatus:(id)arg3 entersReaderIfAvailable:(_Bool)arg4 scribeComponent:(id)arg5;
 - (void).cxx_destruct;
 @property(nonatomic) __weak UIScreenEdgePanGestureRecognizer *interactiveDismissGestureRecognizer; // @synthesize interactiveDismissGestureRecognizer=_interactiveDismissGestureRecognizer;
-@property(nonatomic) unsigned long long presentationStyle; // @synthesize presentationStyle=_presentationStyle;
 @property(nonatomic) _Bool shouldOnlyScribeRedirectHosts; // @synthesize shouldOnlyScribeRedirectHosts=_shouldOnlyScribeRedirectHosts;
 @property(readonly, nonatomic) _Bool didCompleteInitialLoad; // @synthesize didCompleteInitialLoad=_didCompleteInitialLoad;
 @property(readonly, nonatomic) TFNTwitterStatus *sourceStatus; // @synthesize sourceStatus=_sourceStatus;
@@ -68,14 +66,6 @@
 - (void)safariViewControllerDidFinish:(id)arg1;
 - (id)safariViewController:(id)arg1 activityItemsForURL:(id)arg2 title:(id)arg3;
 - (void)safariViewController:(id)arg1 didCompleteInitialLoad:(_Bool)arg2;
-- (id)interactionControllerForDismissal:(id)arg1;
-- (id)animationControllerForDismissedController:(id)arg1;
-- (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
-- (id)transitioningDelegate;
-- (id)verticalSlideTransitioningDelegate;
-- (id)crossDissolveAnimator;
-- (id)fasterNavAnimationAnimator;
-- (id)adFormatsFeatures;
 - (void)tfnPresentedCustomDismissAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)tfnPresentedCustomPresentFromViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)tfn_previewingStateDidChange;

@@ -9,6 +9,12 @@
 @class NSString;
 
 @protocol T1ListCopyStringsProvider <NSObject>
+- (NSString *)levelUpPromptFailureMessage;
+- (NSString *)levelUpPromptSuccessMessage;
+- (NSString *)levelUpPromptActionRejectLabel;
+- (NSString *)levelUpPromptActionAcceptLabel;
+- (NSString *)levelUpPromptMessage;
+- (NSString *)levelUpPromptTitle;
 - (NSString *)emptyPinnedListMessage;
 - (NSString *)listRearrangeHomeAlertMessage;
 - (NSString *)listTypeaheadEmptyQueryMessage;

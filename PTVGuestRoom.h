@@ -13,13 +13,15 @@
     NSString *_remoteID;
     unsigned long long _mode;
     NSArray *_users;
+    unsigned long long _totalUsersCount;
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long totalUsersCount; // @synthesize totalUsersCount=_totalUsersCount;
 @property(readonly, nonatomic) NSArray *users; // @synthesize users=_users;
 @property(readonly, nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(readonly, nonatomic) NSString *remoteID; // @synthesize remoteID=_remoteID;
-- (id)initWithRemoteID:(id)arg1 mode:(unsigned long long)arg2 users:(id)arg3;
+- (id)initWithRemoteID:(id)arg1 mode:(unsigned long long)arg2 users:(id)arg3 totalUsersCount:(unsigned long long)arg4;
 
 @end
 

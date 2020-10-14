@@ -8,7 +8,7 @@
 
 #import <T1Twitter/TFNDirectMessageConversationActions-Protocol.h>
 
-@class NSOperationQueue, NSString, TFNDirectMessageAcceptConversationOperation, TFNDirectMessageContext, TFNDirectMessageConversation, TFNDirectMessageConversationIdentifier, TFNDirectMessageConversationPageOperation, TFNDirectMessageDeleteConversationOperation, TFNDirectMessageMarkConversationAsReadOperation, TFNDirectMessageModel, TFNDirectMessageRenameConversationOperation, TFNDirectMessageUpdateGroupAvatarOperation, TFNDirectMessageUpdateMentionNotificationsSettingOperation, TFNDirectMessageUpdateMuteSettingsOperation, TFSTwitterAPICommandService;
+@class NSOperationQueue, NSString, TFNDirectMessageAcceptConversationOperation, TFNDirectMessageContext, TFNDirectMessageConversation, TFNDirectMessageConversationIdentifier, TFNDirectMessageConversationPageOperation, TFNDirectMessageDeleteConversationOperation, TFNDirectMessageMarkConversationAsReadOperation, TFNDirectMessageModel, TFNDirectMessageMuteConversationOperation, TFNDirectMessageRenameConversationOperation, TFNDirectMessageUpdateGroupAvatarOperation, TFNDirectMessageUpdateMentionNotificationsSettingOperation, TFNDirectMessageUpdateSnoozeNotificationsSettingsOperation, TFSTwitterAPICommandService;
 @protocol TFNDirectMessageConversation, TFSTwitterAPICommandContext;
 
 @interface TFNDirectMessageConversationService : NSObject <TFNDirectMessageConversationActions>
@@ -22,21 +22,23 @@
     NSOperationQueue *_queue;
     TFNDirectMessageRenameConversationOperation *_currentRenameOperation;
     TFNDirectMessageUpdateMentionNotificationsSettingOperation *_currentUpdateMentionNotificationsSettingOperation;
-    TFNDirectMessageUpdateMuteSettingsOperation *_currentUpdateDisableNotificationsOperation;
+    TFNDirectMessageUpdateSnoozeNotificationsSettingsOperation *_currentUpdateDisableNotificationsOperation;
     TFNDirectMessageUpdateGroupAvatarOperation *_currentUpdateGroupAvatarOperation;
     TFNDirectMessageConversationPageOperation *_currentPageOperation;
     TFNDirectMessageAcceptConversationOperation *_currentAcceptOperation;
     TFNDirectMessageDeleteConversationOperation *_currentDeleteOperation;
     TFNDirectMessageMarkConversationAsReadOperation *_currentMarkConversationAsReadOperation;
+    TFNDirectMessageMuteConversationOperation *_currentMuteOperation;
 }
 
 - (void).cxx_destruct;
+@property(nonatomic) __weak TFNDirectMessageMuteConversationOperation *currentMuteOperation; // @synthesize currentMuteOperation=_currentMuteOperation;
 @property(nonatomic) __weak TFNDirectMessageMarkConversationAsReadOperation *currentMarkConversationAsReadOperation; // @synthesize currentMarkConversationAsReadOperation=_currentMarkConversationAsReadOperation;
 @property(nonatomic) __weak TFNDirectMessageDeleteConversationOperation *currentDeleteOperation; // @synthesize currentDeleteOperation=_currentDeleteOperation;
 @property(nonatomic) __weak TFNDirectMessageAcceptConversationOperation *currentAcceptOperation; // @synthesize currentAcceptOperation=_currentAcceptOperation;
 @property(nonatomic) __weak TFNDirectMessageConversationPageOperation *currentPageOperation; // @synthesize currentPageOperation=_currentPageOperation;
 @property(nonatomic) __weak TFNDirectMessageUpdateGroupAvatarOperation *currentUpdateGroupAvatarOperation; // @synthesize currentUpdateGroupAvatarOperation=_currentUpdateGroupAvatarOperation;
-@property(nonatomic) __weak TFNDirectMessageUpdateMuteSettingsOperation *currentUpdateDisableNotificationsOperation; // @synthesize currentUpdateDisableNotificationsOperation=_currentUpdateDisableNotificationsOperation;
+@property(nonatomic) __weak TFNDirectMessageUpdateSnoozeNotificationsSettingsOperation *currentUpdateDisableNotificationsOperation; // @synthesize currentUpdateDisableNotificationsOperation=_currentUpdateDisableNotificationsOperation;
 @property(nonatomic) __weak TFNDirectMessageUpdateMentionNotificationsSettingOperation *currentUpdateMentionNotificationsSettingOperation; // @synthesize currentUpdateMentionNotificationsSettingOperation=_currentUpdateMentionNotificationsSettingOperation;
 @property(nonatomic) __weak TFNDirectMessageRenameConversationOperation *currentRenameOperation; // @synthesize currentRenameOperation=_currentRenameOperation;
 @property(readonly, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
@@ -72,6 +74,8 @@
 - (void)deleteReaction:(id)arg1 forMessage:(id)arg2;
 - (void)addReaction:(id)arg1 forMessage:(id)arg2;
 - (void)deleteConversation;
+- (void)unmute;
+- (void)mute;
 - (void)accept;
 - (void)loadMoreEntriesWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) id <TFNDirectMessageConversation> conversation;

@@ -10,14 +10,14 @@
 #import <T1Twitter/T1NudgeNavigationControllerDelegate-Protocol.h>
 #import <T1Twitter/T1NudgePotentiallyToxicMoreInfoDelegate-Protocol.h>
 #import <T1Twitter/TFNHapticFeedback-Protocol.h>
-#import <T1Twitter/TFNMenuActionAdapterDelegate-Protocol.h>
+#import <T1Twitter/TFNMenuSheetActionAdapterDelegate-Protocol.h>
 #import <T1Twitter/TFNModalSheetViewControllerDelegate-Protocol.h>
 #import <T1Twitter/TFNModalSheetViewControllerLayoutDelegate-Protocol.h>
 
 @class NSString, T1NudgeItemsDataViewController, T1NudgeNavigationController, T1NudgePotentiallyToxicMoreInfo, TFNModalSheetViewController, TFNTwitterAccount, TFNTwitterComposition, UIImpactFeedbackGenerator, UINotificationFeedbackGenerator, UISelectionFeedbackGenerator;
 @protocol T1NudgeDelegate;
 
-@interface T1NudgePotentiallyToxic : NSObject <TFNHapticFeedback, TFNMenuActionAdapterDelegate, TFNModalSheetViewControllerDelegate, TFNModalSheetViewControllerLayoutDelegate, T1NudgePotentiallyToxicMoreInfoDelegate, T1NudgeNavigationControllerDelegate, T1Nudge>
+@interface T1NudgePotentiallyToxic : NSObject <TFNHapticFeedback, TFNMenuSheetActionAdapterDelegate, TFNModalSheetViewControllerDelegate, TFNModalSheetViewControllerLayoutDelegate, T1NudgePotentiallyToxicMoreInfoDelegate, T1NudgeNavigationControllerDelegate, T1Nudge>
 {
     _Bool _hasSelectedMenuItem;
     _Bool _isObservingBackgroundNotification;
@@ -60,7 +60,7 @@
 - (void)modalSheetViewController:(id)arg1 willTransitionToLayoutMode:(long long)arg2 withTransitionCoordinator:(id)arg3;
 - (void)modalSheetViewControllerDidDismiss:(id)arg1 fromGesture:(_Bool)arg2;
 - (void)modalSheetViewControllerWillDismiss:(id)arg1 fromGesture:(_Bool)arg2;
-- (void)menuActionAdapter:(id)arg1 didSelectActionItem:(id)arg2 atIndexPath:(id)arg3;
+- (void)menuActionSheetAdapter:(id)arg1 didSelectActionItem:(id)arg2 atIndexPath:(id)arg3;
 - (void)nudgePotentiallyToxicMoreInfoDidTapGotItButton:(id)arg1;
 - (void)nudgeNavigationController:(id)arg1 didTapCloseButton:(id)arg2;
 - (void)nudgeNavigationController:(id)arg1 didShowViewController:(id)arg2 animated:(_Bool)arg3;

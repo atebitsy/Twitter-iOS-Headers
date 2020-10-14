@@ -59,6 +59,7 @@
 - (void)_presentSendingTweetErrorAlertDialogWithAccount:(id)arg1 message:(id)arg2 draftsAction:(_Bool)arg3 editLaterAction:(_Bool)arg4 ruleAction:(_Bool)arg5 compositionForRetry:(id)arg6;
 - (void)_presentSentTweetAmbientNotificationContainerIfActive:(id)arg1;
 - (void)_presentSentTweetToastIfActive:(id)arg1;
+- (void)_presentUndoTweetSentToastIfNeededFromNotification:(id)arg1;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_tweetComposerDidRetweetFromComposition:(id)arg1;
 - (void)_tweetComposerDidCancelComposition:(id)arg1;

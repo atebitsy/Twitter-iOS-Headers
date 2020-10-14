@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <TFNUI/TFNMenuActionItemAdapter.h>
+#import <TFNUI/TFNMenuSheetActionItemAdapter.h>
 
-@interface T1DirectMessageMenuActionItemAdapter : TFNMenuActionItemAdapter
+@interface T1DirectMessageMenuActionItemAdapter : TFNMenuSheetActionItemAdapter
 {
     // Error parsing type: , name: imagePipeline
     // Error parsing type: , name: topCellPadding

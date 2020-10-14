@@ -28,8 +28,8 @@
 - (void)tfx_avatarHeightLHUnitsParameterChanged;
 - (void)tfx_minimumContentEdgeInsetsParameterChanged;
 - (void)tfx_contentEdgeInsetsEmsParameterChanged;
-- (void)tfx_minimumBodyPaddingParameterChanged;
-- (void)tfx_bodyPaddingEmsParameterChanged;
+- (void)tfx_minimumElementPaddingParameterChanged;
+- (void)tfx_elementPaddingEmsParameterChanged;
 - (void)tfx_minimumBodyWidthParameterChanged;
 - (void)tfx_minimumLineLengthInsetParameterChanged;
 - (void)tfx_insetForLineLengthInHorizontallyCompactEnvironmentParameterChanged;
@@ -46,8 +46,8 @@
 @property(readonly, nonatomic) double avatarHeightLHUnits;
 @property(readonly, nonatomic) double minimumContentEdgeInsets;
 @property(readonly, nonatomic) double contentEdgeInsetsEms;
-@property(readonly, nonatomic) double minimumBodyPadding;
-@property(readonly, nonatomic) double bodyPaddingEms;
+@property(readonly, nonatomic) double minimumElementPadding;
+@property(readonly, nonatomic) double elementPaddingEms;
 @property(readonly, nonatomic) double minimumBodyWidth;
 @property(readonly, nonatomic) double minimumLineLengthInset;
 @property(readonly, nonatomic) _Bool insetForLineLengthInHorizontallyCompactEnvironment;

@@ -19,7 +19,7 @@
 - (id)scribePage;
 - (id)_t1_textItemAdapter;
 - (id)_t1_quotedStatusItemAdapter;
-- (id)initWithAccount:(id)arg1 sections:(id)arg2 menuActionAdapterDelegate:(id)arg3;
+- (id)initWithAccount:(id)arg1 sections:(id)arg2 menuActionSheetAdapterDelegate:(id)arg3;
 - (void)viewDidLoad;
 
 @end

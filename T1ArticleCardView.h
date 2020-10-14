@@ -35,6 +35,7 @@
 @property(readonly, nonatomic) TFNTwitterAccount *account; // @synthesize account=_account;
 @property(readonly, nonatomic) NSString *displayURL; // @synthesize displayURL=_displayURL;
 @property(readonly, nonatomic) NSString *url; // @synthesize url=_url;
+- (id)_t1_accessibilityLabelString;
 - (void)_t1_configureSubviews;
 - (id)initWithURL:(id)arg1 displayURL:(id)arg2 account:(id)arg3 cardData:(id)arg4;
 

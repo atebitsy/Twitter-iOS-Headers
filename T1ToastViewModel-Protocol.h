@@ -16,6 +16,7 @@
 @property(nonatomic, readonly) T1ToastScribeContext *scribeContext;
 @property(nonatomic, readonly) long long hapticFeedbackType;
 @property(nonatomic, readonly) double displayDuration;
+@property(nonatomic, readonly) CDUnknownBlockType dismissCompetionHandler;
 @property(nonatomic, readonly) T1ToastAction *alternateAction;
 @property(nonatomic, readonly) T1ToastAction *primaryAction;
 @property(nonatomic, readonly) UIImage *thumbnailImage;

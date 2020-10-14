@@ -7,8 +7,9 @@
 #import <objc/NSObject.h>
 
 #import <T1Twitter/NSCoding-Protocol.h>
+#import <T1Twitter/NSSecureCoding-Protocol.h>
 
-@interface TFNDirectMessageTimelineCursor : NSObject <NSCoding>
+@interface TFNDirectMessageTimelineCursor : NSObject <NSCoding, NSSecureCoding>
 {
     unsigned long long _status;
     long long _minEntryID;
@@ -16,6 +17,7 @@
 
 + (id)hasMoreCursorWithMinEntryID:(long long)arg1;
 + (id)atEndCursor;
++ (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) long long minEntryID; // @synthesize minEntryID=_minEntryID;
 @property(readonly, nonatomic) unsigned long long status; // @synthesize status=_status;
 - (void)encodeWithCoder:(id)arg1;

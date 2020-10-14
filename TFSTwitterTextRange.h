@@ -6,17 +6,18 @@
 
 #import <objc/NSObject.h>
 
-#import <TFSTwitterCore/NSCoding-Protocol.h>
+#import <TFSTwitterCore/NSSecureCoding-Protocol.h>
 #import <TFSTwitterCore/TFSEncodable-Protocol.h>
 
 @class NSString;
 
-@interface TFSTwitterTextRange : NSObject <NSCoding, TFSEncodable>
+@interface TFSTwitterTextRange : NSObject <NSSecureCoding, TFSEncodable>
 {
     struct _NSRange _range;
 }
 
 + (id)encodableName;
++ (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) struct _NSRange range; // @synthesize range=_range;
 - (void)encodeWithEncoder:(id)arg1;
 - (id)initWithDecoder:(id)arg1;

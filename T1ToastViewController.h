@@ -59,6 +59,7 @@
 - (struct CGRect)_t1_toastContainerFrame;
 - (void)_t1_dismissToast:(id)arg1 withStyle:(unsigned long long)arg2 byGesture:(_Bool)arg3 animated:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)dismissCurrentToastWithStyle:(unsigned long long)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)toastTimerDidStartWithTimeInterval:(double)arg1;
 - (void)presentToast:(id)arg1 withStyle:(unsigned long long)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)reset;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;

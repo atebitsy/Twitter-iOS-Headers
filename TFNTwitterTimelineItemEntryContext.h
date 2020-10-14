@@ -6,16 +6,17 @@
 
 #import <objc/NSObject.h>
 
-#import <T1Twitter/NSCoding-Protocol.h>
+#import <T1Twitter/NSSecureCoding-Protocol.h>
 #import <T1Twitter/TFNTwitterTimelineEntryContext-Protocol.h>
 
 @class NSString;
 
-@interface TFNTwitterTimelineItemEntryContext : NSObject <NSCoding, TFNTwitterTimelineEntryContext>
+@interface TFNTwitterTimelineItemEntryContext : NSObject <NSSecureCoding, TFNTwitterTimelineEntryContext>
 {
     NSString *_entryID;
 }
 
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *entryID; // @synthesize entryID=_entryID;
 - (void)encodeWithCoder:(id)arg1;

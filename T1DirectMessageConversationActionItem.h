@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <TFNUI/TFNMenuActionItem.h>
+#import <TFNUI/TFNActionItem.h>
 
-@interface T1DirectMessageConversationActionItem : TFNMenuActionItem
+@interface T1DirectMessageConversationActionItem : TFNActionItem
 {
     // Error parsing type: , name: conversation
 }

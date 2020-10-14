@@ -9,7 +9,7 @@
 @interface _TtC9T1Twitter21FleetsMediaPrefetcher : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: requests
-    // Error parsing type: , name: observer
+    // Error parsing type: , name: lifetime
 }
 
 @end

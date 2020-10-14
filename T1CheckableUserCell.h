@@ -17,8 +17,8 @@
 
 + (double)private_insetForCheckmarkStyle:(long long)arg1;
 + (id)private_insetLayoutMetricsForLayoutMetrics:(id)arg1 checkmarkStyle:(long long)arg2;
-+ (double)estimatedHeightForUserViewModel:(id)arg1 cellStyle:(long long)arg2 avatarSize:(struct CGSize)arg3 showBio:(_Bool)arg4 bioMaxLines:(unsigned long long)arg5 showUserBlocked:(_Bool)arg6 showDesignatorBadge:(_Bool)arg7 showReplyBadge:(_Bool)arg8 replyBadgeText:(id)arg9 expanded:(_Bool)arg10 layoutMetrics:(id)arg11 checkmarkStyle:(long long)arg12;
-+ (double)heightForUserViewModel:(id)arg1 account:(id)arg2 cellStyle:(long long)arg3 followControlType:(unsigned long long)arg4 followControlVariant:(unsigned long long)arg5 avatarSize:(struct CGSize)arg6 showBio:(_Bool)arg7 bioMaxLines:(unsigned long long)arg8 showUserBlocked:(_Bool)arg9 showDesignatorBadge:(_Bool)arg10 showReplyBadge:(_Bool)arg11 replyBadgeText:(id)arg12 showFollowsYou:(_Bool)arg13 expanded:(_Bool)arg14 layoutMetrics:(id)arg15 checkmarkStyle:(long long)arg16;
++ (double)estimatedHeightForUserViewModel:(id)arg1 cellStyle:(long long)arg2 avatarSize:(struct CGSize)arg3 showBio:(_Bool)arg4 bioMaxLines:(unsigned long long)arg5 showUserBlocked:(_Bool)arg6 showDesignatorBadge:(_Bool)arg7 expanded:(_Bool)arg8 layoutMetrics:(id)arg9 checkmarkStyle:(long long)arg10;
++ (double)heightForUserViewModel:(id)arg1 account:(id)arg2 cellStyle:(long long)arg3 followControlType:(unsigned long long)arg4 followControlVariant:(unsigned long long)arg5 avatarSize:(struct CGSize)arg6 showBio:(_Bool)arg7 bioMaxLines:(unsigned long long)arg8 showUserBlocked:(_Bool)arg9 showDesignatorBadge:(_Bool)arg10 showFollowsYou:(_Bool)arg11 expanded:(_Bool)arg12 layoutMetrics:(id)arg13 checkmarkStyle:(long long)arg14;
 - (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType checkmarkDidChangeValueBlock; // @synthesize checkmarkDidChangeValueBlock=_checkmarkDidChangeValueBlock;
 @property(nonatomic) long long checkmarkStyle; // @synthesize checkmarkStyle=_checkmarkStyle;

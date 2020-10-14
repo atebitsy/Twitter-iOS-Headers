@@ -30,6 +30,7 @@
 - (void).cxx_destruct;
 - (_Bool)textFieldShouldReturn:(id)arg1;
 - (_Bool)textFieldShouldClear:(id)arg1;
+- (void)textFieldDidEndEditing:(id)arg1 reason:(long long)arg2;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (_Bool)textFieldShouldEndEditing:(id)arg1;
 - (void)textFieldDidBeginEditing:(id)arg1;

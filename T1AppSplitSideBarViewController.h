@@ -24,9 +24,13 @@
 @property(retain, nonatomic) T1AppSplitSideBarExpandingActionButtonView *actionButtonView; // @synthesize actionButtonView=_actionButtonView;
 @property(readonly, nonatomic) T1TabBarViewController *tabBarViewController; // @synthesize tabBarViewController=_tabBarViewController;
 @property(nonatomic) __weak id <T1AppSplitSideBarViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void)_t1_viewDidAppearForStealTranslucentSidebarBackgroundViewController;
+- (void)_t1_viewWillAppearForStealTranslucentSidebarBackgroundViewController;
 - (void)_t1_iconTapped:(id)arg1;
 - (struct CGSize)preferredContentSize;
 - (void)viewWillLayoutSubviews;
+- (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 @property(readonly, nonatomic) UIView *dashSourceView;
 @property(nonatomic) long long displayMode;

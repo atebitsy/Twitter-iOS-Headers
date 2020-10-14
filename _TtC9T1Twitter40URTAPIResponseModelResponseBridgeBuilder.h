@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: scribe
     // Error parsing type: , name: scribeContext
     // Error parsing type: , name: responseParseTracerConfig
-    // Error parsing type: , name: encodingPolicy
 }
 
 - (void).cxx_destruct;

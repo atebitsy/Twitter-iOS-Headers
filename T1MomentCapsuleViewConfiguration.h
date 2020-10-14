@@ -19,7 +19,6 @@
     UIColor *_borderColor;
 }
 
-+ (id)compactCardConfiguration;
 + (id)cardConfiguration;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldEnableZoomOnRegularVerticalSizeClass; // @synthesize shouldEnableZoomOnRegularVerticalSizeClass=_shouldEnableZoomOnRegularVerticalSizeClass;
@@ -30,7 +29,7 @@
 @property(readonly, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(readonly, nonatomic) UIColor *pressedBackgroundColor; // @synthesize pressedBackgroundColor=_pressedBackgroundColor;
 - (double)heightForWidth:(double)arg1 layoutMetrics:(id)arg2;
-@property(readonly, nonatomic) _Bool isCompact;
+- (_Bool)isCompact;
 @property(readonly, nonatomic) _Bool shouldShowShadow;
 @property(readonly, nonatomic) _Bool shouldLetterbox;
 @property(readonly, nonatomic) _Bool shouldExtractDominantColor;

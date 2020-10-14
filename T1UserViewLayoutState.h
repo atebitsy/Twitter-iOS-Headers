@@ -14,6 +14,9 @@
 {
     _Bool socialTextMaxLinesExceeded;
     _Bool _socialTextMultipleLines;
+    long long _fullNameAlignment;
+    long long _socialTextAlignment;
+    long long _fullNameNumberOfLines;
     struct CGRect _userNameLabelFrame;
     struct CGRect _fullNameLabelFrame;
     struct CGRect _followsYouViewFrame;
@@ -31,11 +34,14 @@
     struct CGRect _avatarFrame;
     struct CGRect _caretButtonFrame;
     struct CGRect _designatorBadgeFrame;
-    struct CGRect _replyBadgeViewFrame;
+    struct CGRect _borderViewFrame;
 }
 
 @property(nonatomic, getter=isSocialTextMultipleLines) _Bool socialTextMultipleLines; // @synthesize socialTextMultipleLines=_socialTextMultipleLines;
-@property(nonatomic) struct CGRect replyBadgeViewFrame; // @synthesize replyBadgeViewFrame=_replyBadgeViewFrame;
+@property(nonatomic) long long fullNameNumberOfLines; // @synthesize fullNameNumberOfLines=_fullNameNumberOfLines;
+@property(nonatomic) long long socialTextAlignment; // @synthesize socialTextAlignment=_socialTextAlignment;
+@property(nonatomic) long long fullNameAlignment; // @synthesize fullNameAlignment=_fullNameAlignment;
+@property(nonatomic) struct CGRect borderViewFrame; // @synthesize borderViewFrame=_borderViewFrame;
 @property(nonatomic) struct CGRect designatorBadgeFrame; // @synthesize designatorBadgeFrame=_designatorBadgeFrame;
 @property(nonatomic) struct CGRect caretButtonFrame; // @synthesize caretButtonFrame=_caretButtonFrame;
 @property(nonatomic) struct CGRect avatarFrame; // @synthesize avatarFrame=_avatarFrame;
@@ -54,6 +60,7 @@
 @property(nonatomic) struct CGRect fullNameLabelFrame; // @synthesize fullNameLabelFrame=_fullNameLabelFrame;
 @property(nonatomic) struct CGRect userNameLabelFrame; // @synthesize userNameLabelFrame=_userNameLabelFrame;
 @property(readonly, nonatomic, getter=isSocialTextMaxLinesExceeded) _Bool socialTextMaxLinesExceeded; // @synthesize socialTextMaxLinesExceeded;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

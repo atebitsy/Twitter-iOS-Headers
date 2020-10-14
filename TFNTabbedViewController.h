@@ -52,6 +52,7 @@
 - (void)reloadViewControllerData;
 - (void)reconstructViewControllerAtIndex:(long long)arg1;
 - (id)viewControllerAtIndex:(long long)arg1;
+- (_Bool)_tfn_isSelectedViewControllerLoaded;
 - (long long)numberOfViewControllers;
 @property(readonly, nonatomic) UIViewController *selectedViewController;
 @property(nonatomic) long long selectedIndex;

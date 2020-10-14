@@ -17,7 +17,7 @@
 #import <T1Twitter/TFNTwitterCompositionSource-Protocol.h>
 #import <T1Twitter/UITextFieldDelegate-Protocol.h>
 
-@class NSArray, NSString, T1SearchFeatures, T1SearchFiltersViewController, T1SearchResultsParameters, T1SearchTextView, T1SearchTypeaheadViewController, T1SearchViewContainerView, T1URTGenericViewControllerCollection, TFNTwitterAccount, TFSTwitterScribeContext, UIViewController;
+@class NSArray, NSString, T1SearchFeatures, T1SearchFiltersViewController, T1SearchResultsParameters, T1SearchTypeaheadViewController, T1SearchViewContainerView, T1URTGenericViewControllerCollection, TFNTwitterAccount, TFSTwitterScribeContext, TUISearchTextView, UIViewController;
 
 @interface T1SearchContainerViewController : TFNViewController <UITextFieldDelegate, T1URTGenericViewControllerCollectionDelegate, T1SearchTypeaheadViewControllerDelegate, T1SearchFiltersViewControllerDelegate, T1ViewControllerPerformanceTesting, TFNTooltipDelegate, T1SearchKeyCommandSupportProtocol, TFNTwitterCompositionSource, TFNLayoutMetricsEnvironment, T1JumpBackToHomeTimelineBehavior>
 {
@@ -30,7 +30,7 @@
     unsigned long long _selectedTab;
     TFNTwitterAccount *_account;
     T1SearchResultsParameters *_searchParameters;
-    T1SearchTextView *_searchTextView;
+    TUISearchTextView *_searchTextView;
     NSString *_scribeParameterContext;
     T1SearchFeatures *_searchFeatures;
     T1SearchTypeaheadViewController *_typeaheadVC;
@@ -59,7 +59,7 @@
 @property(copy, nonatomic) NSString *scribeParameterContext; // @synthesize scribeParameterContext=_scribeParameterContext;
 @property(nonatomic) _Bool shouldShowComposeTooltip; // @synthesize shouldShowComposeTooltip=_shouldShowComposeTooltip;
 @property(nonatomic) _Bool focusSearchFieldOnNextAppear; // @synthesize focusSearchFieldOnNextAppear=_focusSearchFieldOnNextAppear;
-@property(readonly, nonatomic) T1SearchTextView *searchTextView; // @synthesize searchTextView=_searchTextView;
+@property(readonly, nonatomic) TUISearchTextView *searchTextView; // @synthesize searchTextView=_searchTextView;
 @property(readonly, nonatomic) T1SearchResultsParameters *searchParameters; // @synthesize searchParameters=_searchParameters;
 @property(readonly, nonatomic) TFNTwitterAccount *account; // @synthesize account=_account;
 - (void)handleSearchKeyCommand;

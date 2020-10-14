@@ -29,8 +29,9 @@
 @property(retain, nonatomic) TFNDirectMessageTimelineCursor *cursor; // @synthesize cursor=_cursor;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) unsigned long long countOfUnseenConversations; // @synthesize countOfUnseenConversations=_countOfUnseenConversations;
+- (_Bool)_validateMuteAndNsfwState:(id)arg1;
 - (_Bool)_validateTrustState:(id)arg1;
-- (unsigned long long)countOfUnseenConversationsWithLastSeenEventID:(long long)arg1 countOfUnseenNotifiableConversations:(unsigned long long *)arg2;
+- (unsigned long long)countOfUnseenConversationsWithLastSeenEventID:(long long)arg1;
 - (_Bool)updateConversationPosition:(id)arg1;
 - (unsigned long long)addOrRemoveConversation:(id)arg1;
 - (_Bool)deleteConversation:(id)arg1;

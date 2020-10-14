@@ -11,7 +11,6 @@ __attribute__((visibility("hidden")))
 {
     // Error parsing type: , name: state
     // Error parsing type: , name: delegate
-    // Error parsing type: , name: isHorizontalLayout
     // Error parsing type: , name: progressView
     // Error parsing type: , name: imageView
     // Error parsing type: , name: label

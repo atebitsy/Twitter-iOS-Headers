@@ -10,6 +10,8 @@
 
 @interface _TtC9T1TwitterP33_C4A251FFAD0964944B1F42AA8F91929529URTChromeResponseModelBuilder : NSObject <TFSModelBuilder>
 {
+    // Error parsing type: , name: scribe
+    // Error parsing type: , name: scribeContext
     // Error parsing type: , name: accountID
     // Error parsing type: , name: path
     // Error parsing type: , name: parameters

@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <T1Twitter/TFNMenuActionAdapterDelegate-Protocol.h>
+#import <T1Twitter/TFNMenuSheetActionAdapterDelegate-Protocol.h>
 
 @class NSString, T1NudgeItemsDataViewController;
 @protocol T1NudgePotentiallyToxicMoreInfoDelegate;
 
-@interface T1NudgePotentiallyToxicMoreInfo : NSObject <TFNMenuActionAdapterDelegate>
+@interface T1NudgePotentiallyToxicMoreInfo : NSObject <TFNMenuSheetActionAdapterDelegate>
 {
     _Bool _didSelectGotItButton;
     id <T1NudgePotentiallyToxicMoreInfoDelegate> _delegate;
@@ -24,7 +24,7 @@
 @property(readonly, nonatomic) long long nudgeCopyStyle; // @synthesize nudgeCopyStyle=_nudgeCopyStyle;
 @property(readonly, nonatomic) _Bool didSelectGotItButton; // @synthesize didSelectGotItButton=_didSelectGotItButton;
 @property(readonly, nonatomic) __weak id <T1NudgePotentiallyToxicMoreInfoDelegate> delegate; // @synthesize delegate=_delegate;
-- (void)menuActionAdapter:(id)arg1 didSelectActionItem:(id)arg2 atIndexPath:(id)arg3;
+- (void)menuActionSheetAdapter:(id)arg1 didSelectActionItem:(id)arg2 atIndexPath:(id)arg3;
 - (id)_t1_gotItButtonItem;
 - (id)_t1_whatDoesThisMeanForMyRepluySubtitleTextItem;
 - (id)_t1_whatDoesThisMeanForMyRepluyTitleTextItem;

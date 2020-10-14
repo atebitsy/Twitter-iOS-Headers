@@ -341,8 +341,11 @@
 @property(readonly, copy, nonatomic) NSString *oAuthConsumerKey;
 @property(readonly, nonatomic) _Bool hasOAuthTokens;
 @property(readonly, nonatomic) TFNTwitterDynamicVideoAdManager *dynamicVideoAdManager; // @synthesize dynamicVideoAdManager=_dynamicVideoAdManager;
+- (double)simulatedCompositionUploadDelayTimeInteral;
+- (_Bool)peekIfNudgeTestingKeywordIsEnabled;
 - (void)writeNudgeFeatureSwitchImpresssionsIfControlGroup;
 - (void)writeNudgeFeatureSwitchImpressionsIfNeeded;
+@property(readonly, nonatomic) unsigned long long toastNudgeFlags;
 @property(readonly, nonatomic) unsigned long long compositionNudgeFlags;
 - (void)updateScribeOptions;
 - (id)_scribeOptionsFromDictionary:(id)arg1;
@@ -403,6 +406,7 @@
 - (_Bool)isSimpleQuoteActionLabelEnabled;
 - (_Bool)isQuoteStatRearrangeEnabled;
 - (_Bool)isRetweetsAndCommentsLabelEnabled;
+- (_Bool)isConversationControlFlexibleParticipationReplyEnabled;
 - (_Bool)isConversationControlNotifyingParticipantsEnabled;
 - (_Bool)isConversationControlCreationEnabled;
 - (_Bool)isVerificationV2ElectionsBadgeEnabled;
@@ -542,6 +546,9 @@
 - (_Bool)isSMS2faEnabled;
 - (_Bool)performAnimationOnSkippedStatusNavigation;
 - (_Bool)isRedundantStatusNavigationDisabled;
+- (long long)conversationThreadingMaximumIndentationLevels;
+- (long long)conversationThreadingCursorIndentationLevelDelta;
+- (long long)conversationThreadingInitialRequestIndentationLevels;
 - (double)conversationPeekHeight;
 - (_Bool)isConversationThreadingEmptyModuleRetryEnabled;
 - (_Bool)isConversationThreadingSelectedStateExtendedSendReplyViewNoOpEnabled;
@@ -583,7 +590,6 @@
 - (_Bool)isOpenLinksInNativeAppsFailureDebuggingEnabled;
 - (_Bool)canOpenURLInExternalApp:(id)arg1;
 - (_Bool)isSafariViewControllerModalEnabled;
-- (_Bool)isSafariViewControllerDisabledForPromotedWebsiteClicks;
 - (_Bool)isSafariViewControllerEnabled;
 - (_Bool)isProfileBioTranslationEnabled;
 - (id)canonicalProfileURLString;
@@ -596,12 +602,19 @@
 - (id)profileBirthdayBalloonOverrides;
 - (_Bool)isProfileBirthdayBalloonOverridesEnabled;
 - (_Bool)isEditProfileUsernameEnabled;
+- (_Bool)isConsecutiveAdHoistingPreventionEnabled;
 - (_Bool)isConsecutiveAdDedupPreventionEnabled;
 - (id)pinToTopManagerConfiguration;
 @property(readonly, nonatomic) _Bool isHomeLegacyToURTFeedbackBridgeEnabled;
 - (_Bool)isHomeTimelineFeedbackCaretDisplayTreatmentOverflowInlineEnabled;
 - (id)homeTimelineFeedbackCaretDisplayTreatment;
 - (_Bool)isHomeTimelineFeedbackMenuSheetSubpromptsEnabled;
+- (long long)jumpToTopNavigationMinScrollCancel;
+- (long long)jumpToTopNavigationMinEntriesAdded;
+- (long long)jumpToTopNavigationMinBackgroundMinutes;
+- (_Bool)isJumpToTopNavigationLatestEnabled;
+- (_Bool)isJumpToTopNavigationHomeEnabled;
+- (_Bool)isJumpToTopNavigationCacheRestorePreventionEnabled;
 - (id)homeTimelineFeedbackImmediateDismissTreatment;
 - (_Bool)isHomeTimelineFeedbackImmediateDismissEnabled;
 - (_Bool)isHomeTimelineFeedbackMoreIconEnabled;
@@ -628,7 +641,6 @@
 - (id)homeTimelineVariantCoordinator;
 - (_Bool)isLatestHomeTimelineSwitchEnabled;
 - (_Bool)isTimelineItemsHydrationScribingEnabled;
-- (long long)homeTimelineProgressiveAPISegmentSize;
 - (unsigned long long)maxRecentCacheEntriesToUseForClientDeduping;
 - (_Bool)isConversationHoistingPreventionEnabled;
 - (_Bool)isClientDedupingUsingImpressionCacheEnabled;
@@ -694,7 +706,9 @@
 @property(readonly, nonatomic) _Bool tavFoundationAvoidBlockingReads;
 @property(readonly, nonatomic) _Bool isAVCoreSingleThreaded;
 @property(readonly, nonatomic) _Bool isMixedMediaBadgeEnabled;
-@property(readonly, nonatomic) _Bool shouldUseComponentizedInlineMediaViewsForVideosBesidesMediaEntityVod;
+@property(readonly, nonatomic) _Bool shouldUseComponentizedInlineMediaViewsForEverythingElse;
+@property(readonly, nonatomic) _Bool shouldUseComponentizedInlineMediaViewsForVine;
+@property(readonly, nonatomic) _Bool shouldUseComponentizedInlineMediaViewsForGIF;
 @property(readonly, nonatomic) _Bool shouldUseComponentizedInlineMediaViewsForMediaEntityVod;
 @property(readonly, nonatomic) NSNumber *skipButtonTimeWithImpressionLogging;
 @property(readonly, nonatomic) double viewThresholdContent;
@@ -778,9 +792,7 @@
 - (double)typingIndicatorDuration;
 - (_Bool)isDMExpandedInfoAvailable;
 - (_Bool)isDMConversationInfoSharedContentEnabled;
-- (_Bool)isDMBadgeExcludeUntrustedEnabled;
-- (_Bool)isDMBadgeExcludeMutedEnabled;
-- (_Bool)isDMBadgeClientCalculationEnabled;
+- (_Bool)isDMBadgeCalculatedFromClientUntrustedCountEnabled;
 @property(readonly, nonatomic) id <T1CardViewRegistry> cardRegistry;
 - (_Bool)isBetaBugButtonEnabled;
 - (void)unmuteUserWithUserReference:(id)arg1 unmuteFleets:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
@@ -788,8 +800,8 @@
 - (void)muteFleetsForUserID:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 @property(nonatomic, readonly) id <_TtP9T1Twitter24PeopleAddressBookService_> addressBookService;
 @property(nonatomic, readonly) T1AccountNotificationSettingsManager *notificationSettingsManager;
-- (unsigned long long)unseenDMCountForBadgingExcludingMuted:(_Bool)arg1 excludingUntrusted:(_Bool)arg2;
-@property(nonatomic, readonly) _Bool countOfUnseenConversationsForBadgingDiffersFromLegacy;
+- (unsigned long long)unseenUntrustedDMCountForBadging;
+- (unsigned long long)unseenDMCountForBadging;
 @property(nonatomic, readonly) TFNDirectMessageService *directMessages;
 - (long long)articlesNudgeRateLimit;
 - (id)articlesNudgeNewsDomainSetWithImpression:(_Bool)arg1;

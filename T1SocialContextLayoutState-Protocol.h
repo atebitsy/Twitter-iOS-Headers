@@ -12,5 +12,8 @@
 @property(readonly, nonatomic) struct CGRect caretButtonFrame;
 @property(readonly, nonatomic) struct CGRect socialTextFrame;
 @property(readonly, nonatomic) struct CGRect socialBadgeFrame;
+
+@optional
+@property(readonly, nonatomic) long long socialTextAlignment;
 @end
 

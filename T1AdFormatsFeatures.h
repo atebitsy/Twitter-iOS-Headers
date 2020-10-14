@@ -19,8 +19,6 @@
 - (double)_t1_mediaRatio:(id)arg1;
 - (id)_t1_cardTypesToMapToUnifiedCards;
 - (id)_t1_clientHardcodedCardTypesToMapToUnifiedCards;
-- (long long)_t1_appMetadataLineTwoTypeForModel:(id)arg1;
-- (_Bool)_t1_isPassingAppRatingsExperimentThresholdForModel:(id)arg1;
 - (id)_t1_applyMAPExperimentsIfNecessary:(id)arg1;
 - (id)_t1_applyClientUCExperiments:(id)arg1;
 - (id)_t1_applyLegacyCardToUCMigrations:(id)arg1;
@@ -50,10 +48,6 @@
 @property(readonly, nonatomic) unsigned long long dockedMediaMediaControlsVariant;
 - (_Bool)isUnifiedCardDestinationOfTypeEnabled:(unsigned long long)arg1;
 - (_Bool)isUnifiedCardComponentOfTypeEnabled:(unsigned long long)arg1;
-@property(readonly, nonatomic) long long unifiedCardAppMetadataLineTwoType;
-@property(readonly, nonatomic) _Bool shouldShowRatingsForAppMetadata;
-@property(readonly, nonatomic) _Bool shouldUseSingleLineTitleForAppMetadata;
-@property(readonly, nonatomic) _Bool shouldShowAppIconForAppMetadata;
 - (_Bool)legacyCardEnabled:(long long)arg1 forDisplayMode:(long long)arg2;
 - (_Bool)shouldForceForwardDisplayModeRenderingForLegacyCard:(long long)arg1;
 @property(readonly, nonatomic) _Bool useNonFSOCompatibleLegacyCardRegistryKeys;
@@ -61,8 +55,6 @@
 @property(readonly, nonatomic) unsigned long long edgeToEdgePresentation;
 @property(readonly, nonatomic) unsigned long long videoCarouselPresentation;
 @property(readonly, nonatomic) unsigned long long carouselPresentation;
-@property(readonly, nonatomic) _Bool isVideoWebsiteCardBannerlessWebViewEnabled;
-@property(readonly, nonatomic) _Bool isVideoWebsiteCardSafariViewControllerEnabled;
 @property(readonly, nonatomic) _Bool isTweetViewInGalleryEnabled;
 @property(readonly, nonatomic) double promotedImageRatio;
 @property(readonly, nonatomic) _Bool isAdDisplaySessionGranularityReduced;
@@ -73,9 +65,6 @@
 @property(readonly, nonatomic) _Bool isMediaAppCardRatingsViewEnabled;
 @property(readonly, nonatomic) _Bool isSkipTalonURLVerificationEnabled;
 @property(readonly, nonatomic) double unifiedCardsRequiredLingerIntervalForDNSResolution;
-@property(readonly, nonatomic) double unifiedCardsSafariVCPresentationAnimationDuration;
-@property(readonly, nonatomic) _Bool disableProactiveLoadAsDefaultSafariPresentationStyle;
-@property(readonly, nonatomic) unsigned long long unifiedCardsSafariVCPresentationStyle;
 @property(readonly, nonatomic) double webViewDwellLongInterval;
 @property(readonly, nonatomic) double webViewDwellMediumInterval;
 @property(readonly, nonatomic) double webViewDwellShortInterval;

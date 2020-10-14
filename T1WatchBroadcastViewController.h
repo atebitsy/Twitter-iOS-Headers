@@ -14,7 +14,7 @@
 #import <T1Twitter/T1WatchBroadcastViewControllerModelDelegate-Protocol.h>
 #import <T1Twitter/TFNPresented-Protocol.h>
 
-@class NSString, PTVMergeWatchBroadcastViewController, T1ComposeController, T1PeriscopeFollowPromptViewController, T1WatchBroadcastExternalVideoPlayer, T1WatchBroadcastViewControllerModel, T1WatchBroadcastViewControllerPresenter, TFNPaddedButton, UIView, UIViewController, UIWindow;
+@class NSString, PTVMergeWatchBroadcastViewController, T1ComposeController, T1FleetcastReportContext, T1PeriscopeFollowPromptViewController, T1WatchBroadcastExternalVideoPlayer, T1WatchBroadcastViewControllerModel, T1WatchBroadcastViewControllerPresenter, TFNPaddedButton, UIButton, UIView, UIViewController, UIWindow;
 @protocol T1Dockable, T1WatchBroadcastViewControllerDelegate;
 
 @interface T1WatchBroadcastViewController : TFNViewController <T1WatchBroadcastViewControllerModelDelegate, PTVCustomTwitterViewDelegate, T1WatchBroadcastExternalVideoPlayerDelegate, T1ComposeControllerDelegate, PTVBroadcastWatcherObserver, PTVMergeWatchBroadcastViewControllerDelegate, TFNPresented>
@@ -44,10 +44,14 @@
     CDUnknownBlockType _onPresentationCompletionBlock;
     UIWindow *_presentingWindow;
     unsigned long long _reauthenticationCount;
+    UIButton *_fleetcastReportButton;
+    T1FleetcastReportContext *_fleetReportContext;
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) T1FleetcastReportContext *fleetReportContext; // @synthesize fleetReportContext=_fleetReportContext;
 @property(nonatomic) _Bool isPresentedFromFleets; // @synthesize isPresentedFromFleets=_isPresentedFromFleets;
+@property(retain, nonatomic) UIButton *fleetcastReportButton; // @synthesize fleetcastReportButton=_fleetcastReportButton;
 @property(nonatomic) _Bool isInWindowScene; // @synthesize isInWindowScene=_isInWindowScene;
 @property(nonatomic) unsigned long long reauthenticationCount; // @synthesize reauthenticationCount=_reauthenticationCount;
 @property(nonatomic) _Bool reauthenticating; // @synthesize reauthenticating=_reauthenticating;
@@ -160,9 +164,11 @@
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)_t1_action_reportButtonDidTouchUpInside:(id)arg1;
+- (void)_t1_createFleetcastReportButtonIfNeeded;
 - (void)viewDidLoad;
 - (void)dealloc;
-- (id)initForFleetsWithBroadcastID:(id)arg1 account:(id)arg2 shouldPresent:(_Bool)arg3;
+- (id)initForFleetsWithBroadcastID:(id)arg1 account:(id)arg2 fleetReportContext:(id)arg3 shouldPresent:(_Bool)arg4;
 - (id)initWithBroadcastIDOrShareToken:(id)arg1 account:(id)arg2;
 - (id)initWithBroadcast:(id)arg1 account:(id)arg2 cardDataSource:(id)arg3 liveEvent:(id)arg4 presentingFromWindow:(id)arg5 shouldAutoplay:(_Bool)arg6;
 @property(retain, nonatomic) TFNViewController<T1Dockable> *t1_dockableSourceViewController;

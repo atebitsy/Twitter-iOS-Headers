@@ -8,12 +8,12 @@
 
 #import <T1Twitter/TAVPlaybackObserver-Protocol.h>
 
-@class T1VoiceStatusViewModel, TAVPlayer;
+@class T1VoiceClipViewModel, TAVPlayer;
 
 @interface T1VoiceStatusPlaybackObserver : NSObject <TAVPlaybackObserver>
 {
     _Bool _playing;
-    T1VoiceStatusViewModel *_voiceStatusViewModel;
+    T1VoiceClipViewModel *_voiceClipViewModel;
     TAVPlayer *_player;
     CDUnknownBlockType _playbackChangeCallback;
 }
@@ -22,10 +22,10 @@
 @property(copy, nonatomic) CDUnknownBlockType playbackChangeCallback; // @synthesize playbackChangeCallback=_playbackChangeCallback;
 @property(nonatomic) _Bool playing; // @synthesize playing=_playing;
 @property(retain, nonatomic) TAVPlayer *player; // @synthesize player=_player;
-@property(retain, nonatomic) T1VoiceStatusViewModel *voiceStatusViewModel; // @synthesize voiceStatusViewModel=_voiceStatusViewModel;
+@property(retain, nonatomic) T1VoiceClipViewModel *voiceClipViewModel; // @synthesize voiceClipViewModel=_voiceClipViewModel;
 - (void)player:(id)arg1 didUpdatePlaybackState:(id)arg2;
 - (void)dealloc;
-- (id)initWithVoiceStatusViewModel:(id)arg1 callback:(CDUnknownBlockType)arg2;
+- (id)initWithVoiceClipViewModel:(id)arg1 callback:(CDUnknownBlockType)arg2;
 
 @end
 

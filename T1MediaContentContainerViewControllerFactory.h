@@ -13,8 +13,8 @@
 + (id)dockedVideoWebsiteViewControllerForPresenting:(id)arg1 with:(id)arg2 forMedia:(id)arg3 targetWebsite:(id)arg4 videoAspect:(double)arg5 shouldAutoAdvanceVideo:(_Bool)arg6 transitionObject:(id)arg7 scribeComponentConstant:(id)arg8;
 + (id)videoAppStoreViewControllerForHeaderViewModel:(id)arg1 context:(id)arg2 account:(id)arg3 transitionObject:(id)arg4;
 + (id)imageAppStoreViewControllerForHeaderViewModel:(id)arg1 context:(id)arg2 account:(id)arg3 transitionObject:(id)arg4;
-+ (id)videoWebsiteViewControllerForHeaderViewModel:(id)arg1 context:(id)arg2 account:(id)arg3 transitionObject:(id)arg4;
-+ (id)imageWebsiteViewControllerForHeaderViewModel:(id)arg1 context:(id)arg2 account:(id)arg3 transitionObject:(id)arg4;
++ (id)videoWebsiteViewControllerForHeaderViewModel:(id)arg1 rootURL:(id)arg2 account:(id)arg3 sourceStatus:(id)arg4 scribeComponent:(id)arg5 transitionObject:(id)arg6;
++ (id)imageWebsiteViewControllerForHeaderViewModel:(id)arg1 rootURL:(id)arg2 account:(id)arg3 sourceStatus:(id)arg4 scribeComponent:(id)arg5 transitionObject:(id)arg6;
 - (id)init;
 
 @end

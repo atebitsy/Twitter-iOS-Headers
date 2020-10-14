@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIViewController.h>
+#import <TFNUI/TFNWindowRootViewController.h>
 
 #import <T1Twitter/T1AppLaunchTransitionDelegate-Protocol.h>
 #import <T1Twitter/T1OnboardingFlowControllerDelegate-Protocol.h>
@@ -12,10 +12,10 @@
 #import <T1Twitter/TFNPresentationInterceptor-Protocol.h>
 #import <T1Twitter/TFNTwitterRecurringTaskContextPanelIDProvider-Protocol.h>
 
-@class NSString, T1OnboardingFlowAssistant, T1OnboardingFlowController, T1OnboardingFlowMonitor, T1URLProtocolDefaultHandlerEvent, TFNTwitterAdsTPMIdSyncManager;
+@class NSString, T1OnboardingFlowAssistant, T1OnboardingFlowController, T1OnboardingFlowMonitor, T1URLProtocolDefaultHandlerEvent, TFNTwitterAdsTPMIdSyncManager, UIViewController;
 @protocol T1AppNavigationProvider, T1AppNavigationProviderFactory, T1LaunchTransitionProvider, T1LoginChallengeProtocol, T1OnboardingFlow, T1SignedOutViewControllerFactory;
 
-@interface T1HostViewController : UIViewController <TFNTwitterRecurringTaskContextPanelIDProvider, T1OnboardingFlowControllerDelegate, T1AppLaunchTransitionDelegate, TFNPresentationInterceptor, T1SignedOutNavigation>
+@interface T1HostViewController : TFNWindowRootViewController <TFNTwitterRecurringTaskContextPanelIDProvider, T1OnboardingFlowControllerDelegate, T1AppLaunchTransitionDelegate, TFNPresentationInterceptor, T1SignedOutNavigation>
 {
     _Bool _showedSignedOutScreen;
     _Bool _performingLaunchTransition;

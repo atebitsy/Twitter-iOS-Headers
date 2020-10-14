@@ -24,6 +24,7 @@
     NSValue *_customHorizontalSafeAreaInsets;
     NSNumber *_customAccessoryWidth;
     NSValue *_customAvatarSize;
+    NSNumber *_customBodyBelowAvatar;
     _Bool _mutable;
     unsigned long long _hash;
     long long _parametersVersion;
@@ -31,6 +32,7 @@
 
 - (void).cxx_destruct;
 @property(readonly, nonatomic) long long parametersVersion; // @synthesize parametersVersion=_parametersVersion;
+@property(readonly, nonatomic) NSNumber *customBodyBelowAvatar; // @synthesize customBodyBelowAvatar=_customBodyBelowAvatar;
 @property(readonly, nonatomic) NSValue *customAvatarSize; // @synthesize customAvatarSize=_customAvatarSize;
 @property(readonly, nonatomic) NSNumber *customAccessoryWidth; // @synthesize customAccessoryWidth=_customAccessoryWidth;
 @property(readonly, nonatomic) NSValue *customHorizontalSafeAreaInsets; // @synthesize customHorizontalSafeAreaInsets=_customHorizontalSafeAreaInsets;

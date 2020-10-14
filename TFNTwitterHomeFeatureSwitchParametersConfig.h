@@ -12,7 +12,6 @@
 
 @interface TFNTwitterHomeFeatureSwitchParametersConfig : NSObject <TFNTwitterHomeFeatureSwitchParameters>
 {
-    _Bool _progressiveAPIEnabled;
     _Bool _isClientDedupingUsingImpressionCacheEnabled;
     _Bool _latestHomeTimelineOptionAvailable;
     _Bool _topCursorPrefetchEnabled;
@@ -22,13 +21,14 @@
     _Bool _homeConversationHoistingPreventionEnabled;
     _Bool _asyncPrefetchRequestEnabled;
     _Bool _consecutiveAdDedupPreventionEnabled;
+    _Bool _consecutiveAdHoistingPreventionEnabled;
     _Bool _visibilityByItemPathTrackingEnabled;
     unsigned long long _homeRequestMaxSeenIDs;
-    long long _progressiveAPISegmentSize;
     unsigned long long _clientDedupingMaxRecentCacheEntries;
 }
 
 @property(nonatomic, getter=isVisibilityByItemPathTrackingEnabled) _Bool visibilityByItemPathTrackingEnabled; // @synthesize visibilityByItemPathTrackingEnabled=_visibilityByItemPathTrackingEnabled;
+@property(nonatomic, getter=isConsecutiveAdHoistingPreventionEnabled) _Bool consecutiveAdHoistingPreventionEnabled; // @synthesize consecutiveAdHoistingPreventionEnabled=_consecutiveAdHoistingPreventionEnabled;
 @property(nonatomic, getter=isConsecutiveAdDedupPreventionEnabled) _Bool consecutiveAdDedupPreventionEnabled; // @synthesize consecutiveAdDedupPreventionEnabled=_consecutiveAdDedupPreventionEnabled;
 @property(nonatomic, getter=isAsyncPrefetchRequestEnabled) _Bool asyncPrefetchRequestEnabled; // @synthesize asyncPrefetchRequestEnabled=_asyncPrefetchRequestEnabled;
 @property(nonatomic, getter=isHomeConversationHoistingPreventionEnabled) _Bool homeConversationHoistingPreventionEnabled; // @synthesize homeConversationHoistingPreventionEnabled=_homeConversationHoistingPreventionEnabled;
@@ -39,8 +39,6 @@
 @property(nonatomic, getter=isLatestHomeTimelineOptionAvailable) _Bool latestHomeTimelineOptionAvailable; // @synthesize latestHomeTimelineOptionAvailable=_latestHomeTimelineOptionAvailable;
 @property(nonatomic) unsigned long long clientDedupingMaxRecentCacheEntries; // @synthesize clientDedupingMaxRecentCacheEntries=_clientDedupingMaxRecentCacheEntries;
 @property(nonatomic) _Bool isClientDedupingUsingImpressionCacheEnabled; // @synthesize isClientDedupingUsingImpressionCacheEnabled=_isClientDedupingUsingImpressionCacheEnabled;
-@property(nonatomic) long long progressiveAPISegmentSize; // @synthesize progressiveAPISegmentSize=_progressiveAPISegmentSize;
-@property(nonatomic, getter=isProgressiveAPIEnabled) _Bool progressiveAPIEnabled; // @synthesize progressiveAPIEnabled=_progressiveAPIEnabled;
 @property(nonatomic) unsigned long long homeRequestMaxSeenIDs; // @synthesize homeRequestMaxSeenIDs=_homeRequestMaxSeenIDs;
 
 // Remaining properties

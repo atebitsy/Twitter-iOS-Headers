@@ -23,6 +23,7 @@
     TAVPlaybackState *_playbackState;
     TAVErrorLabel *_errorLabel;
     TAVPlayerViewDebugOverlay *_debugOverlay;
+    UIView *_debugOutlineView;
     TAVCaptionContainerView *_captionContainerView;
     NSHashTable *_weakObservers;
     UIView *_transitionSnapshotContainerView;
@@ -40,6 +41,7 @@
 @property(retain, nonatomic) UIView *transitionSnapshotContainerView; // @synthesize transitionSnapshotContainerView=_transitionSnapshotContainerView;
 @property(readonly, nonatomic) NSHashTable *weakObservers; // @synthesize weakObservers=_weakObservers;
 @property(retain, nonatomic) TAVCaptionContainerView *captionContainerView; // @synthesize captionContainerView=_captionContainerView;
+@property(retain, nonatomic) UIView *debugOutlineView; // @synthesize debugOutlineView=_debugOutlineView;
 @property(retain, nonatomic) TAVPlayerViewDebugOverlay *debugOverlay; // @synthesize debugOverlay=_debugOverlay;
 @property(retain, nonatomic) TAVErrorLabel *errorLabel; // @synthesize errorLabel=_errorLabel;
 @property(readonly, nonatomic) TAVPlaybackState *playbackState; // @synthesize playbackState=_playbackState;

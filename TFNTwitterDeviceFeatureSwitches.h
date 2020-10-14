@@ -48,7 +48,6 @@
 + (id)darkreadLifecycleShutdownInfoURL;
 + (long long)darkreadLifecycleShutdownLevel;
 + (_Bool)darkreadLifecycleShutdownEnabled;
-+ (_Bool)isPerformanceTracingEnabled;
 + (_Bool)isDashContentSFSVCEnabled;
 + (_Bool)isBetaBugButtonEmailFlowEnabled;
 + (_Bool)isTNLForPeriscopePluginEnabled;
@@ -71,6 +70,7 @@
 + (_Bool)isMaxPasswordLengthCheckEnabled;
 + (_Bool)isMacTestExperimentLoggedOutEnabled;
 + (_Bool)isMacSceneReconnectEnabled;
++ (_Bool)isMacTranslucentSidebarEnabled;
 + (_Bool)isMacToolbarRemovalEnabled;
 + (_Bool)isLoginJSInstrumentationEnabled;
 + (id)phoneSignupCountriesNotificationsAllowList;
@@ -78,6 +78,9 @@
 + (id)phoneSignupCountriesRestrictedList;
 + (double)ambientNotificationCooldownPeriod;
 + (long long)maxQueuedAmbientNotifications;
++ (_Bool)isTwitterEventKitEnabledWithoutImpression;
++ (_Bool)isTwitterEventKitEnabledCachedWithoutImpression;
++ (_Bool)isTwitterEventKitEnabledWithImpression;
 + (_Bool)isTwitterEventKitEnabled;
 + (_Bool)isFeatureSwitchesCrashlyticsLoggingEnabled;
 + (long long)appStoreReviewPromptDaysAfterCrashMin;
@@ -95,22 +98,15 @@
 + (double)_CGFloatForKey:(id)arg1 minValue:(double)arg2 maxValue:(double)arg3;
 + (long long)_integerForKey:(id)arg1 minValue:(long long)arg2 maxValue:(long long)arg3;
 + (id)nonUsernamePaths;
-+ (long long)mediaURLLength;
 + (long long)shortenedURLLengthSecure;
 + (id)excludedWebViewDomains;
 + (id)excludedEmailDomains;
-+ (double)scribeStatusLingerMaxThresholdInSeconds;
 + (double)scribeStatusLingerMinThresholdInSeconds;
 + (long long)typeaheadMaxUserMatches;
 + (long long)typeaheadMaxRecentSearchesHorizontallyScrolling;
 + (long long)typeaheadMaxRecentSearches;
 + (long long)typeaheadMaxQueryMatches;
-+ (long long)typeaheadUserPrefetchSize;
 + (double)typeaheadUserPrefetchRateInSeconds;
-+ (long long)antispamQueryFrequency;
-+ (long long)antispamConnectUserCount;
-+ (long long)antispamConnectTweetCount;
-+ (_Bool)disableInlinePhotosInstagram;
 + (_Bool)disableWatchdogDetection;
 + (_Bool)shouldScribeError;
 

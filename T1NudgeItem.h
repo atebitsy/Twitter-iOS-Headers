@@ -11,6 +11,8 @@
 @interface T1NudgeItem : NSObject
 {
     _Bool _contextViewShouldFillWidth;
+    _Bool _forceContextViewAllowsUserInteraction;
+    _Bool _shouldPerformContextActionCompletion;
     long long _style;
     NSString *_iconName;
     NSString *_condensedTitle;
@@ -18,22 +20,32 @@
     NSString *_subtitle;
     CDUnknownBlockType _contextViewBlock;
     CDUnknownBlockType _contextAction;
+    CDUnknownBlockType _learnMoreAction;
+    NSString *_actionConfirmationText;
     double _contentVerticalSpacing;
     UIColor *_backgroundColor;
     UIColor *_iconImageColor;
     UIColor *_iconImageBackgroundColor;
+    NSString *_iconImageAccessibilityLabel;
     struct CGSize _iconImageSize;
     struct CGSize _iconImageBackgroundSize;
+    struct UIEdgeInsets _nudgeContentInsets;
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *iconImageAccessibilityLabel; // @synthesize iconImageAccessibilityLabel=_iconImageAccessibilityLabel;
 @property(retain, nonatomic) UIColor *iconImageBackgroundColor; // @synthesize iconImageBackgroundColor=_iconImageBackgroundColor;
 @property(nonatomic) struct CGSize iconImageBackgroundSize; // @synthesize iconImageBackgroundSize=_iconImageBackgroundSize;
 @property(retain, nonatomic) UIColor *iconImageColor; // @synthesize iconImageColor=_iconImageColor;
 @property(nonatomic) struct CGSize iconImageSize; // @synthesize iconImageSize=_iconImageSize;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
+@property(nonatomic) _Bool shouldPerformContextActionCompletion; // @synthesize shouldPerformContextActionCompletion=_shouldPerformContextActionCompletion;
+@property(nonatomic) _Bool forceContextViewAllowsUserInteraction; // @synthesize forceContextViewAllowsUserInteraction=_forceContextViewAllowsUserInteraction;
 @property(nonatomic) _Bool contextViewShouldFillWidth; // @synthesize contextViewShouldFillWidth=_contextViewShouldFillWidth;
+@property(nonatomic) struct UIEdgeInsets nudgeContentInsets; // @synthesize nudgeContentInsets=_nudgeContentInsets;
 @property(nonatomic) double contentVerticalSpacing; // @synthesize contentVerticalSpacing=_contentVerticalSpacing;
+@property(retain, nonatomic) NSString *actionConfirmationText; // @synthesize actionConfirmationText=_actionConfirmationText;
+@property(copy, nonatomic) CDUnknownBlockType learnMoreAction; // @synthesize learnMoreAction=_learnMoreAction;
 @property(copy, nonatomic) CDUnknownBlockType contextAction; // @synthesize contextAction=_contextAction;
 @property(copy, nonatomic) CDUnknownBlockType contextViewBlock; // @synthesize contextViewBlock=_contextViewBlock;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;

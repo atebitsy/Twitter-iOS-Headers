@@ -7,12 +7,12 @@
 #import <T1Twitter/NSObject-Protocol.h>
 #import <T1Twitter/TAVScrollViewVisibilityDelegate-Protocol.h>
 
-@class T1UnifiedCardCarouselViewController, TFNPreviewConfiguration;
+@class NSIndexPath, T1UnifiedCardCarouselViewController, TFNPreviewConfiguration;
 
 @protocol T1UnifiedCardCarouselViewControllerDelegate <NSObject, TAVScrollViewVisibilityDelegate>
 - (TFNPreviewConfiguration *)carouselViewController:(T1UnifiedCardCarouselViewController *)arg1 didHapticTouchItemAtIndex:(unsigned long long)arg2;
 - (void)carouselViewController:(T1UnifiedCardCarouselViewController *)arg1 didSwipeFrom:(unsigned long long)arg2 to:(unsigned long long)arg3;
 - (void)carouselViewController:(T1UnifiedCardCarouselViewController *)arg1 didDisplayItemAtIndex:(unsigned long long)arg2;
-- (void)carouselViewController:(T1UnifiedCardCarouselViewController *)arg1 didSelectItemAtIndex:(unsigned long long)arg2 eventType:(unsigned long long)arg3;
+- (void)carouselViewController:(T1UnifiedCardCarouselViewController *)arg1 didSelectItemAtIndexPath:(NSIndexPath *)arg2 eventType:(unsigned long long)arg3;
 @end
 

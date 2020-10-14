@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 @property(retain, nonatomic) TAVPlayerView *playerView; // @synthesize playerView=_playerView;
 @property(retain, nonatomic) TAVPlayer *player; // @synthesize player=_player;
+- (void)player:(id)arg1 didUpdatePlaybackState:(id)arg2;
 - (long long)t1_playerViewAttachmentPriority;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;

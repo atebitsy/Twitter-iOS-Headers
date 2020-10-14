@@ -10,7 +10,7 @@
 {
 }
 
-+ (_Bool)isLightsOutUpdatedColorsEnabled;
++ (_Bool)isDimUpdatedColorsEnabled;
 + (_Bool)isTwitterSansFontEnabled;
 + (_Bool)isAlignImagePlaceholderColorsEnabled;
 + (_Bool)isPreventOLEDSmearingEnabled;

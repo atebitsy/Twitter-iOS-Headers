@@ -18,7 +18,7 @@
 - (void).cxx_destruct;
 - (id)init;
 - (void)handleScribeOutgoingEvents:(id)arg1 retryDistribution:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)flushGroupsWithAccountId:(id)arg1;
+- (id)flushGroupsWithAccountId:(id)arg1 priority:(int)arg2;
 - (id)initWithContext:(id)arg1 accountId:(id)arg2 serviceRunner:(id)arg3;
 
 @end

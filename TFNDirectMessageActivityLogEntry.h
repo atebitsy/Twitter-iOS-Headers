@@ -7,10 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <T1Twitter/NSCoding-Protocol.h>
+#import <T1Twitter/NSSecureCoding-Protocol.h>
 
 @class NSDate, NSString;
 
-@interface TFNDirectMessageActivityLogEntry : NSObject <NSCoding>
+@interface TFNDirectMessageActivityLogEntry : NSObject <NSCoding, NSSecureCoding>
 {
     long long _eventID;
     NSString *_conversationID;
@@ -18,6 +19,7 @@
     NSDate *_date;
 }
 
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) long long sharedStatusID; // @synthesize sharedStatusID=_sharedStatusID;

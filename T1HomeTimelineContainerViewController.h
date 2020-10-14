@@ -67,7 +67,6 @@
 - (void)tfn_navigationControllerDidLayoutBarItems;
 - (void)t1_appSplitModeDidChangeFromPrevious:(long long)arg1 toCurrent:(long long)arg2;
 - (_Bool)t1_showsPeopleAction;
-- (_Bool)t1_showsToggleSideBarAction;
 - (_Bool)t1_showsDashAction;
 - (_Bool)tfn_prefersNavigationBarShadowHidden;
 - (void)_t1_fakeRecurringTaskForegroundRefresh:(id)arg1;

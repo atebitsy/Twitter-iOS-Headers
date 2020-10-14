@@ -9,7 +9,7 @@
 #import <T1Twitter/TFSScribeOutgoingEventsHandler-Protocol.h>
 #import <T1Twitter/TFSScribeOutgoingImpressionsHandler-Protocol.h>
 
-@class TFNScribeThriftEventsHandler, TFNTwitterAccount, TFNTwitterScribeImpressionLogger, TFSScribe;
+@class CESClientEventsHandler, TFNScribeThriftEventsHandler, TFNTwitterAccount, TFNTwitterScribeImpressionLogger, TFSScribe;
 @protocol TFNTwitterScribeWriter;
 
 @interface TFNTwitterScribeFlush : NSObject <TFSScribeOutgoingEventsHandler, TFSScribeOutgoingImpressionsHandler>
@@ -21,12 +21,14 @@
     TFNTwitterAccount *_account;
     TFNTwitterScribeImpressionLogger *_impressionLogger;
     TFNScribeThriftEventsHandler *_thriftEventsHandler;
+    CESClientEventsHandler *_clientEventsHandler;
 }
 
 + (unsigned long long)scribeOutgoingEventsBehaviorWithSuccess:(_Bool)arg1 HTTPStatusCode:(long long)arg2;
 + (unsigned long long)scribeOutgoingEventsBehaviorWithSuccess:(_Bool)arg1 error:(id)arg2;
 + (id)guestScribeFlush;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CESClientEventsHandler *clientEventsHandler; // @synthesize clientEventsHandler=_clientEventsHandler;
 @property(retain, nonatomic) TFNScribeThriftEventsHandler *thriftEventsHandler; // @synthesize thriftEventsHandler=_thriftEventsHandler;
 @property(retain, nonatomic) TFNTwitterScribeImpressionLogger *impressionLogger; // @synthesize impressionLogger=_impressionLogger;
 @property(nonatomic) __weak TFNTwitterAccount *account; // @synthesize account=_account;
@@ -37,6 +39,7 @@
 - (void)flushWithToken:(id)arg1 thriftToken:(id)arg2 clientEventsToken:(id)arg3;
 - (void)flush;
 @property(readonly, nonatomic) TFSScribe *scribeService; // @synthesize scribeService=_scribeService;
+- (id)_tfn_scribeClientEventGroups;
 - (id)_tfn_scribeThriftGroups;
 - (id)_tfn_scribeGroups;
 - (id)_tfn_scribeGroup;

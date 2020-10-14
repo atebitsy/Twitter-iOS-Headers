@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <TFSTwitterCore/NSCoding-Protocol.h>
+#import <TFSTwitterCore/NSSecureCoding-Protocol.h>
 #import <TFSTwitterCore/TFSModel-Protocol.h>
 
 @class NSDate, NSNumber;
 
-@interface TFSTwitterBadgeCounts : NSObject <TFSModel, NSCoding>
+@interface TFSTwitterBadgeCounts : NSObject <TFSModel, NSSecureCoding>
 {
     NSNumber *_ntabUnreadCount;
     NSNumber *_dmUnreadCount;
@@ -19,6 +19,7 @@
     NSDate *_date;
 }
 
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) NSNumber *totalUnreadCount; // @synthesize totalUnreadCount=_totalUnreadCount;

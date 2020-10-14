@@ -7,12 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <TFSTwitterCore/MKAnnotation-Protocol.h>
-#import <TFSTwitterCore/NSCoding-Protocol.h>
+#import <TFSTwitterCore/NSSecureCoding-Protocol.h>
 #import <TFSTwitterCore/TFSEncodable-Protocol.h>
 
 @class CLLocation, NSDate, NSString;
 
-@interface TFSTwitterLocation : NSObject <TFSEncodable, NSCoding, MKAnnotation>
+@interface TFSTwitterLocation : NSObject <TFSEncodable, NSSecureCoding, MKAnnotation>
 {
     NSString *_footprint;
     CLLocation *_backingLocation;
@@ -20,6 +20,7 @@
 
 + (id)footprintForLocation:(id)arg1;
 + (id)encodableName;
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *footprint; // @synthesize footprint=_footprint;
 @property(readonly, nonatomic) CLLocation *backingLocation; // @synthesize backingLocation=_backingLocation;

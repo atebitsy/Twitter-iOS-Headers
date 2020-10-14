@@ -15,12 +15,8 @@
 @property(readonly, nonatomic) NSNumber *coreServices2TNLForegroundIdleTimeout;
 @property(readonly, copy, nonatomic) NSSet *excludedWebViewDomains;
 @property(readonly, copy, nonatomic) NSSet *nonUsernamePaths;
-@property(readonly, nonatomic) long long antispamQueryFrequency;
-@property(readonly, nonatomic) unsigned long long typeaheadUserPrefetchSize;
 @property(readonly, nonatomic) double typeaheadUserPrefetchRateInSeconds;
 @property(readonly, copy, nonatomic) NSSet *excludedEmailDomains;
-@property(readonly, nonatomic) _Bool disableInlinePhotosInstagram;
-@property(readonly, nonatomic) long long mediaURLLength;
 @property(readonly, nonatomic) long long shortenedURLLengthSecure;
 @property(readonly, nonatomic, getter=isActionServiceLoggedOutIntegrationEnabled) _Bool actionServiceLoggedOutIntegrationEnabled;
 @property(readonly, nonatomic, getter=isActionServiceIntegrationEnabled) _Bool actionServiceIntegrationEnabled;

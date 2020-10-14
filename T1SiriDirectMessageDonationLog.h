@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <T1Twitter/NSCoding-Protocol.h>
+#import <T1Twitter/NSSecureCoding-Protocol.h>
 
 @class NSMutableArray;
 @protocol OS_dispatch_queue;
 
-@interface T1SiriDirectMessageDonationLog : NSObject <NSCoding>
+@interface T1SiriDirectMessageDonationLog : NSObject <NSSecureCoding>
 {
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableArray *_mutableEntries;
@@ -19,6 +19,7 @@
 
 + (id)logPath;
 + (id)sharedLog;
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mutableEntries; // @synthesize mutableEntries=_mutableEntries;
 - (void)_t1_clearSynchronously;

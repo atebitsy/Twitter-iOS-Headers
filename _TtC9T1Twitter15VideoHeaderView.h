@@ -12,15 +12,6 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: mediaControlsVariant
     // Error parsing type: , name: mediaControlsContainer
     // Error parsing type: , name: mediaControls
-    // Error parsing type: , name: title
-    // Error parsing type: , name: titleStyle
-    // Error parsing type: , name: isTitleHidden
-    // Error parsing type: , name: titleAlpha
-    // Error parsing type: , name: navigationBarTitleLabelIfLoaded
-    // Error parsing type: , name: titlePillIfLoaded
-    // Error parsing type: , name: titlePillLeadingConstraintIfLoaded
-    // Error parsing type: , name: titlePillTopConstraintIfLoaded
-    // Error parsing type: , name: bottomBarTitleLabelIfLoaded
     // Error parsing type: , name: tavPlayerView
 }
 

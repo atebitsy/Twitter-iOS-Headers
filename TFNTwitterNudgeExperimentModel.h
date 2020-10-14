@@ -21,6 +21,8 @@
 @property(readonly, nonatomic) TFNTwitterComposition *composition; // @synthesize composition=_composition;
 @property(readonly, nonatomic) TFNTwitterAccount *account; // @synthesize account=_account;
 @property(readonly, nonatomic) unsigned long long nudgeFlags; // @synthesize nudgeFlags=_nudgeFlags;
+- (double)simulatedDelayForCompositionUpload;
+- (_Bool)shouldSimulateDelayedCompositionUpload;
 - (void)didReceiveNudgeDuringCompositionUpload;
 - (void)didExcludeCreateNudgeOperationFromCompositionUpload;
 - (void)didIncludeCreateNudgeOperationInCompositionUpload;

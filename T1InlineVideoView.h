@@ -17,6 +17,7 @@
     // Error parsing type: , name: $__lazy_storage_$_videoBitrateManager
     // Error parsing type: , name: notificationCenter
     // Error parsing type: , name: styleProvider
+    // Error parsing type: , name: tapRecognizer
     // Error parsing type: , name: gestureResponder
     // Error parsing type: , name: playlistItemObservation
 }

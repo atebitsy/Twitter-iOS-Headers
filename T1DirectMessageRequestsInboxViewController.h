@@ -8,7 +8,6 @@
 
 @interface T1DirectMessageRequestsInboxViewController : T1DirectMessageInboxTimelineViewController
 {
-    // Error parsing type: , name: nsfwPromptDismissed
     // Error parsing type: , name: moreButton
     // Error parsing type: , name: SortChronologicallyKey
     // Error parsing type: , name: InboxSortingTooltipEvent
@@ -21,6 +20,7 @@
     // Error parsing type: , name: $__lazy_storage_$_lowQualityPivotItem
     // Error parsing type: , name: $__lazy_storage_$_nsfwMediaFilterPromptItem
     // Error parsing type: , name: didRegisterTopRequestsImpression
+    // Error parsing type: , name: keepShowingNsfwPrompt
 }
 
 - (void).cxx_destruct;
@@ -32,6 +32,7 @@
 - (void)didMoveToParentViewController:(id)arg1;
 - (_Bool)shouldShowLowQualityPivotForConversationCount:(long long)arg1 filteringEnabled:(_Bool)arg2 atEndOfInbox:(_Bool)arg3;
 - (id)initWithAccount:(id)arg1;
+@property(nonatomic) _Bool keepShowingNsfwPrompt; // @synthesize keepShowingNsfwPrompt;
 @property(nonatomic) _Bool didRegisterTopRequestsImpression; // @synthesize didRegisterTopRequestsImpression;
 
 @end

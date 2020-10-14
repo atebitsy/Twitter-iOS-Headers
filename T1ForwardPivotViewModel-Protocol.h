@@ -9,6 +9,7 @@
 @class NSString, UIColor, UIFont, UIImage;
 
 @protocol T1ForwardPivotViewModel <NSObject>
+@property(readonly, copy, nonatomic) NSString *landingUrlString;
 @property(readonly, nonatomic) NSString *accessibilityString;
 @property(readonly, nonatomic) struct CGSize preferredIconImageSize;
 @property(readonly, nonatomic) struct CGSize preferredChevronImageSize;
@@ -24,6 +25,7 @@
 @property(readonly, nonatomic) UIColor *textColor;
 @property(readonly, nonatomic) UIFont *textFont;
 @property(readonly, copy, nonatomic) NSString *textTitle;
+@property(readonly, copy, nonatomic) NSString *iconImageName;
 @property(readonly, nonatomic) UIImage *iconImage;
 @property(readonly, nonatomic) UIColor *iconColor;
 @property(readonly, nonatomic) struct NSDirectionalEdgeInsets directionalLayoutMargins;

@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <T1Twitter/T1EmptyContentMessage.h>
+#import <T1Twitter/TUIEmptyContentMessage.h>
 
 @class NSString, TFNDataViewController, TFNTwitterAccount;
 @protocol T1ProfileDataSource;
 
-@interface T1ProfileTweetsTimelineEmptyContentMessage : T1EmptyContentMessage
+@interface T1ProfileTweetsTimelineEmptyContentMessage : TUIEmptyContentMessage
 {
     id <T1ProfileDataSource> _dataSource;
     _Bool _previousNeedsSetup;

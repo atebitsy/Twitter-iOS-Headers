@@ -15,7 +15,6 @@
     // Error parsing type: , name: includeBlockingInfo
     // Error parsing type: , name: completion
     // Error parsing type: , name: assimilationOptions
-    // Error parsing type: , name: scribe
     // Error parsing type: , name: scribeContext
     // Error parsing type: , name: displaySizeProvider
     // Error parsing type: , name: seenTweetIDs

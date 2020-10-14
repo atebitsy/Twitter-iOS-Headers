@@ -9,14 +9,13 @@
 #import <T1Twitter/T1MomentCapsulePageImageViewDelegate-Protocol.h>
 #import <T1Twitter/T1MomentCapsuleViewDelegate-Protocol.h>
 
-@class NSString, T1CompactMomentView, T1MomentCapsuleView, T1MomentsCardViewModel, UILabel, UITapGestureRecognizer, UIView;
+@class NSString, T1MomentCapsuleView, T1MomentsCardViewModel, UILabel, UITapGestureRecognizer, UIView;
 @protocol T1MomentCapsuleViewLayoutDelegate;
 
 @interface T1MomentsCardView : T1CardView <T1MomentCapsuleViewDelegate, T1MomentCapsulePageImageViewDelegate>
 {
     UIView *_momentViewContainer;
     T1MomentCapsuleView *_momentView;
-    T1CompactMomentView *_compactMomentView;
     UIView *_errorView;
     UILabel *_errorLabel;
     UITapGestureRecognizer *_errorTapGestureRecognizer;
@@ -31,7 +30,6 @@
 @property(retain, nonatomic) UITapGestureRecognizer *errorTapGestureRecognizer; // @synthesize errorTapGestureRecognizer=_errorTapGestureRecognizer;
 @property(retain, nonatomic) UILabel *errorLabel; // @synthesize errorLabel=_errorLabel;
 @property(retain, nonatomic) UIView *errorView; // @synthesize errorView=_errorView;
-@property(retain, nonatomic) T1CompactMomentView *compactMomentView; // @synthesize compactMomentView=_compactMomentView;
 @property(retain, nonatomic) T1MomentCapsuleView *momentView; // @synthesize momentView=_momentView;
 @property(retain, nonatomic) UIView *momentViewContainer; // @synthesize momentViewContainer=_momentViewContainer;
 - (id)cardMediaView;

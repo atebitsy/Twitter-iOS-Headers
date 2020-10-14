@@ -11,7 +11,7 @@
     // Error parsing type: , name: scribeContext
     // Error parsing type: , name: context
     // Error parsing type: , name: _threadStatus
-    // Error parsing type: , name: observer
+    // Error parsing type: , name: lifetime
     // Error parsing type: , name: dmAvailablilityInput
     // Error parsing type: , name: dmAvailablilityObservable
     // Error parsing type: , name: readEntries

@@ -6,16 +6,16 @@
 
 #import <TFNUI/TFNItemsDataViewController.h>
 
-@class T1EmptyContentMessage;
+@class TUIEmptyContentMessage;
 
 @interface T1EmptyProfileInterstitialViewController : TFNItemsDataViewController
 {
     _Bool _didAppearOnce;
-    T1EmptyContentMessage *_contentMessage;
+    TUIEmptyContentMessage *_contentMessage;
 }
 
 - (void).cxx_destruct;
-@property(readonly, nonatomic) T1EmptyContentMessage *contentMessage; // @synthesize contentMessage=_contentMessage;
+@property(readonly, nonatomic) TUIEmptyContentMessage *contentMessage; // @synthesize contentMessage=_contentMessage;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithTitle:(id)arg1 subtitle:(id)arg2 activeSubtitleRange:(struct _NSRange)arg3 activeTextActionBlock:(CDUnknownBlockType)arg4 buttonText:(id)arg5 buttonActionBlock:(CDUnknownBlockType)arg6;

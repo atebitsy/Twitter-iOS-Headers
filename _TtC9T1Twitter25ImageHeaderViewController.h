@@ -6,10 +6,16 @@
 
 #import <T1Twitter/_TtC9T1Twitter25MediaHeaderViewController.h>
 
+@class NSString;
+
 __attribute__((visibility("hidden")))
 @interface _TtC9T1Twitter25ImageHeaderViewController : _TtC9T1Twitter25MediaHeaderViewController
 {
 }
+
+- (void)viewDidLoad;
+@property(nonatomic, copy) NSString *title;
+@property(nonatomic, readonly) _Bool prefersStatusBarHidden;
 
 @end
 

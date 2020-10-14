@@ -11,6 +11,7 @@
     long long _canonicalID;
 }
 
++ (_Bool)supportsSecureCoding;
 - (long long)canonicalID;
 - (id)debugDescription;
 - (id)description;

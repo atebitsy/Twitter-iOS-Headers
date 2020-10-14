@@ -42,7 +42,7 @@
 - (_Bool)shouldHideNavigationIcons;
 - (_Bool)shouldHideShareSheetIcon;
 - (void)viewDidLoad;
-- (id)initWithRootURL:(id)arg1 account:(id)arg2 mode:(unsigned long long)arg3;
+- (id)initWithRootURL:(id)arg1 account:(id)arg2 statusViewModel:(id)arg3 mode:(unsigned long long)arg4;
 
 @end
 

@@ -19,7 +19,6 @@
 - (id)t1_actionButtonItemCategoriesWithAccount:(id)arg1;
 - (_Bool)t1_showsActionButton;
 - (void)layoutMetricsDidChange:(id)arg1 to:(id)arg2;
-- (_Bool)t1_showsToggleSideBarAction;
 - (_Bool)t1_showsDashAction;
 - (void)updateNavigationItems;
 - (void)viewDidLoad;

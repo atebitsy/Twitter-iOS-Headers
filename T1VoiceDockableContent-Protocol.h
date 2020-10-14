@@ -8,12 +8,7 @@
 @protocol T1VoiceDockContainer;
 
 @protocol T1VoiceDockableContent
-@property(readonly, nonatomic, getter=isExpandable) _Bool expandable;
-@property(readonly, nonatomic) double expandedHeight;
 @property(readonly, nonatomic) double minimumHeight;
 @property(nonatomic) __weak UIView<T1VoiceDockContainer> *dockContainer;
-
-@optional
-- (void)handleSwipeGesture:(struct CGPoint)arg1 state:(long long)arg2;
 @end
 

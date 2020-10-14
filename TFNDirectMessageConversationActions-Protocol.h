@@ -32,6 +32,8 @@
 - (void)deleteReaction:(NSString *)arg1 forMessage:(id <TFNDirectMessageEntry>)arg2;
 - (void)addReaction:(NSString *)arg1 forMessage:(id <TFNDirectMessageEntry>)arg2;
 - (void)deleteConversation;
+- (void)unmute;
+- (void)mute;
 - (void)accept;
 - (void)loadMoreEntriesWithCompletion:(void (^)(NSArray *, NSError *))arg1;
 @property(nonatomic, readonly) id <TFNDirectMessageConversation> conversation;

@@ -26,7 +26,6 @@
 - (id)scribeContext;
 - (_Bool)t1_showsActionButton;
 - (long long)dashContentItemType;
-- (_Bool)t1_showsToggleSideBarAction;
 - (_Bool)t1_showsDashAction;
 - (_Bool)t1_showsPeopleAction;
 - (_Bool)tfn_isContentScrolledToBottom;

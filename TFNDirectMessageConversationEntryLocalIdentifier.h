@@ -13,6 +13,7 @@
     NSString *_localID;
 }
 
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 - (id)localID;
 - (id)debugDescription;

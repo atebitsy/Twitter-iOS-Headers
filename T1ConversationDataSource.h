@@ -18,6 +18,8 @@
     _Bool _conversationEmphasizedConnectorLinesEnabled;
     _Bool _connectorEmphasisDirectAncestorOnly;
     _Bool _connectorEmphasisDirectDescendentsOnly;
+    _Bool _didLogRemovedFromURTNonFatal;
+    _Bool _didLogMultipleLoadableCursorsNonFatal;
     id <T1ConversationDataSourceDelegate> _delegate;
     TFNTwitterAccount *_account;
     TFSTwitterScribeContext *_scribeContext;
@@ -42,6 +44,8 @@
 }
 
 - (void).cxx_destruct;
+@property(nonatomic) _Bool didLogMultipleLoadableCursorsNonFatal; // @synthesize didLogMultipleLoadableCursorsNonFatal=_didLogMultipleLoadableCursorsNonFatal;
+@property(nonatomic) _Bool didLogRemovedFromURTNonFatal; // @synthesize didLogRemovedFromURTNonFatal=_didLogRemovedFromURTNonFatal;
 @property(readonly, nonatomic) _Bool connectorEmphasisDirectDescendentsOnly; // @synthesize connectorEmphasisDirectDescendentsOnly=_connectorEmphasisDirectDescendentsOnly;
 @property(readonly, nonatomic) _Bool connectorEmphasisDirectAncestorOnly; // @synthesize connectorEmphasisDirectAncestorOnly=_connectorEmphasisDirectAncestorOnly;
 @property(readonly, nonatomic) _Bool conversationEmphasizedConnectorLinesEnabled; // @synthesize conversationEmphasizedConnectorLinesEnabled=_conversationEmphasizedConnectorLinesEnabled;
@@ -68,6 +72,7 @@
 @property(nonatomic) __weak id <T1ConversationDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_t1_computeConversationSections:(id)arg1;
 - (void)_t1_copyScribingParametersFromNode:(id)arg1 toNode:(id)arg2;
+- (void)logNonFatalWithErrorTitle:(id)arg1 errorDetails:(id)arg2;
 - (void)unsetScribeAdditions;
 - (void)updateScribeAdditions;
 @property(readonly, nonatomic) T1ConversationStatusNode *selectedNode;
@@ -76,7 +81,7 @@
 - (void)_t1_convertStatusNode:(id)arg1 toTombstone:(id)arg2;
 - (void)insertTombstoneForStatus:(id)arg1;
 - (void)_t1_addNodeToCache:(id)arg1;
-- (id)_t1_generateAndInsertNodeForWrappedItem:(id)arg1;
+- (id)_t1_generateNodeForWrappedItem:(id)arg1;
 - (id)_t1_lazyGeneratedNodeForWrappedItem:(id)arg1;
 - (void)_t1_removeNodeFromCache:(id)arg1;
 - (id)entryIDForStatusID:(long long)arg1;
@@ -97,12 +102,11 @@
 - (void)completedRenderingForUpdate;
 @property(readonly, nonatomic) _Bool isEmpty;
 - (id)_t1_flattenedCompositionChainForNode:(id)arg1;
-- (void)_t1_updateCursorWithItemWrapper:(id)arg1;
-- (id)_t1_processURTItemWrapper:(id)arg1;
 - (_Bool)_t1_canShowConversationNode:(id)arg1;
 - (id)_t1_orderedDescendantNodesForNode:(id)arg1;
 - (id)_t1_flattenedConversationFromNodeOrdering;
 - (id)_t1_flattenedConversationFromURTOrdering;
+- (void)updateNodeTreeToLatestURTResponse;
 - (id)flattenedNodeTreeNodes;
 @property(readonly, nonatomic) _Bool shouldAssertOnDuplicateItems;
 - (void)urtConversationMediatorDidRecieveError:(id)arg1;

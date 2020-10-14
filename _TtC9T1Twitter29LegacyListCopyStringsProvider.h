@@ -14,6 +14,12 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (id)init;
+- (id)levelUpPromptFailureMessage;
+- (id)levelUpPromptSuccessMessage;
+- (id)levelUpPromptActionRejectLabel;
+- (id)levelUpPromptActionAcceptLabel;
+- (id)levelUpPromptMessage;
+- (id)levelUpPromptTitle;
 - (id)emptyPinnedListMessage;
 - (id)listRearrangeHomeAlertMessage;
 - (id)listTypeaheadEmptyQueryMessage;

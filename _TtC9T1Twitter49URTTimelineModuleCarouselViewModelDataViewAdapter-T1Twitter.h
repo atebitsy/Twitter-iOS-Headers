@@ -11,6 +11,7 @@
 
 @interface _TtC9T1Twitter49URTTimelineModuleCarouselViewModelDataViewAdapter (T1Twitter) <T1TimelinesCarouselCollectionViewLayoutMetricsProvider, T1UserOrRecommendationTableRowAdapterDelegate>
 - (id)layoutMetricsForCollectionViewLayout:(id)arg1;
+- (void)userRowAdapter:(id)arg1 didTapCaretForItem:(id)arg2 withOptions:(id)arg3 sender:(id)arg4;
 - (void)userRowAdapter:(id)arg1 didPerformAction:(unsigned long long)arg2 forItem:(id)arg3 withOptions:(id)arg4 success:(_Bool)arg5 error:(id)arg6;
 @end
 

@@ -22,6 +22,7 @@
     _Bool _hasCheckedForNudge;
     _Bool _didReviseAfterNudge;
     _Bool _didFailLastSendFromNudge;
+    _Bool _didUndoTweetSent;
     _Bool _shouldScribeRetweetWithCommentForArticleNudge;
     NSString *_uniqueID;
     TFSTwitterUserReference *_replyToUserReference;
@@ -55,6 +56,7 @@
     NSString *_replyChainUniqueID;
     unsigned long long _positionWithinReplyChain;
     NSString *_compositionNudgeID;
+    NSString *_compositionUndoTweetSentNudgeID;
     NSDictionary *_articleNudgeScribeParameters;
     TFNTwitterTweetTextCounter *_tweetTextCounter;
     NSMutableSet *_mutableSemanticAnnotationIds;
@@ -70,6 +72,8 @@
 @property(retain, nonatomic) TFNTwitterTweetTextCounter *tweetTextCounter; // @synthesize tweetTextCounter=_tweetTextCounter;
 @property(retain, nonatomic) NSDictionary *articleNudgeScribeParameters; // @synthesize articleNudgeScribeParameters=_articleNudgeScribeParameters;
 @property(nonatomic) _Bool shouldScribeRetweetWithCommentForArticleNudge; // @synthesize shouldScribeRetweetWithCommentForArticleNudge=_shouldScribeRetweetWithCommentForArticleNudge;
+@property(nonatomic) _Bool didUndoTweetSent; // @synthesize didUndoTweetSent=_didUndoTweetSent;
+@property(copy, nonatomic) NSString *compositionUndoTweetSentNudgeID; // @synthesize compositionUndoTweetSentNudgeID=_compositionUndoTweetSentNudgeID;
 @property(copy, nonatomic) NSString *compositionNudgeID; // @synthesize compositionNudgeID=_compositionNudgeID;
 @property(nonatomic) _Bool didFailLastSendFromNudge; // @synthesize didFailLastSendFromNudge=_didFailLastSendFromNudge;
 @property(nonatomic) _Bool didReviseAfterNudge; // @synthesize didReviseAfterNudge=_didReviseAfterNudge;

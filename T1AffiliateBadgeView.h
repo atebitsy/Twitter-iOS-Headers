@@ -50,6 +50,7 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)sizeToFit;
 - (struct CGSize)intrinsicContentSize;
+- (_Bool)isUserInteractionEnabled;
 - (void)_t1_updateDescriptionString;
 - (id)initWithFrame:(struct CGRect)arg1;
 

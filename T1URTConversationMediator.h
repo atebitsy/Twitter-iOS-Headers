@@ -48,7 +48,7 @@
 - (_Bool)cursorIsLoading:(id)arg1;
 - (void)loadMoreBottom;
 - (void)loadMoreAncestors;
-- (void)loadFromCursor:(id)arg1 fromScroll:(_Bool)arg2 maximumIndentation:(unsigned long long)arg3;
+- (void)loadFromCursor:(id)arg1 fromScroll:(_Bool)arg2 maximumIndentation:(long long)arg3;
 - (void)requestInitialTimelineLoading;
 - (id)initWithAccount:(id)arg1 statusID:(long long)arg2 scribeContext:(id)arg3 referrer:(id)arg4 controllerData:(id)arg5 overflowCount:(long long)arg6;
 @property(nonatomic) __weak id <T1URTConversationMediatorDelegate> loadingDelegate; // @synthesize loadingDelegate;
